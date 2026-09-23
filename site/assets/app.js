@@ -5,6 +5,7 @@
   const PAGES = [
     ["index.html", "Главная"],
     ["guide.html", "Инструкция"],
+    ["manual.html", "Руководство"],
     ["bands.html", "Диапазоны"],
     ["listen.html", "Что слушать"],
     ["schedule.html", "Программа"],

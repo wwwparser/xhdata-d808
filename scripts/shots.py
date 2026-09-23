@@ -4,7 +4,7 @@ from pathlib import Path
 from playwright.sync_api import sync_playwright
 
 ROOT = Path(__file__).resolve().parent.parent / "site"
-PAGES = ["index", "guide", "bands", "listen", "schedule", "hams", "antennas"]
+PAGES = ["index", "guide", "manual", "bands", "listen", "schedule", "hams", "antennas"]
 out = Path(sys.argv[1] if len(sys.argv) > 1 else ROOT.parent / "shots")
 out.mkdir(parents=True, exist_ok=True)
 with sync_playwright() as p:

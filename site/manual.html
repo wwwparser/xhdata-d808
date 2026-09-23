@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Руководство D-808 (PDF)</title>
+<meta name="description" content="Официальное руководство пользователя XHDATA D-808 на русском и английском: просмотр прямо на сайте и скачивание PDF.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://wwwparser.github.io/xhdata-d808/manual.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Руководство D-808 (PDF)">
+<meta property="og:description" content="Официальное руководство пользователя XHDATA D-808 на русском и английском: просмотр прямо на сайте и скачивание PDF.">
+<meta property="og:url" content="https://wwwparser.github.io/xhdata-d808/manual.html">
+<meta name="theme-color" content="#c2410c">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  .doc-bar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 12px 0; }
+  .doc-bar a.chip { text-decoration: none; }
+  .toc { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 16px; }
+  .toc a { font-size: .85rem; text-decoration: none; border: 1px solid var(--line); background: var(--surface); color: var(--text);
+    border-radius: 999px; padding: 3px 10px; }
+  .toc a:hover { border-color: var(--accent); }
+  .toc a b { color: var(--accent); margin-right: 4px; }
+  .pages { display: grid; gap: 16px; justify-items: center; }
+  .page { width: 100%; max-width: 860px; background: #fff; border: 1px solid var(--line); border-radius: 6px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.08); position: relative; scroll-margin-top: 70px; }
+  .page canvas { width: 100%; height: auto; display: block; border-radius: 6px; }
+  .page .pnum { position: absolute; top: 6px; right: 8px; font-size: .75rem; background: rgba(0,0,0,.55); color: #fff;
+    border-radius: 999px; padding: 1px 8px; }
+  .page .ph { aspect-ratio: 595 / 842; display: grid; place-items: center; color: #888; font-size: .9rem; }
+  .fallback { display: none; }
+  .mobile-hint { display: none; }
+  @media (max-width: 760px) { .mobile-hint { display: block; } }
+</style>
+</head>
+<body>
+<main class="wrap">
+  <h1>Руководство пользователя D-808</h1>
+  <p class="lead">Официальное руководство XHDATA — смотрите прямо здесь или скачайте PDF. Простой пересказ с пошаговыми процедурами — в разделе <a href="guide.html">«Инструкция»</a>.</p>
+
+  <div class="doc-bar" id="langs"></div>
+  <p class="small muted" id="about"></p>
+  <div class="doc-bar" id="actions"></div>
+  <nav class="toc" id="toc" aria-label="Оглавление"></nav>
+  <p class="small muted mobile-hint">На телефоне страницы можно увеличивать двумя пальцами или открыть PDF целиком кнопкой «Открыть PDF».</p>
+  <div class="pages" id="pages"></div>
+  <p class="fallback note" id="fallback">Не удалось показать страницы в браузере. <a id="fallback-link" href="#">Откройте PDF</a> — он откроется в программе просмотра.</p>
+</main>
+<script src="assets/app.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
+(function () {
+  const { esc, $ } = Site;
+  const DOCS = {
+    ru: {
+      title: "Русская (официальная)",
+      file: "docs/XHDATA-D-808-manual-ru.pdf",
+      source: "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808Russian_manual.pdf?v=1752652692",
+      about: "Официальный перевод XHDATA, 12 страниц, 2024 год. Перевод местами машинный, часть подписей на схемах осталась на английском и немецком; в тексте встречаются упоминания и micro-USB, и Type-C — руководство писали для разных партий приёмника.",
+      toc: [[1, "Обложка"], [2, "Меры безопасности"], [3, "Вид спереди, кнопки"], [4, "Дисплей и боковые органы"],
+        [5, "Обозначения 1–26"], [6, "Вид сзади, питание, ручка настройки"], [7, "Вверх/вниз, блокировка, дисплей, время"],
+        [8, "Будильник, кнопки диапазонов, шаг 9/10 кГц"], [9, "Ввод частоты, память, зарядка"], [10, "Сброс, антенна, чехол, температура"],
+        [11, "Технические характеристики"], [12, "Контакты XHDATA"]],
+    },
+    en: {
+      title: "English (2025, новее)",
+      file: "docs/XHDATA-D-808-manual-en.pdf",
+      source: "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649",
+      about: "Официальное руководство XHDATA на английском, 16 страниц, версия для приёмников с разъёмом Type-C (ноябрь 2024 — 2025). Подробнее русского: настройки, память, SSB, авиадиапазон, метровые поддиапазоны КВ.",
+      toc: [[2, "Contents"], [3, "Front view"], [4, "Display"], [5, "Side controls"], [6, "Warnings, quick start"],
+        [7, "FM range, MW step"], [8, "Alarm"], [9, "Tuning, ATS, direct input"], [10, "Memory"], [11, "Display mode, FM, RDS"],
+        [12, "MW, LW, SW"], [13, "SW bands, SSB"], [14, "AIR band, squelch"], [15, "Specifications"], [16, "Contacts"]],
+    },
+  };
+
+  let lang = (location.hash.match(/^#(ru|en)/) || [0, "ru"])[1];
+  let loadId = 0;
+  if (window.pdfjsLib) {
+    pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+  }
+
+  function header() {
+    const d = DOCS[lang];
+    $("#langs").innerHTML = Object.entries(DOCS).map(([k, x]) =>
+      `<button class="chip${k === lang ? " active" : ""}" data-lang="${k}">${esc(x.title)}</button>`).join("");
+    $("#about").textContent = d.about;
+    $("#actions").innerHTML = `<a class="chip" href="${d.file}" target="_blank" rel="noopener">Открыть PDF ↗</a>
+      <a class="chip" href="${d.file}" download>Скачать PDF</a>
+      <a class="small" href="${esc(d.source)}" target="_blank" rel="noopener">первоисточник на сайте XHDATA</a>`;
+    $("#toc").innerHTML = d.toc.map(([n, t]) => `<a href="#${lang}-p${n}"><b>${n}</b>${esc(t)}</a>`).join("");
+    $("#fallback-link").href = d.file;
+  }
+
+  async function load() {
+    const my = ++loadId;
+    header();
+    const box = $("#pages");
+    box.innerHTML = "";
+    $("#fallback").style.display = "none";
+    if (!window.pdfjsLib) { $("#fallback").style.display = "block"; return; }
+    let pdf;
+    try {
+      pdf = await pdfjsLib.getDocument(DOCS[lang].file).promise;
+    } catch (e) {
+      $("#fallback").style.display = "block";
+      return;
+    }
+    if (my !== loadId) return;
+    // заглушки под все страницы, рисуем по мере прокрутки
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        if (!en.isIntersecting || en.target.dataset.done) return;
+        en.target.dataset.done = "1";
+        render(pdf, +en.target.dataset.n, en.target, my);
+      });
+    }, { rootMargin: "600px 0px" });
+    for (let n = 1; n <= pdf.numPages; n++) {
+      const el = document.createElement("div");
+      el.className = "page";
+      el.id = `${lang}-p${n}`;
+      el.dataset.n = n;
+      el.innerHTML = `<div class="ph">страница ${n}</div><span class="pnum">${n} / ${pdf.numPages}</span>`;
+      box.append(el);
+      io.observe(el);
+    }
+    const target = location.hash.slice(1);
+    if (target.startsWith(lang + "-p")) document.getElementById(target)?.scrollIntoView();
+  }
+
+  async function render(pdf, n, el, my) {
+    const page = await pdf.getPage(n);
+    if (my !== loadId) return;
+    const cssW = Math.min(el.clientWidth || 800, 860);
+    const base = page.getViewport({ scale: 1 });
+    const scale = (cssW / base.width) * Math.min(window.devicePixelRatio || 1, 2);
+    const vp = page.getViewport({ scale });
+    const canvas = document.createElement("canvas");
+    canvas.width = vp.width;
+    canvas.height = vp.height;
+    canvas.setAttribute("aria-label", `Страница ${n}`);
+    await page.render({ canvasContext: canvas.getContext("2d"), viewport: vp }).promise;
+    if (my !== loadId) return;
+    el.querySelector(".ph")?.replaceWith(canvas);
+  }
+
+  $("#langs").addEventListener("click", (e) => {
+    const b = e.target.closest("[data-lang]");
+    if (!b || b.dataset.lang === lang) return;
+    lang = b.dataset.lang;
+    history.replaceState(null, "", "#" + lang);
+    window.scrollTo(0, 0);
+    load();
+  });
+  let lastW = window.innerWidth;
+  window.addEventListener("resize", () => {
+    if (Math.abs(window.innerWidth - lastW) < 120) return;
+    lastW = window.innerWidth;
+    load();
+  });
+  load();
+})();
+</script>
+</body>
+</html>
