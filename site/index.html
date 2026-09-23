@@ -49,10 +49,11 @@
   </ol>
 </main>
 <script src="data/stations.js"></script>
+<script src="data/streams.js"></script>
 <script src="assets/app.js"></script>
 <script>
 (function () {
-  const { esc, isLive, startClock, groupSW, $ } = Site;
+  const { esc, isLive, startClock, groupSW, streamFor, $ } = Site;
   startClock($("#clock"));
   const S = window.STATIONS || {};
   const live = groupSW([...(S.sw_russian || []), ...(S.sw_other || [])].filter((r) => isLive(r.time_utc)));
@@ -62,7 +63,11 @@
   const seen = new Set();
   const uniq = live.filter((r) => !seen.has(r.station) && seen.add(r.station));
   $("#now").innerHTML = uniq.length
-    ? uniq.slice(0, 6).map((r) => `<b>${esc(r.station)}</b> <span class="muted">${esc(shortFreqs(r.freq_khz))} кГц</span>`).join(" · ") +
+    ? uniq.slice(0, 6).map((r) => {
+        const st = streamFor(r);
+        const play = st ? ` <button class="chip" style="padding:0 8px" data-play="${esc(st.url)}" data-title="${esc(r.station)}" title="Слушать онлайн">▶</button>` : "";
+        return `<b>${esc(r.station)}</b> <span class="muted">${esc(shortFreqs(r.freq_khz))} кГц</span>${play}`;
+      }).join(" · ") +
       (uniq.length > 6 ? ` <a href="listen.html#swru">и ещё ${uniq.length - 6}</a>` : "")
     : 'Сейчас по расписанию на КВ тихо. <a href="listen.html">Все станции</a>';
 })();

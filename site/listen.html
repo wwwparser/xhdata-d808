@@ -37,7 +37,11 @@
   if (S.meta) $("#meta").textContent = `Данные собраны ${S.meta.compiled}. КВ-расписания: сезон ${S.meta.season}.`;
 
   const live = (r) => isLive(r.time_utc);
-  const online = (r) => streamFor(r) ? ' <span class="badge" title="есть онлайн-поток">▶ онлайн</span>' : "";
+  // кнопка «▶ онлайн» прямо в строке — включает поток, не раскрывая карточку
+  const online = (r) => {
+    const st = streamFor(r);
+    return st ? ` <button class="badge" type="button" data-play="${esc(st.url)}" data-title="${esc(r.name || r.station)}" title="Слушать онлайн">▶ онлайн</button>` : "";
+  };
   const liveBadge = (r) => live(r) ? ' <span class="badge on">в эфире</span>' : "";
 
   const TABS = {

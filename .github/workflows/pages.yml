@@ -4,6 +4,8 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  schedule:
+    - cron: "0 3 * * 1"   # каждый понедельник: отчёт по онлайн-потокам в логе и пересборка сайта
 
 permissions:
   contents: read
@@ -25,6 +27,14 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      # Только отчёт: сервер GitHub в США, часть российских потоков может не отдаваться
+      # на зарубежный IP. Удалять мёртвые потоки — локальным прогоном с российского IP.
+      - name: Report online streams (informational)
+        continue-on-error: true
+        run: |
+          pip install requests
+          cp data/streams.json /tmp/streams.json
+          python scripts/check_streams.py /tmp/streams.json | tail -40
       - name: Build data (data/*.json -> site/data/*.js)
         run: python scripts/build_data.py
       - uses: actions/configure-pages@v5

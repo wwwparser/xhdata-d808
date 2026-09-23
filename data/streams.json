@@ -1,4 +1,4 @@
-window.STREAMS = {
+{
  "All India Radio (Akashvani)": {
   "url": "https://airhlspush.pc.cdn.bitgravity.com/httppush/hlspbaudio002/hlspbaudio002_Auto.m3u8",
   "site": "https://akashvani.gov.in/",
@@ -836,4 +836,4 @@ window.STREAMS = {
   "check": "audio/aac, 32768 байт",
   "checked_at": "2026-09-23"
  }
-};
+}

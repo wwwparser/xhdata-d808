@@ -183,3 +183,5 @@ body.has-player main { padding-bottom: 110px; }
   tr.detail > td { padding: 0 0 12px; }
   .tune { position: sticky; left: 0; width: calc(100vw - 34px); }
 }
+button.badge { cursor: pointer; font-family: inherit; }
+button.badge:hover { border-color: var(--ok); color: var(--ok); }
