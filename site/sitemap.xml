@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://wwwparser.github.io/xhdata-d808/</loc><lastmod>2026-09-23</lastmod></url>
-  <url><loc>https://wwwparser.github.io/xhdata-d808/guide.html</loc><lastmod>2026-09-23</lastmod></url>
-  <url><loc>https://wwwparser.github.io/xhdata-d808/manual.html</loc><lastmod>2026-09-23</lastmod></url>
-  <url><loc>https://wwwparser.github.io/xhdata-d808/bands.html</loc><lastmod>2026-09-23</lastmod></url>
-  <url><loc>https://wwwparser.github.io/xhdata-d808/listen.html</loc><lastmod>2026-09-23</lastmod></url>
-  <url><loc>https://wwwparser.github.io/xhdata-d808/schedule.html</loc><lastmod>2026-09-23</lastmod></url>
-  <url><loc>https://wwwparser.github.io/xhdata-d808/hams.html</loc><lastmod>2026-09-23</lastmod></url>
-  <url><loc>https://wwwparser.github.io/xhdata-d808/antennas.html</loc><lastmod>2026-09-23</lastmod></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url><loc>https://wwwparser.github.io/xhdata-d808/</loc><lastmod>2026-09-23</lastmod><priority>1.0</priority><image:image><image:loc>https://wwwparser.github.io/xhdata-d808/img/d808/2.webp</image:loc></image:image></url>
+  <url><loc>https://wwwparser.github.io/xhdata-d808/guide.html</loc><lastmod>2026-09-23</lastmod><priority>0.9</priority><image:image><image:loc>https://wwwparser.github.io/xhdata-d808/img/d808/5.webp</image:loc></image:image></url>
+  <url><loc>https://wwwparser.github.io/xhdata-d808/manual.html</loc><lastmod>2026-09-23</lastmod><priority>0.8</priority></url>
+  <url><loc>https://wwwparser.github.io/xhdata-d808/bands.html</loc><lastmod>2026-09-23</lastmod><priority>0.8</priority></url>
+  <url><loc>https://wwwparser.github.io/xhdata-d808/listen.html</loc><lastmod>2026-09-23</lastmod><priority>0.9</priority></url>
+  <url><loc>https://wwwparser.github.io/xhdata-d808/schedule.html</loc><lastmod>2026-09-23</lastmod><priority>0.7</priority></url>
+  <url><loc>https://wwwparser.github.io/xhdata-d808/hams.html</loc><lastmod>2026-09-23</lastmod><priority>0.7</priority></url>
+  <url><loc>https://wwwparser.github.io/xhdata-d808/antennas.html</loc><lastmod>2026-09-23</lastmod><priority>0.8</priority><image:image><image:loc>https://wwwparser.github.io/xhdata-d808/img/antennas/78363496-1.webp</image:loc></image:image><image:image><image:loc>https://wwwparser.github.io/xhdata-d808/img/antennas/624059378-1.webp</image:loc></image:image><image:image><image:loc>https://wwwparser.github.io/xhdata-d808/img/antennas/139370258-1.webp</image:loc></image:image><image:image><image:loc>https://wwwparser.github.io/xhdata-d808/img/antennas/78317608-1.webp</image:loc></image:image><image:image><image:loc>https://wwwparser.github.io/xhdata-d808/img/antennas/164536713-1.webp</image:loc></image:image><image:image><image:loc>https://wwwparser.github.io/xhdata-d808/img/antennas/160146209-1.webp</image:loc></image:image></url>
+  <url><loc>https://wwwparser.github.io/xhdata-d808/docs/XHDATA-D-808-manual-ru.pdf</loc><lastmod>2026-09-23</lastmod><priority>0.5</priority></url>
+  <url><loc>https://wwwparser.github.io/xhdata-d808/docs/XHDATA-D-808-manual-en.pdf</loc><lastmod>2026-09-23</lastmod><priority>0.5</priority></url>
 </urlset>

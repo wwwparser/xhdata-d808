@@ -27,19 +27,32 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Install tools
+        run: |
+          pip install requests playwright
+          python -m playwright install --with-deps chromium
       # Только отчёт: сервер GitHub в США, часть российских потоков может не отдаваться
       # на зарубежный IP. Удалять мёртвые потоки — локальным прогоном с российского IP.
       - name: Report online streams (informational)
         continue-on-error: true
         run: |
-          pip install requests
           cp data/streams.json /tmp/streams.json
           python scripts/check_streams.py /tmp/streams.json | tail -40
       - name: Build data (data/*.json -> site/data/*.js)
         run: python scripts/build_data.py
+      # Готовый HTML для поисковиков: таблицы и тексты уже в разметке, а не только в JS
+      - name: Prerender pages
+        run: python scripts/prerender.py site dist
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: site
+          path: dist
       - id: deployment
         uses: actions/deploy-pages@v4
+      # Заявка на переобход: сообщаем Яндексу (IndexNow) об обновлённых страницах
+      - name: Notify search engines (IndexNow)
+        if: github.event_name != 'schedule'
+        continue-on-error: true
+        run: |
+          sleep 30
+          python scripts/indexnow.py

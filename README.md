@@ -14,6 +14,19 @@ GitHub Pages через GitHub Actions (`.github/workflows/pages.yml`): кажд
 данные скриптом `build_data.py` и выкладывает папку `site/`. Чтобы обновить сайт, достаточно поправить
 `data/*.json` и сделать push.
 
+## SEO
+
+- `scripts/seo.py` — title/description/canonical/Open Graph, JSON-LD (BreadcrumbList, WebSite, TechArticle,
+  FAQPage, DigitalDocument, ItemList с BroadcastService и Product), блок «Частые вопросы» (`data/faq.json`),
+  `sitemap.xml` и `robots.txt`. Адрес сайта — `SITE_URL`; при переезде на свой домен:
+  `SITE_URL=https://домен/ python scripts/seo.py`.
+- `scripts/prerender.py` — в GitHub Actions каждая страница сохраняется уже отрисованной (таблицы и тексты
+  в HTML), публикуется папка `dist/`. Исходники в `site/` не меняются.
+- `scripts/indexnow.py` — после публикации отправляет Яндексу список страниц по IndexNow (заявка на переобход).
+  Ключ — файл `site/<ключ>.txt`.
+- Корень хоста — репозиторий `wwwparser/wwwparser.github.io`: там `robots.txt` со ссылкой на наш sitemap
+  и файл подтверждения Яндекс.Вебмастера.
+
 ## Как открыть прототип
 
 Двойной клик по `site/index.html` — сайт работает прямо с диска, без сервера и сборщика.

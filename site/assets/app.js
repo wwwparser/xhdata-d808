@@ -17,6 +17,9 @@
   const $ = (sel, root = document) => root.querySelector(sel);
 
   function header() {
+    // страница после пререндера уже содержит шапку и подвал — только навешиваем обработчики
+    const ready = document.querySelector("header.top");
+    if (ready) { bindTheme(ready); return; }
     const here = location.pathname.split("/").pop() || "index.html";
     const links = PAGES.map(([href, title]) =>
       `<a href="${href}"${href === here ? ' class="active"' : ""}>${title}</a>`).join("");
@@ -26,6 +29,15 @@
       <nav class="nav">${links}</nav>
       <button class="theme-btn" type="button" title="Тема">◐</button></div>`;
     document.body.prepend(el);
+    bindTheme(el);
+    const foot = document.createElement("footer");
+    foot.innerHTML = `<div class="wrap">Неофициальный справочник по приёмнику XHDATA D-808.
+      Частоты и расписания меняются — метка <span class="badge verify">проверить</span> означает, что данные нужно сверить перед публикацией.
+      Схемы нарисованы для сайта, это не копии иллюстраций из инструкции производителя. Фото приёмника и антенн — из карточек товаров на Wildberries.</div>`;
+    document.body.append(foot);
+  }
+
+  function bindTheme(el) {
     $(".theme-btn", el).addEventListener("click", () => {
       const cur = document.documentElement.dataset.theme
         || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
@@ -33,11 +45,6 @@
       document.documentElement.dataset.theme = next;
       try { localStorage.setItem("theme", next); } catch (e) { /* нет хранилища */ }
     });
-    const foot = document.createElement("footer");
-    foot.innerHTML = `<div class="wrap">Неофициальный справочник по приёмнику XHDATA D-808.
-      Частоты и расписания меняются — метка <span class="badge verify">проверить</span> означает, что данные нужно сверить перед публикацией.
-      Схемы нарисованы для сайта, это не копии иллюстраций из инструкции производителя. Фото приёмника и антенн — из карточек товаров на Wildberries.</div>`;
-    document.body.append(foot);
   }
 
   try {
@@ -252,6 +259,7 @@
   // cols: [{key, title, cls, render(row)}]
   // opts.live(row) — подсветка; opts.detail(row) — раскрывающаяся строка под записью
   const openRows = new Set();
+  const details = new Map(); // key -> () => html подсказки
   const rowKey = (r) => [r.freq_mhz, r.freq_khz, r.freq, r.name, r.station, r.show, r.what, r.time_utc, r.time_msk, r.city].join("|");
   function table(rows, cols, opts = {}) {
     if (!rows || !rows.length) return `<p class="muted">Нет данных.</p>`;
@@ -267,8 +275,9 @@
       if (!opts.detail) return `<tr${cls ? ` class="${cls}"` : ""}>${tds}</tr>`;
       const key = rowKey(r);
       const open = openRows.has(key);
+      details.set(key, () => opts.detail(r));
       return `<tr class="${cls}${open ? " open" : ""}" data-key="${esc(key)}">${tds}</tr>
-        <tr class="detail"${open ? "" : " hidden"}><td colspan="${cols.length}">${opts.detail(r)}</td></tr>`;
+        <tr class="detail"${open ? "" : " hidden"}><td colspan="${cols.length}">${open ? opts.detail(r) : ""}</td></tr>`;
     }).join("");
     return `<div class="table-wrap"><table><thead><tr>${head}</tr></thead><tbody>${body}</tbody></table></div>`;
   }
@@ -279,6 +288,8 @@
     if (!tr || e.target.closest("a, [data-play]")) return;
     const det = tr.nextElementSibling;
     const open = det.hidden;
+    const cell = det.firstElementChild;
+    if (open && !cell.innerHTML.trim() && details.has(tr.dataset.key)) cell.innerHTML = details.get(tr.dataset.key)();
     det.hidden = !open;
     tr.classList.toggle("open", open);
     const btn = tr.querySelector(".tune-btn");
