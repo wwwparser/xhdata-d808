@@ -163,13 +163,13 @@ window.D808 = {
  "controls": [
   {
    "name": "POWER (оранжевая)",
-   "location": "лицевая панель, правый верхний угол",
+   "location": "лицевая панель, справа от экрана (оранжевая)",
    "function": "Кратко: вкл/выкл. Сразу после включения ~5 с мигает значок сна — повторные нажатия перебирают 120/90/60/45/30/15/ON. При сработавшем будильнике — выключает его.",
    "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
   },
   {
    "name": "SSB",
-   "location": "лицевая панель",
+   "location": "лицевая панель, круглая кнопка справа в верхнем ряду",
    "function": "Кратко: вкл/выкл режима SSB (при выходе на экране NORMAL). Ранние версии: долгое нажатие — старт зарядки аккумулятора (в старом Quick Start подписана SSB/Battery Charge).",
    "source": "https://www.blogordie.com/wp-content/uploads/2023/03/XHDATA-D-808-Users-Manual.pdf"
   },
@@ -193,55 +193,55 @@ window.D808 = {
   },
   {
    "name": "FM",
-   "location": "лицевая панель (ряд кнопок диапазонов)",
+   "location": "лицевая панель, первая в верхнем ряду",
    "function": "Кратко: диапазон FM. Долго (при вкл.): ATS. Долго при выкл.: выбор нижней границы FM (64/76/87/87.5).",
    "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
   },
   {
    "name": "LW/MW",
-   "location": "лицевая панель",
+   "location": "лицевая панель, левая колонка",
    "function": "Кратко: MW (или переключение LW/MW, если LW включён). Долго (вкл.): ATS. Долго при выкл.: LW ON/OFF.",
    "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
   },
   {
    "name": "SW",
-   "location": "лицевая панель",
+   "location": "лицевая панель, левая колонка",
    "function": "Кратко: КВ, повторные нажатия — перебор 14 метровых поддиапазонов. Долго: ATS (только в вещательных поддиапазонах).",
    "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
   },
   {
    "name": "AIR",
-   "location": "лицевая панель",
+   "location": "лицевая панель, левая колонка",
    "function": "Кратко: авиадиапазон. Долго: ATS.",
    "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
   },
   {
    "name": "LIGHT",
-   "location": "лицевая панель",
+   "location": "лицевая панель, левая колонка внизу",
    "function": "Кратко: постоянная подсветка вкл/выкл.",
    "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
   },
   {
    "name": "FREQ",
-   "location": "лицевая панель",
+   "location": "лицевая панель, нижний ряд, под цифрой 7",
    "function": "Кратко: начать прямой ввод частоты цифрами; повторно — подтвердить. Неверная частота — Error.",
    "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
   },
   {
    "name": "PAGE",
-   "location": "лицевая панель",
+   "location": "лицевая панель, нижний ряд справа",
    "function": "Кратко, затем цифра 0–9: выбор страницы памяти.",
    "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
   },
   {
    "name": "INFO (USB/LSB, замок)",
-   "location": "лицевая панель",
+   "location": "лицевая панель, круглая кнопка под SSB",
    "function": "Кратко на FM: листает RDS (PS/DATE/PTY/RT); в SSB: USB/LSB. Долго (вкл. или выкл.): блокировка/разблокировка кнопок (значок замка).",
    "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
   },
   {
    "name": "▲ / ▼ (стрелки)",
-   "location": "лицевая панель",
+   "location": "лицевая панель, справа от цифр",
    "function": "Кратко: шаг частоты вверх/вниз (и выбор пунктов в настройках). Долго: поиск следующей сильной станции (без записи в память); краткое нажатие останавливает поиск.",
    "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
   },
@@ -253,43 +253,43 @@ window.D808 = {
   },
   {
    "name": "TUNING (главный валкодер)",
-   "location": "правый бок, верх",
+   "location": "правый торец, вверху",
    "function": "Вращение: перестройка. Кратко нажать внутрь: FAST/SLOW/STOP. Долго (≈2–5 с): шумоподавитель Squelch, уровень 1–9/OFF вращением.",
    "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
   },
   {
    "name": "FINE TUNE (колёсико точной подстройки)",
-   "location": "правый бок",
+   "location": "правый торец, под колесом настройки",
    "function": "В SSB — подстройка BFO (FINE ±1…99, по Davidson ±990 Гц шагом 10 Гц); в прочих режимах — лёгкая расстройка.",
    "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
   },
   {
    "name": "VOLUME (колёсико)",
-   "location": "левый бок",
+   "location": "левый бок, между гнёздами",
    "function": "Вверх — громче, вниз — тише. При блокировке остаётся активным.",
    "source": "https://www.blogordie.com/wp-content/uploads/2023/03/XHDATA-D-808-Users-Manual.pdf"
   },
   {
    "name": "Гнездо внешней антенны 3.5 мм",
-   "location": "боковая панель (по нумерации схемы — левый бок, unverified)",
+   "location": "левый бок, вверху",
    "function": "Подключение внешней антенны для FM/SW/AIR.",
    "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
   },
   {
    "name": "Гнездо наушников 3.5 мм",
-   "location": "боковая панель (по нумерации схемы — левый бок, unverified)",
+   "location": "левый бок, внизу",
    "function": "Стереонаушники/линейный выход; стерео FM слышно только в наушниках.",
    "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
   },
   {
    "name": "USB (Type-C / Micro-USB на ранних)",
-   "location": "правый бок",
+   "location": "правый торец, внизу",
    "function": "Зарядка 18650 и питание 5 В.",
    "source": "https://www.blogordie.com/wp-content/uploads/2023/03/XHDATA-D-808-Users-Manual.pdf"
   },
   {
    "name": "RESET (отверстие)",
-   "location": "днище (руководство 2025)",
+   "location": "снизу, рядом с батарейным отсеком",
    "function": "Аппаратный сброс микропроцессора зубочисткой/скрепкой до щелчка.",
    "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
   },
@@ -662,7 +662,6 @@ window.D808 = {
   }
  ],
  "unverified": [
-  "Точное расположение гнёзд антенны и наушников (левый бок) — выведено из нумерации схемы, не прямым текстом",
   "Сохраняется ли полоса фильтра в памяти (руководство — да, SWLing 2018 — нет)",
   "Шаг FAST на SW: 5 кГц (руководство 2025) или 10 кГц (2023) — видимо, зависит от прошивки",
   "Squelch только на AIR или на всех диапазонах — зависит от версии",
@@ -680,6 +679,7 @@ window.D808 = {
   "https://swling.com/blog/2018/04/a-detailed-review-of-the-xhdata-d-808-and-comparison-with-the-tecsun-pl-660/",
   "https://swling.com/blog/2021/05/dan-revisits-the-venerable-xhdata-d-808-portable-radio/",
   "https://radiojayallen.com/xhtata-d-808-am-fm-sw-ssb-airband-portable-radio/",
-  "https://www.radioscanner.ru/rating/item/1703/"
+  "https://www.radioscanner.ru/rating/item/1703/",
+  "https://www.wildberries.ru/catalog/243652804/detail.aspx"
  ]
 };

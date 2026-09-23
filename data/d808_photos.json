@@ -1,4 +1,4 @@
-window.D808_PHOTOS = {
+{
  "article": "243652804",
  "url": "https://www.wildberries.ru/catalog/243652804/detail.aspx",
  "price_rub": 6521,
@@ -14,4 +14,4 @@ window.D808_PHOTOS = {
   "img/d808/4.webp",
   "img/d808/5.webp"
  ]
-};
+}

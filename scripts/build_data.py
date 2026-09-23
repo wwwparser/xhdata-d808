@@ -62,19 +62,23 @@ def fix_shows(rows):
 
 
 def check_antennas(rows, problems):
-    if len(rows) != 20:
-        problems.append(f"антенн {len(rows)}, ожидается 20")
+    # Правило подборки: только товары с Wildberries, больше 10 отзывов, до 3000 ₽, с картинками
     seen = set()
     for a in rows:
         key = a.get("url") or a.get("name")
         if key in seen:
             problems.append(f"дубль антенны: {key}")
         seen.add(key)
-        for f in ("name", "type", "placement", "price_rub", "description", "principle", "rating"):
+        for f in ("name", "type", "placement", "price_rub", "description", "principle", "rating", "images"):
             if not a.get(f):
                 problems.append(f"антенна '{a.get('name')}': пустое поле {f}")
         if (a.get("price_rub") or 0) > 3000:
             problems.append(f"антенна '{a.get('name')}' дороже 3000 ₽: {a.get('price_rub')}")
+        if (a.get("reviews_count") or 0) <= 10:
+            problems.append(f"антенна '{a.get('name')}': отзывов {a.get('reviews_count')}, нужно больше 10")
+        for img in a.get("images") or []:
+            if not (OUT.parent / img).exists():
+                problems.append(f"антенна '{a.get('name')}': нет файла {img}")
 
 
 def main():

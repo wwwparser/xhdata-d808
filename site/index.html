@@ -17,8 +17,17 @@
 </head>
 <body>
 <main class="wrap">
-  <h1>XHDATA D-808: всё, чтобы начать слушать</h1>
-  <p class="lead">Понятная инструкция к приёмнику, все его диапазоны, станции Москвы и Подмосковья с расписанием и подборка недорогих антенн. Для тех, кто только купил приёмник, и для тех, кто хочет слышать больше.</p>
+  <div class="hero">
+    <div>
+      <h1>XHDATA D-808: всё, чтобы начать слушать</h1>
+      <p class="lead">Понятная инструкция к приёмнику, все его диапазоны, станции Москвы и Подмосковья с расписанием, онлайн-эфир и подборка недорогих антенн. Для тех, кто только купил приёмник, и для тех, кто хочет слышать больше.</p>
+      <p class="small muted" id="buy"></p>
+    </div>
+    <figure class="hero-photo" style="margin:0">
+      <img src="img/d808/2.webp" alt="Приёмник XHDATA D-808" width="700" height="933" style="aspect-ratio:700/560;object-fit:cover;object-position:50% 78%">
+      <figcaption>Фото: карточка официального магазина XHDATA на Wildberries</figcaption>
+    </figure>
+  </div>
 
   <div class="card" style="display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin:16px 0">
     <div style="flex:1 1 260px">
@@ -37,8 +46,10 @@
       <p class="muted">Все FM-станции Москвы, станции области, СВ/ДВ, русскоязычное КВ-вещание и служебный эфир.</p></a>
     <a class="card" href="schedule.html"><div class="kicker">Шаг 4</div><h3>Программа дня и вечера</h3>
       <p class="muted">Что включить утром, днём, вечером и ночью. Популярные передачи по времени выхода.</p></a>
-    <a class="card" href="antennas.html"><div class="kicker">Шаг 5</div><h3>20 антенн до 3000 ₽</h3>
-      <p class="muted">Комнатные и наружные антенны с маркетплейсов: принцип работы, подключение, рейтинг приёма.</p></a>
+    <a class="card" href="hams.html"><div class="kicker">Шаг 5</div><h3>Радиолюбители и радиохулиганы</h3>
+      <p class="muted">Круглые столы, Си-Би, «свободные операторы» и пираты: частоты, время и как настроиться в SSB.</p></a>
+    <a class="card" href="antennas.html"><div class="kicker">Шаг 6</div><h3>Антенны до 3000 ₽</h3>
+      <p class="muted">Антенны с Wildberries с реальными отзывами: фото, что пишут покупатели, подключение, рейтинг приёма.</p></a>
   </div>
 
   <h2>Три совета, с которых стоит начать</h2>
@@ -50,12 +61,15 @@
 </main>
 <script src="data/stations.js"></script>
 <script src="data/streams.js"></script>
+<script src="data/d808_photos.js"></script>
 <script src="assets/app.js"></script>
 <script>
 (function () {
   const { esc, isLive, startClock, groupSW, streamFor, $ } = Site;
   startClock($("#clock"));
   const S = window.STATIONS || {};
+  const P = window.D808_PHOTOS || {};
+  if (P.url) $("#buy").innerHTML = `Сам приёмник на Wildberries: <a href="${esc(P.url)}" target="_blank" rel="noopener nofollow">${Number(P.price_rub).toLocaleString("ru-RU")} ₽, ★ ${String(P.rating).replace(".", ",")}, ${P.feedbacks_card_total || P.feedbacks} отзывов</a> (цена на ${esc(String(P.checked).split("-").reverse().join("."))}).`;
   const live = groupSW([...(S.sw_russian || []), ...(S.sw_other || [])].filter((r) => isLive(r.time_utc)));
   // длинный список частот: первые три и «…»
   const shortFreqs = (f) => { const a = String(f).split(", "); return a.length > 3 ? a.slice(0, 3).join(", ") + "…" : f; };

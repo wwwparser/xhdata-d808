@@ -185,3 +185,29 @@ body.has-player main { padding-bottom: 110px; }
 }
 button.badge { cursor: pointer; font-family: inherit; }
 button.badge:hover { border-color: var(--ok); color: var(--ok); }
+
+/* антенны: галерея и отзывы */
+.ant-grid { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+.gallery { display: grid; gap: 6px; margin: -4px -6px 4px; }
+.gallery-main { width: 100%; height: 240px; object-fit: contain; background: #fff; border-radius: 8px; border: 1px solid var(--line); }
+.thumbs { display: flex; gap: 6px; }
+.thumb { padding: 0; border: 2px solid transparent; border-radius: 6px; background: #fff; cursor: pointer; width: 56px; height: 56px; overflow: hidden; }
+.thumb img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.thumb.on { border-color: var(--accent); }
+.ant .wb { font-size: .85rem; font-weight: 500; color: var(--muted); margin-left: 6px; }
+.reviews { background: var(--surface-2); border-radius: 8px; padding: 10px 12px; font-size: .92rem; }
+.reviews p { margin: 4px 0; }
+.reviews .pc { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+@media (max-width: 420px) { .reviews .pc { grid-template-columns: 1fr; } }
+.reviews ul { margin: 2px 0 0; padding-left: 0; list-style: none; font-size: .88rem; }
+.reviews li { padding-left: 16px; position: relative; margin: 2px 0; }
+.reviews ul.plus li::before { content: "+"; position: absolute; left: 0; color: var(--ok); font-weight: 700; }
+.reviews ul.minus li::before { content: "−"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+.ant .buy { font-weight: 600; margin-top: auto; }
+
+/* фото приёмника */
+.hero { display: grid; grid-template-columns: 1.1fr 1fr; gap: 24px; align-items: center; }
+.hero-photo { background: #0b1220; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); }
+.hero-photo img { width: 100%; height: auto; display: block; }
+.hero-photo figcaption { font-size: .8rem; color: #a7b0c0; padding: 6px 10px; }
+@media (max-width: 760px) { .hero { grid-template-columns: 1fr; } }
