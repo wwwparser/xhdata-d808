@@ -56,11 +56,13 @@
   startClock($("#clock"));
   const S = window.STATIONS || {};
   const live = groupSW([...(S.sw_russian || []), ...(S.sw_other || [])].filter((r) => isLive(r.time_utc)));
+  // длинный список частот: первые три и «…»
+  const shortFreqs = (f) => { const a = String(f).split(", "); return a.length > 3 ? a.slice(0, 3).join(", ") + "…" : f; };
   // одна станция — один пункт, сначала подтверждённые
   const seen = new Set();
   const uniq = live.filter((r) => !seen.has(r.station) && seen.add(r.station));
   $("#now").innerHTML = uniq.length
-    ? uniq.slice(0, 6).map((r) => `<b>${esc(r.station)}</b> <span class="muted">${esc(r.freq_khz)} кГц</span>`).join(" · ") +
+    ? uniq.slice(0, 6).map((r) => `<b>${esc(r.station)}</b> <span class="muted">${esc(shortFreqs(r.freq_khz))} кГц</span>`).join(" · ") +
       (uniq.length > 6 ? ` <a href="listen.html#swru">и ещё ${uniq.length - 6}</a>` : "")
     : 'Сейчас по расписанию на КВ тихо. <a href="listen.html">Все станции</a>';
 })();
