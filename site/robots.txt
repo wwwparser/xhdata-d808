@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://wwwparser.github.io/xhdata-d808/sitemap.xml

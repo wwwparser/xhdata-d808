@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>XHDATA D-808: справочник</title>
+<meta name="description" content="Как пользоваться приёмником XHDATA D-808: пошаговая инструкция, все диапазоны, что слушать в Подмосковье и какие антенны купить до 3000 ₽.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://wwwparser.github.io/xhdata-d808/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="XHDATA D-808: справочник">
+<meta property="og:description" content="Как пользоваться приёмником XHDATA D-808: пошаговая инструкция, все диапазоны, что слушать в Подмосковье и какие антенны купить до 3000 ₽.">
+<meta property="og:url" content="https://wwwparser.github.io/xhdata-d808/">
+<meta name="theme-color" content="#c2410c">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<main class="wrap">
+  <h1>XHDATA D-808: всё, чтобы начать слушать</h1>
+  <p class="lead">Понятная инструкция к приёмнику, все его диапазоны, станции Москвы и Подмосковья с расписанием и подборка недорогих антенн. Для тех, кто только купил приёмник, и для тех, кто хочет слышать больше.</p>
+
+  <div class="card" style="display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin:16px 0">
+    <div style="flex:1 1 260px">
+      <div class="kicker">Сейчас в эфире</div>
+      <p style="margin:.3em 0" id="now">Загрузка…</p>
+    </div>
+    <span class="clock" id="clock"></span>
+  </div>
+
+  <div class="grid">
+    <a class="card" href="guide.html"><div class="kicker">Шаг 1</div><h3>Инструкция</h3>
+      <p class="muted">Кнопки на схеме, включение, память, автопоиск, SSB, часы. Каждое действие по шагам.</p></a>
+    <a class="card" href="bands.html"><div class="kicker">Шаг 2</div><h3>Диапазоны и как ловить</h3>
+      <p class="muted">FM, СВ, ДВ, КВ, авиа и SSB: что где звучит, когда слушать и как настроиться.</p></a>
+    <a class="card" href="listen.html"><div class="kicker">Шаг 3</div><h3>Что слушать</h3>
+      <p class="muted">Все FM-станции Москвы, станции области, СВ/ДВ, русскоязычное КВ-вещание и служебный эфир.</p></a>
+    <a class="card" href="schedule.html"><div class="kicker">Шаг 4</div><h3>Программа дня и вечера</h3>
+      <p class="muted">Что включить утром, днём, вечером и ночью. Популярные передачи по времени выхода.</p></a>
+    <a class="card" href="antennas.html"><div class="kicker">Шаг 5</div><h3>20 антенн до 3000 ₽</h3>
+      <p class="muted">Комнатные и наружные антенны с маркетплейсов: принцип работы, подключение, рейтинг приёма.</p></a>
+  </div>
+
+  <h2>Три совета, с которых стоит начать</h2>
+  <ol class="steps">
+    <li><b>Длинные и средние волны принимает внутренняя антенна.</b> Телескоп здесь не помогает. Поворачивайте приёмник: ферритовая антенна направленная, и при правильном повороте слабая станция выходит из шума.</li>
+    <li><b>Короткие волны слушайте вечером и у окна.</b> В бетонном доме КВ глохнет. Простой провод 5–7 м, подключённый к гнезду внешней антенны, даёт больше, чем любые настройки.</li>
+    <li><b>Держите приёмник подальше от зарядок, светодиодных ламп и компьютера.</b> Импульсные блоки питания сильнее всего шумят на СВ и КВ. Когда слушаете, отключите зарядку самого приёмника.</li>
+  </ol>
+</main>
+<script src="data/stations.js"></script>
+<script src="assets/app.js"></script>
+<script>
+(function () {
+  const { esc, isLive, startClock, groupSW, $ } = Site;
+  startClock($("#clock"));
+  const S = window.STATIONS || {};
+  const live = groupSW([...(S.sw_russian || []), ...(S.sw_other || [])].filter((r) => isLive(r.time_utc)));
+  // одна станция — один пункт, сначала подтверждённые
+  const seen = new Set();
+  const uniq = live.filter((r) => !seen.has(r.station) && seen.add(r.station));
+  $("#now").innerHTML = uniq.length
+    ? uniq.slice(0, 6).map((r) => `<b>${esc(r.station)}</b> <span class="muted">${esc(r.freq_khz)} кГц</span>`).join(" · ") +
+      (uniq.length > 6 ? ` <a href="listen.html#swru">и ещё ${uniq.length - 6}</a>` : "")
+    : 'Сейчас по расписанию на КВ тихо. <a href="listen.html">Все станции</a>';
+})();
+</script>
+</body>
+</html>

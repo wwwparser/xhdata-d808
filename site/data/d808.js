@@ -1,0 +1,685 @@
+window.D808 = {
+ "device": "XHDATA D-808 (Sihuadon D-808)",
+ "specs": {
+  "note": "Основной источник — официальное англ. руководство XHDATA (версия с Type-C, 2025). Где версии руководства расходятся — указаны оба значения.",
+  "bands": {
+   "FM": {
+    "range": "64–108 МГц (нижняя граница выбирается: 64.0 / 76.0 / 87.0 / 87.5 МГц)",
+    "note": "Вариант 87.0 МГц есть только в руководстве 2025; в руководстве Davidson v1.3 (2023) — три варианта 64/76/87.5; в старом Quick Start — 87–108 / 64–108",
+    "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
+   },
+   "MW": {
+    "range": "520–1710 кГц (шаг 10 кГц) / 522–1620 кГц (шаг 9 кГц)",
+    "source": "https://www.radioamatore.info/attachments/article/2167/XHDATA-D-808.pdf"
+   },
+   "SW": {
+    "range": "1711–29999 кГц",
+    "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
+   },
+   "LW": {
+    "range": "150–450 кГц (по умолчанию выключен, включается в настройках)",
+    "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
+   },
+   "AIR": {
+    "range": "118–137 МГц",
+    "note": "Только сетка 25 кГц, нет шага 8.33 кГц (обзор SWLing)",
+    "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
+   }
+  },
+  "tuning_steps": {
+   "FAST": "FM 100 кГц; MW 9/10 кГц; LW 3 кГц; AIR 25 кГц; SW 5 кГц (руководство 2025) / 10 кГц (руководство Davidson v1.3, 2023) — расхождение",
+   "SLOW": "1 кГц (FM — 10 кГц)",
+   "STOP": "колесо не перестраивает частоту",
+   "fine_tune": "Колесо FINE TUNE: в SSB на экране FINE 1-99 / 1+99; по Davidson — ±990 Гц шагом 10 Гц. В остальных режимах — небольшая подстройка частоты",
+   "mw_intelligent_step": "режим 9k: шаги 1/9 кГц; режим 10k: 1/10 кГц",
+   "source": [
+    "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649",
+    "https://www.blogordie.com/wp-content/uploads/2023/03/XHDATA-D-808-Users-Manual.pdf",
+    "https://www.radioamatore.info/attachments/article/2167/XHDATA-D-808.pdf"
+   ]
+  },
+  "dsp_chip": {
+   "value": "Silicon Labs Si4735 (семейство Si47xx)",
+   "note": "В руководстве не указан; по обзорам",
+   "source": [
+    "https://radiojayallen.com/xhtata-d-808-am-fm-sw-ssb-airband-portable-radio/",
+    "https://swling.com/blog/2021/05/dan-revisits-the-venerable-xhdata-d-808-portable-radio/"
+   ]
+  },
+  "bandwidth_filters": {
+   "AM": [
+    "6",
+    "4",
+    "3",
+    "2.5",
+    "2",
+    "1.8",
+    "1"
+   ],
+   "AM_unit": "кГц; работает на LW/MW/SW (по старому Quick Start — и на AIR, unverified)",
+   "SSB": [
+    "4",
+    "3",
+    "2.2",
+    "1.2",
+    "1",
+    "0.5"
+   ],
+   "SSB_note": "В руководствах 2023/2025 опечатка «4, 2, 2.2, 1.2, 1, 0.5»; старый Quick Start и обзор SWLing дают 500 Гц, 1к, 1.2к, 2.2к, 3к, 4к",
+   "defaults": "По старому Quick Start и рус. руководству: после смены станции полоса возвращается к 1 кГц в SSB и 3 кГц в прочих режимах (unverified для новых прошивок)",
+   "source": [
+    "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649",
+    "https://www.radioamatore.info/attachments/article/2167/XHDATA-D-808.pdf",
+    "https://swling.com/blog/2018/04/a-detailed-review-of-the-xhdata-d-808-and-comparison-with-the-tecsun-pl-660/"
+   ]
+  },
+  "memory": {
+   "total": 500,
+   "per_band": 100,
+   "bands": "FM, MW, LW, SW, AIR (по 100 ячеек)",
+   "pages": "10 страниц (0–9) по 10 ячеек (0–9) на каждый диапазон; обозначение вида P18 = страница 1, ячейка 8",
+   "stored": "частота + стерео/моно для FM + полоса для LW/MW/SW (по руководству); обзор SWLing 2018 утверждает, что полоса/режим не сохраняются — расхождение",
+   "messages": "PAGE—SAVE при записи, PAGE—LOAD при вызове",
+   "source": [
+    "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649",
+    "https://swling.com/blog/2018/04/a-detailed-review-of-the-xhdata-d-808-and-comparison-with-the-tecsun-pl-660/"
+   ]
+  },
+  "power": {
+   "battery": "1 x Li-ion 18650 (в комплекте; в 2018 г. — 2000 мА·ч по SWLing)",
+   "dc_in": "5 В через USB (Type-C на новых, Micro-USB на ранних партиях)",
+   "charging": "встроенная зарядка, останавливается при полном заряде или через 10 ч; на ранних версиях может требоваться долгое нажатие SSB для старта зарядки",
+   "consumption": "140 мкА выкл., 120 мА на макс. громкости (Davidson)",
+   "runtime": "≈32 ч, из них 14 ч с подсветкой (замер SWLing); ≈34 ч заявлено (radiojayallen)",
+   "source": [
+    "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649",
+    "https://www.blogordie.com/wp-content/uploads/2023/03/XHDATA-D-808-Users-Manual.pdf",
+    "https://swling.com/blog/2018/04/a-detailed-review-of-the-xhdata-d-808-and-comparison-with-the-tecsun-pl-660/",
+    "https://radiojayallen.com/xhtata-d-808-am-fm-sw-ssb-airband-portable-radio/"
+   ]
+  },
+  "sensitivity": {
+   "FM": ">3 мкВ",
+   "MW": ">0.5 мВ/м",
+   "LW": ">10 мВ/м",
+   "SW": ">10 мкВ",
+   "AIR": ">0.5 мкВ",
+   "AM_selectivity": ">80 дБ",
+   "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
+  },
+  "jacks": {
+   "external_antenna": "3.5 мм (для FM/SW/AIR)",
+   "headphones": "3.5 мм стерео (можно как линейный выход)",
+   "usb": "Type-C (ранние — Micro-USB), зарядка/питание 5 В",
+   "reset": "отверстие RESET (на днище по руководству 2025; Davidson относит к боковым органам)",
+   "source": [
+    "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649",
+    "https://www.blogordie.com/wp-content/uploads/2023/03/XHDATA-D-808-Users-Manual.pdf",
+    "https://www.radioamatore.info/attachments/article/2167/XHDATA-D-808.pdf"
+   ]
+  },
+  "antennas": {
+   "ferrite": "встроенная ферритовая антенна для LW/MW (≈3 7/8 дюйма по radiojayallen)",
+   "whip": "телескопическая 25.5 дюйма (≈65 см) для FM/SW/AIR",
+   "source": [
+    "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649",
+    "https://radiojayallen.com/xhtata-d-808-am-fm-sw-ssb-airband-portable-radio/"
+   ]
+  },
+  "rds": {
+   "supported": true,
+   "fields": [
+    "PS — название станции",
+    "DATE — дата/время (NO DATE)",
+    "PTY — тип программы (NONE)",
+    "RT — радиотекст (NO RT)"
+   ],
+   "clock_sync": "возможна автоустановка часов по RDS (режим AUTO)",
+   "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
+  },
+  "clock_alarm_sleep": {
+   "clock": "только 24-часовой формат",
+   "alarm": "один будильник, режимы: радио (последняя станция) / зуммер / выкл.; заводская установка 07:00, выкл.; повтор (snooze) 10 мин любой кнопкой кроме POWER",
+   "sleep": "120, 90, 60, 45, 30, 15 мин или ON (таймер выключен)",
+   "display_modes": "уровень сигнала (dBu)/SNR (dB), время, температура (°C/°F), время будильника",
+   "source": [
+    "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649",
+    "https://www.blogordie.com/wp-content/uploads/2023/03/XHDATA-D-808-Users-Manual.pdf"
+   ]
+  },
+  "backlight": "≈10 с после нажатия/поворота; кнопка LIGHT — постоянно (работает даже при выключенном радио)",
+  "speaker": "8 Ом, 1 Вт",
+  "dimensions_mm": "157 (Ш) x 92 (В) x 32 (Г)",
+  "weight": "265 г без аккумулятора",
+  "operating_temp": "0…40 °C",
+  "accessories": "чехол, внешняя проволочная антенна, кабель Type-C, аккумулятор 18650, англ. руководство (наушники — в ранних комплектах)",
+  "no_features": "нет переключателя ATT/LOCAL-DX/предусилителя, нет ручной регулировки AGC (по обзорам); нет NOAA; нет шага 8.33 кГц на AIR",
+  "source_all": [
+   "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649",
+   "https://www.blogordie.com/wp-content/uploads/2023/03/XHDATA-D-808-Users-Manual.pdf",
+   "https://www.radioamatore.info/attachments/article/2167/XHDATA-D-808.pdf"
+  ]
+ },
+ "controls": [
+  {
+   "name": "POWER (оранжевая)",
+   "location": "лицевая панель, правый верхний угол",
+   "function": "Кратко: вкл/выкл. Сразу после включения ~5 с мигает значок сна — повторные нажатия перебирают 120/90/60/45/30/15/ON. При сработавшем будильнике — выключает его.",
+   "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
+  },
+  {
+   "name": "SSB",
+   "location": "лицевая панель",
+   "function": "Кратко: вкл/выкл режима SSB (при выходе на экране NORMAL). Ранние версии: долгое нажатие — старт зарядки аккумулятора (в старом Quick Start подписана SSB/Battery Charge).",
+   "source": "https://www.blogordie.com/wp-content/uploads/2023/03/XHDATA-D-808-Users-Manual.pdf"
+  },
+  {
+   "name": "DISPLAY",
+   "location": "лицевая панель",
+   "function": "Кратко: переключение отображения: сигнал/SNR, время, температура, время будильника. При выкл. радио + долгое нажатие 3 — смена °C/°F.",
+   "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
+  },
+  {
+   "name": "ALARM",
+   "location": "лицевая панель",
+   "function": "При выкл. радио: кратко — выбор режима будильника (стрелками: радио/зуммер/выкл.); долго — ввод времени будильника цифрами.",
+   "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
+  },
+  {
+   "name": "AM BW / FM ST / TIME SET",
+   "location": "лицевая панель",
+   "function": "На AM/SW/LW: перебор полос фильтра; на FM: стерео/моно; при выкл. радио: кратко — AUTO/MANUAL установка времени (стрелкой), долго — ввод времени цифрами.",
+   "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
+  },
+  {
+   "name": "FM",
+   "location": "лицевая панель (ряд кнопок диапазонов)",
+   "function": "Кратко: диапазон FM. Долго (при вкл.): ATS. Долго при выкл.: выбор нижней границы FM (64/76/87/87.5).",
+   "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
+  },
+  {
+   "name": "LW/MW",
+   "location": "лицевая панель",
+   "function": "Кратко: MW (или переключение LW/MW, если LW включён). Долго (вкл.): ATS. Долго при выкл.: LW ON/OFF.",
+   "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
+  },
+  {
+   "name": "SW",
+   "location": "лицевая панель",
+   "function": "Кратко: КВ, повторные нажатия — перебор 14 метровых поддиапазонов. Долго: ATS (только в вещательных поддиапазонах).",
+   "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
+  },
+  {
+   "name": "AIR",
+   "location": "лицевая панель",
+   "function": "Кратко: авиадиапазон. Долго: ATS.",
+   "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
+  },
+  {
+   "name": "LIGHT",
+   "location": "лицевая панель",
+   "function": "Кратко: постоянная подсветка вкл/выкл.",
+   "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
+  },
+  {
+   "name": "FREQ",
+   "location": "лицевая панель",
+   "function": "Кратко: начать прямой ввод частоты цифрами; повторно — подтвердить. Неверная частота — Error.",
+   "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
+  },
+  {
+   "name": "PAGE",
+   "location": "лицевая панель",
+   "function": "Кратко, затем цифра 0–9: выбор страницы памяти.",
+   "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
+  },
+  {
+   "name": "INFO (USB/LSB, замок)",
+   "location": "лицевая панель",
+   "function": "Кратко на FM: листает RDS (PS/DATE/PTY/RT); в SSB: USB/LSB. Долго (вкл. или выкл.): блокировка/разблокировка кнопок (значок замка).",
+   "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
+  },
+  {
+   "name": "▲ / ▼ (стрелки)",
+   "location": "лицевая панель",
+   "function": "Кратко: шаг частоты вверх/вниз (и выбор пунктов в настройках). Долго: поиск следующей сильной станции (без записи в память); краткое нажатие останавливает поиск.",
+   "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
+  },
+  {
+   "name": "0–9 (цифровые)",
+   "location": "лицевая панель",
+   "function": "Кратко: ввод частоты / выбор страницы / вызов ячейки памяти. Долго: запись в ячейку. Спецфункции при выкл. радио (долго): 0 — шаг MW 9/10 кГц; 5 — BEEP вкл/выкл; 3 — °C/°F (из режима температуры).",
+   "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
+  },
+  {
+   "name": "TUNING (главный валкодер)",
+   "location": "правый бок, верх",
+   "function": "Вращение: перестройка. Кратко нажать внутрь: FAST/SLOW/STOP. Долго (≈2–5 с): шумоподавитель Squelch, уровень 1–9/OFF вращением.",
+   "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
+  },
+  {
+   "name": "FINE TUNE (колёсико точной подстройки)",
+   "location": "правый бок",
+   "function": "В SSB — подстройка BFO (FINE ±1…99, по Davidson ±990 Гц шагом 10 Гц); в прочих режимах — лёгкая расстройка.",
+   "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
+  },
+  {
+   "name": "VOLUME (колёсико)",
+   "location": "левый бок",
+   "function": "Вверх — громче, вниз — тише. При блокировке остаётся активным.",
+   "source": "https://www.blogordie.com/wp-content/uploads/2023/03/XHDATA-D-808-Users-Manual.pdf"
+  },
+  {
+   "name": "Гнездо внешней антенны 3.5 мм",
+   "location": "боковая панель (по нумерации схемы — левый бок, unverified)",
+   "function": "Подключение внешней антенны для FM/SW/AIR.",
+   "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
+  },
+  {
+   "name": "Гнездо наушников 3.5 мм",
+   "location": "боковая панель (по нумерации схемы — левый бок, unverified)",
+   "function": "Стереонаушники/линейный выход; стерео FM слышно только в наушниках.",
+   "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
+  },
+  {
+   "name": "USB (Type-C / Micro-USB на ранних)",
+   "location": "правый бок",
+   "function": "Зарядка 18650 и питание 5 В.",
+   "source": "https://www.blogordie.com/wp-content/uploads/2023/03/XHDATA-D-808-Users-Manual.pdf"
+  },
+  {
+   "name": "RESET (отверстие)",
+   "location": "днище (руководство 2025)",
+   "function": "Аппаратный сброс микропроцессора зубочисткой/скрепкой до щелчка.",
+   "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
+  },
+  {
+   "name": "Телескопическая антенна",
+   "location": "задняя панель",
+   "function": "FM/SW/AIR, выдвигать полностью.",
+   "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
+  },
+  {
+   "name": "Подставка (kickstand)",
+   "location": "задняя панель",
+   "function": "Откидная подставка.",
+   "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
+  },
+  {
+   "name": "Крышка батарейного отсека",
+   "location": "задняя панель",
+   "function": "1 x 18650; при поставке — изолирующая вкладка, её нужно удалить.",
+   "source": "https://www.blogordie.com/wp-content/uploads/2023/03/XHDATA-D-808-Users-Manual.pdf"
+  }
+ ],
+ "howto": [
+  {
+   "title": "Первое включение",
+   "steps": [
+    "Снять крышку отсека на задней панели, удалить транспортную изолирующую вкладку, вставить 18650 с соблюдением полярности.",
+    "Нажать оранжевую POWER; чтобы пропустить выбор таймера сна — нажать любую кнопку (или подождать ~5 с).",
+    "Громкость — колёсико VOLUME на левом боку (вверх — громче)."
+   ],
+   "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
+  },
+  {
+   "title": "Выбор диапазона",
+   "steps": [
+    "Кратко нажать FM, LW/MW, SW или AIR.",
+    "LW доступен только после включения в настройках (см. ниже); тогда LW/MW переключает LW и MW."
+   ],
+   "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
+  },
+  {
+   "title": "Ввод частоты с клавиатуры",
+   "steps": [
+    "Выбрать диапазон.",
+    "Кратко нажать FREQ.",
+    "Набрать частоту цифрами (MW — 3–4 цифры в кГц, например 1520; SW — в кГц 1711–29999).",
+    "Нажать FREQ ещё раз для подтверждения (если приёмник не перестроился сам).",
+    "Если частота вне диапазона — на экране Error. По руководству 2025 радио само переходит в диапазон введённой частоты."
+   ],
+   "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
+  },
+  {
+   "title": "Настройка колесом и смена шага",
+   "steps": [
+    "Вращать TUNING (по часовой — вверх по частоте).",
+    "Кратко нажать валкодер внутрь — циклически FAST / SLOW / STOP (индикация мелким шрифтом).",
+    "FAST: FM 100 кГц, MW 9/10, LW 3, AIR 25, SW 5 кГц (в руководстве 2023 — 10 кГц); SLOW: 1 кГц (FM 10 кГц); STOP — колесо не работает.",
+    "Кнопки ▲/▼ — шаг вверх/вниз; долгое нажатие — поиск следующей станции (не сохраняется в память)."
+   ],
+   "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
+  },
+  {
+   "title": "ATS — автопоиск с сохранением",
+   "steps": [
+    "Выбрать диапазон.",
+    "Долго (2 с) нажать кнопку этого же диапазона (FM, LW/MW, SW или AIR); на экране ATS _ _ _.",
+    "Станции записываются подряд по страницам и ячейкам, ПЕРЕЗАПИСЫВАЯ прежние ячейки этого диапазона.",
+    "На SW сканируются только 14 вещательных поддиапазонов. Слабые/замирающие станции могут быть пропущены; помехи от ПК могут записаться как станции."
+   ],
+   "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
+  },
+  {
+   "title": "Ручное сохранение в память и вызов",
+   "steps": [
+    "Выбрать диапазон (у каждого диапазона свои 100 ячеек).",
+    "Нажать PAGE, затем цифру 0–9 — выбрать страницу.",
+    "Настроиться на станцию и ДОЛГО нажать цифру 0–9 (номер ячейки) — появится PAGE—SAVE.",
+    "Вызов: выбрать диапазон и страницу (PAGE + цифра), кратко нажать цифру ячейки — PAGE—LOAD.",
+    "Вместе с частотой сохраняется стерео/моно (FM) и полоса фильтра (LW/MW/SW) — по руководству."
+   ],
+   "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
+  },
+  {
+   "title": "Выбор метрового КВ-поддиапазона",
+   "steps": [
+    "Нажать SW — включится последняя КВ-частота.",
+    "Повторными краткими нажатиями SW перебирать 14 поддиапазонов (120 м … 11 м); название кратко показывается на экране."
+   ],
+   "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
+  },
+  {
+   "title": "Приём SSB",
+   "steps": [
+    "Настроиться на станцию на КВ (удобно шаг SLOW 1 кГц).",
+    "Нажать SSB; через паузу (DSP загружает патч, до ~5 с по обзорам) появится USB или LSB.",
+    "Кнопкой INFO переключать USB/LSB (ниже 7300 кГц обычно LSB, выше 14000 кГц — USB).",
+    "Колёсиком FINE TUNE на правом боку подстроить до разборчивой речи (FINE ±1…99; по Davidson шаг 10 Гц, до ±990 Гц).",
+    "При необходимости сузить полосу кнопкой AM BW (4/3/2.2/1.2/1/0.5 кГц).",
+    "Выход — снова SSB, на экране NORMAL."
+   ],
+   "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
+  },
+  {
+   "title": "Выбор полосы фильтра",
+   "steps": [
+    "На LW/MW/SW (AM) краткими нажатиями AM BW перебирать 6/4/3/2.5/2/1.8/1 кГц.",
+    "В SSB те же нажатия перебирают 4/3/2.2/1.2/1/0.5 кГц.",
+    "Широкая полоса — лучше звук, узкая — меньше помех от соседних станций и шума."
+   ],
+   "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
+  },
+  {
+   "title": "AGC / ATT / чувствительность",
+   "steps": [
+    "В руководстве нет функций ATT, LOCAL/DX или ручного AGC — у D-808 их нет (обзор SWLing: «No attenuator or preamp switch»).",
+    "Против перегрузки от внешней антенны: укоротить антенну/телескоп, сузить полосу фильтра.",
+    "Для слабых сигналов следить, чтобы шумоподавитель Squelch был в OFF.",
+    "DISPLAY показывает уровень сигнала (dBu) и SNR (dB) — удобно для ориентирования приёмника и антенны."
+   ],
+   "source": "https://swling.com/blog/2018/04/a-detailed-review-of-the-xhdata-d-808-and-comparison-with-the-tecsun-pl-660/"
+  },
+  {
+   "title": "Шумоподавитель (Squelch)",
+   "steps": [
+    "Нажать и удерживать валкодер TUNING (≈2–5 с) до надписи Squelch.",
+    "Сразу вращать валкодер — уровень 1–9 или OFF.",
+    "Кратко нажать валкодер для сохранения (по старому Quick Start).",
+    "Руководство 2025 и radiojayallen: работает на всех диапазонах; старые руководства — только AIR."
+   ],
+   "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
+  },
+  {
+   "title": "RDS",
+   "steps": [
+    "На FM настроиться на станцию с RDS (значок RDS, текст внизу экрана).",
+    "Кратко нажимать INFO: PS → DATE → PTY → RT.",
+    "Для синхронизации часов по RDS включить режим AUTO (см. «Часы»)."
+   ],
+   "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
+  },
+  {
+   "title": "Часы",
+   "steps": [
+    "Выключить радио.",
+    "Долго нажать TIME SET (кнопка AM BW/FM ST) — появится TIME.",
+    "Набрать 4 цифры (24-часовой формат, например 2130); режим выходит сам через ~5 с без нажатий.",
+    "Автоустановка по RDS: при выкл. радио кратко нажать TIME SET и стрелкой ▲ выбрать AUTO или MANUAL; затем вручную настроиться на FM-станцию, передающую время."
+   ],
+   "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
+  },
+  {
+   "title": "Будильник",
+   "steps": [
+    "Выключить радио.",
+    "Долго нажать ALARM и ввести время цифрами (например 0 7 0 0).",
+    "Кратко нажать ALARM (мигает ALARM) и стрелками выбрать: радио (значок динамика, играет последняя станция) / зуммер / выкл.",
+    "При срабатывании: POWER — выключить, любая другая кнопка — повтор через 10 мин."
+   ],
+   "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
+  },
+  {
+   "title": "Таймер сна",
+   "steps": [
+    "Включить радио кнопкой POWER.",
+    "Пока мигает значок сна (~5 с), нажимать POWER: 120 → 90 → 60 → 45 → 30 → 15 → ON (ON = таймер выключен).",
+    "Пока значок мигает, радио нельзя выключить — дождаться окончания мигания. Таймер отменяется выключением радио."
+   ],
+   "source": "https://www.blogordie.com/wp-content/uploads/2023/03/XHDATA-D-808-Users-Manual.pdf"
+  },
+  {
+   "title": "Блокировка кнопок",
+   "steps": [
+    "При включённом или выключенном радио долго нажать INFO — появится значок замка (громкость остаётся активной).",
+    "Повторное долгое нажатие INFO — разблокировать."
+   ],
+   "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
+  },
+  {
+   "title": "Подсветка",
+   "steps": [
+    "Подсветка включается сама на ~10 с при нажатии кнопки или повороте валкодера.",
+    "Кратко LIGHT — постоянная подсветка (остаётся и при выключенном радио); повторно LIGHT — выключить."
+   ],
+   "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
+  },
+  {
+   "title": "Шаг MW 9/10 кГц",
+   "steps": [
+    "Выключить радио.",
+    "Долго нажать кнопку 0 (9/10 kHz) — отобразится текущий шаг.",
+    "Кратко нажимать её же для переключения 9k (522–1620 кГц, Европа/Азия/Африка) / 10k (520–1710 кГц, Америка).",
+    "Подождать несколько секунд — настройка сохранится."
+   ],
+   "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
+  },
+  {
+   "title": "Диапазон FM 64/76/87/87.5",
+   "steps": [
+    "Выключить радио.",
+    "Долго нажать FM — отобразится нижняя граница текущего диапазона.",
+    "Кратко нажимать FM: 64.0 → 76.0 → 87.0 → 87.5 МГц (87.0 — только в руководстве 2025).",
+    "Подождать несколько секунд — выход с сохранением."
+   ],
+   "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
+  },
+  {
+   "title": "Включение LW",
+   "steps": [
+    "Выключить радио.",
+    "Долго нажать LW/MW — появится LW ON или LW OFF.",
+    "Кратко LW/MW для смены."
+   ],
+   "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
+  },
+  {
+   "title": "Звук нажатий (BEEP)",
+   "steps": [
+    "Выключить радио.",
+    "Долго (2–3 с) нажать кнопку 5 (BEEP) — переключение вкл/выкл (значок BEEP)."
+   ],
+   "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
+  },
+  {
+   "title": "Зарядка",
+   "steps": [
+    "Подключить кабель USB (Type-C, на ранних — Micro-USB) к порту на правом боку, питание 5 В.",
+    "Значок батареи циклически заполняется; зарядка останавливается при полном заряде или через 10 ч.",
+    "Лучше заряжать при выключенном радио — при включённом индикатор может показывать зарядку ошибочно.",
+    "Ранние версии: может потребоваться долгое нажатие SSB для начала зарядки.",
+    "Если экран пустой после полного заряда — вынуть и вставить аккумулятор заново."
+   ],
+   "source": "https://www.blogordie.com/wp-content/uploads/2023/03/XHDATA-D-808-Users-Manual.pdf"
+  },
+  {
+   "title": "Сброс (Reset)",
+   "steps": [
+    "Вставить зубочистку/скрепку в отверстие RESET (на днище) до лёгкого щелчка, не давить сильно.",
+    "Сбрасывает микропроцессор при зависании. Сохраняются ли память и настройки — в руководстве не сказано (unverified).",
+    "Замена аккумулятора — в пределах 1 минуты, иначе сбросятся время и другие настройки (Davidson)."
+   ],
+   "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
+  }
+ ],
+ "sw_meter_bands": {
+  "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649",
+  "note": "Основные границы — по официальному руководству 2025; руководство называет границы приблизительными. ATS и долгий поиск стрелками работают только внутри этих поддиапазонов.",
+  "bands": [
+   {
+    "band": "120m",
+    "range_khz": "2300–2495"
+   },
+   {
+    "band": "90m",
+    "range_khz": "3200–3400"
+   },
+   {
+    "band": "75m",
+    "range_khz": "3900–4000"
+   },
+   {
+    "band": "60m",
+    "range_khz": "4750–5060",
+    "alt": "4750–4995 (Davidson v1.3)"
+   },
+   {
+    "band": "49m",
+    "range_khz": "5730–6200"
+   },
+   {
+    "band": "41m",
+    "range_khz": "7100–7300",
+    "alt": "7100–7450 (Davidson v1.3)"
+   },
+   {
+    "band": "31m",
+    "range_khz": "9250–9900"
+   },
+   {
+    "band": "25m",
+    "range_khz": "11500–12160",
+    "alt": "11500–12100 (Davidson v1.3)"
+   },
+   {
+    "band": "22m",
+    "range_khz": "13570–13870"
+   },
+   {
+    "band": "19m",
+    "range_khz": "15300–15800",
+    "alt": "15300–15830 (Davidson v1.3)"
+   },
+   {
+    "band": "16m",
+    "range_khz": "17480–17900"
+   },
+   {
+    "band": "15m",
+    "range_khz": "18900–19020"
+   },
+   {
+    "band": "13m",
+    "range_khz": "21450–21850"
+   },
+   {
+    "band": "11m",
+    "range_khz": "25670–26100"
+   }
+  ]
+ },
+ "tips": [
+  {
+   "tip": "Сильная сторона — фильтры: 7 полос AM и 6 полос SSB, редкость даже для дорогих приёмников; позволяют ECSS-приём и отстройку от соседей.",
+   "source": "https://swling.com/blog/2021/05/dan-revisits-the-venerable-xhdata-d-808-portable-radio/"
+  },
+  {
+   "tip": "Отличная чувствительность на MW (лучше Tecsun PL-660, на уровне Grundig Satellit 400) и почти на уровне PL-660 на КВ; AIR заметно лучше PL-660.",
+   "source": "https://swling.com/blog/2018/04/a-detailed-review-of-the-xhdata-d-808-and-comparison-with-the-tecsun-pl-660/"
+  },
+  {
+   "tip": "LW на вещательных частотах слабый («pretty much not existing»), выше 300 кГц (NDB) — лучше.",
+   "source": "https://swling.com/blog/2018/04/a-detailed-review-of-the-xhdata-d-808-and-comparison-with-the-tecsun-pl-660/"
+  },
+  {
+   "tip": "Слабые места SSB: медленная атака AGC (начало сильного сигнала искажено), «чавканье»/выпадение звука при перестройке, переключение режима до ~5 с, громкий щелчок при смене диапазона/режима (неприятно в наушниках).",
+   "source": "https://swling.com/blog/2018/04/a-detailed-review-of-the-xhdata-d-808-and-comparison-with-the-tecsun-pl-660/"
+  },
+  {
+   "tip": "Калибровку BFO приходится подстраивать отдельно для USB и LSB; измеренные ошибки BFO — порядка 100–300 Гц.",
+   "source": "https://swling.com/blog/2018/04/a-detailed-review-of-the-xhdata-d-808-and-comparison-with-the-tecsun-pl-660/"
+  },
+  {
+   "tip": "Нет аттенюатора/LOCAL-DX: при большой внешней антенне и хорошем прохождении возможна перегрузка и интермодуляция (замечена на 7, 10 МГц и 15 м). Не переусердствовать с длиной внешней антенны.",
+   "source": "https://swling.com/blog/2018/04/a-detailed-review-of-the-xhdata-d-808-and-comparison-with-the-tecsun-pl-660/"
+  },
+  {
+   "tip": "Стабильность частоты очень хорошая: дрейф <10 Гц при охлаждении на 12 °C.",
+   "source": "https://swling.com/blog/2018/04/a-detailed-review-of-the-xhdata-d-808-and-comparison-with-the-tecsun-pl-660/"
+  },
+  {
+   "tip": "Экземпляры разных лет отличаются: ревизия 2022 — остаточное шипение при нулевой громкости, оранжевая подсветка; ревизия 2023 (USB-C) — фиксированные чип-индуктивности, чуть хуже на очень слабых AM-сигналах. Для DX на MW ранние (2018) экземпляры предпочтительнее.",
+   "source": "https://radiojayallen.com/xhtata-d-808-am-fm-sw-ssb-airband-portable-radio/"
+  },
+  {
+   "tip": "Типичные дефекты: разряд аккумулятора в выключенном состоянии, хрустящий регулятор громкости (лечится очистителем контактов типа DeoxIT), писк на отдельных экземплярах, жужжание при сохранении пресетов, soft mute при перестройке.",
+   "source": "https://swling.com/blog/2021/05/dan-revisits-the-venerable-xhdata-d-808-portable-radio/"
+  },
+  {
+   "tip": "Для улучшения КВ: полностью выдвинуть телескоп, использовать комплектную проволочную антенну или несколько метров провода; на MW вращать приёмник (ферритовая антенна направленная), помогает пассивная рамка рядом; даже небольшое перемещение приёмника заметно меняет приём.",
+   "source": "https://www.blogordie.com/wp-content/uploads/2023/03/XHDATA-D-808-Users-Manual.pdf"
+  },
+  {
+   "tip": "Для FM: при слабом сигнале выключить стерео (FM ST → MONO) — приём чище.",
+   "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
+  },
+  {
+   "tip": "Оранжевые подписи плохо читаются при слабом освещении; подсветка экрана очень яркая.",
+   "source": "https://swling.com/blog/2018/04/a-detailed-review-of-the-xhdata-d-808-and-comparison-with-the-tecsun-pl-660/"
+  },
+  {
+   "tip": "Для ATS избегать мест с помехами (ПК) — помехи записываются как станции.",
+   "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
+  },
+  {
+   "tip": "Отзывы на radioscanner.ru (пересказ): плюсы — чувствительность, SSB, RDS, питание от 18650; минусы — soft mute, медленный SSB, слабая помехозащищённость на КВ, звук FM хуже Tecsun PL-310, неудобная работа с памятью; совет — внешняя антенна.",
+   "source": "https://www.radioscanner.ru/rating/item/1703/"
+  },
+  {
+   "tip": "Если «пропал приём» — проверить, не включён ли случайно Squelch (руководство прямо об этом предупреждает).",
+   "source": "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649"
+  }
+ ],
+ "unverified": [
+  "Точное расположение гнёзд антенны и наушников (левый бок) — выведено из нумерации схемы, не прямым текстом",
+  "Сохраняется ли полоса фильтра в памяти (руководство — да, SWLing 2018 — нет)",
+  "Шаг FAST на SW: 5 кГц (руководство 2025) или 10 кГц (2023) — видимо, зависит от прошивки",
+  "Squelch только на AIR или на всех диапазонах — зависит от версии",
+  "Стирает ли RESET память и настройки",
+  "Работает ли фильтр полосы на AIR",
+  "Чип Si4735 — только по обзорам, в руководстве не указан"
+ ],
+ "sources": [
+  "https://www.xhdata.com.cn/pages/d-808-manual",
+  "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808English_manual.pdf?v=1752652649",
+  "https://cdn.shopify.com/s/files/1/0670/0443/2702/files/D-808Russian_manual.pdf?v=1752652692",
+  "https://www.blogordie.com/wp-content/uploads/2023/03/XHDATA-D-808-Users-Manual.pdf",
+  "https://www.radioamatore.info/attachments/article/2167/XHDATA-D-808.pdf",
+  "https://www.manualslib.com/manual/3018577/Xhdata-D-808.html",
+  "https://swling.com/blog/2018/04/a-detailed-review-of-the-xhdata-d-808-and-comparison-with-the-tecsun-pl-660/",
+  "https://swling.com/blog/2021/05/dan-revisits-the-venerable-xhdata-d-808-portable-radio/",
+  "https://radiojayallen.com/xhtata-d-808-am-fm-sw-ssb-airband-portable-radio/",
+  "https://www.radioscanner.ru/rating/item/1703/"
+ ]
+};

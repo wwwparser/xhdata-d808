@@ -1,0 +1,3607 @@
+window.STATIONS = {
+ "meta": {
+  "compiled": "2026-09-23",
+  "season": "A26 (до 25.10.2026), с 25.10.2026 действует B26 - КВ-расписания поменяются",
+  "msk": "MSK = UTC+3 круглый год",
+  "verify": "verify=true - факт из одного источника, противоречие источников или давно не подтверждался"
+ },
+ "fm_moscow": [
+  {
+   "freq_mhz": 66.44,
+   "name": "Радио России / «Радио 1» (Первое Подмосковное)",
+   "format": "общественно-информационное",
+   "note": "УКВ OIRT; Радио России с 09.07.2024 также на 101,5 FM; по morze.ru частота помечена как прежняя. Приёмник D-808 ловит 64-108 МГц",
+   "verify": true,
+   "source": [
+    "https://noginsk-service.ru/page.php?575=",
+    "https://www.radiogrom.com/moscowfm.html",
+    "https://www.morze.ru/radio_tv/radio_tv1.htm"
+   ]
+  },
+  {
+   "freq_mhz": 71.3,
+   "name": "Пи FM",
+   "format": "музыка",
+   "note": "УКВ OIRT, тестовое вещание несколько раз в год",
+   "verify": true,
+   "source": [
+    "https://noginsk-service.ru/page.php?575=",
+    "https://www.radiogrom.com/moscowfm.html",
+    "https://www.morze.ru/radio_tv/radio_tv1.htm"
+   ]
+  },
+  {
+   "freq_mhz": 72.92,
+   "name": "Радио Радонеж",
+   "format": "православное, разговорное",
+   "note": "УКВ OIRT, передатчик Универ",
+   "verify": false,
+   "source": [
+    "https://noginsk-service.ru/page.php?575=",
+    "https://www.radiogrom.com/moscowfm.html",
+    "https://www.morze.ru/radio_tv/radio_tv1.htm"
+   ]
+  },
+  {
+   "freq_mhz": 87.5,
+   "name": "Business FM",
+   "format": "деловое, новости",
+   "note": "Останкино",
+   "verify": false,
+   "source": [
+    "https://noginsk-service.ru/page.php?575=",
+    "https://www.radiogrom.com/moscowfm.html",
+    "https://www.morze.ru/radio_tv/radio_tv1.htm"
+   ]
+  },
+  {
+   "freq_mhz": 87.9,
+   "name": "Like FM",
+   "format": "поп-хиты",
+   "note": "Балашиха",
+   "verify": false,
+   "source": [
+    "https://noginsk-service.ru/page.php?575=",
+    "https://www.radiogrom.com/moscowfm.html",
+    "https://www.morze.ru/radio_tv/radio_tv1.htm"
+   ]
+  },
+  {
+   "freq_mhz": 88.3,
+   "name": "Ретро FM",
+   "format": "ретро-хиты",
+   "note": "Останкино",
+   "verify": false,
+   "source": [
+    "https://noginsk-service.ru/page.php?575=",
+    "https://www.radiogrom.com/moscowfm.html",
+    "https://www.morze.ru/radio_tv/radio_tv1.htm"
+   ]
+  },
+  {
+   "freq_mhz": 88.7,
+   "name": "Юмор FM",
+   "format": "юмор, развлекательное",
+   "note": "Балашиха",
+   "verify": false,
+   "source": [
+    "https://noginsk-service.ru/page.php?575=",
+    "https://www.radiogrom.com/moscowfm.html",
+    "https://www.morze.ru/radio_tv/radio_tv1.htm"
+   ]
+  },
+  {
+   "freq_mhz": 89.1,
+   "name": "Радио Джаз",
+   "format": "джаз",
+   "note": "Останкино",
+   "verify": false,
+   "source": [
+    "https://noginsk-service.ru/page.php?575=",
+    "https://www.radiogrom.com/moscowfm.html",
+    "https://www.morze.ru/radio_tv/radio_tv1.htm"
+   ]
+  },
+  {
+   "freq_mhz": 89.5,
+   "name": "Калина Красная",
+   "format": "русские песни, эстрада",
+   "note": "с 01.06.2023, ранее Мегаполис FM",
+   "verify": false,
+   "source": [
+    "https://noginsk-service.ru/page.php?575=",
+    "https://www.radiogrom.com/moscowfm.html",
+    "https://www.morze.ru/radio_tv/radio_tv1.htm"
+   ]
+  },
+  {
+   "freq_mhz": 89.9,
+   "name": "Радио Рекорд",
+   "format": "танцевальная электроника",
+   "note": "с 22.04.2024, ранее «Твоя волна» (radiogrom ещё показывает «Твоя волна»)",
+   "verify": false,
+   "source": [
+    "https://noginsk-service.ru/page.php?575=",
+    "https://www.radiogrom.com/moscowfm.html",
+    "https://www.morze.ru/radio_tv/radio_tv1.htm"
+   ]
+  },
+  {
+   "freq_mhz": 90.3,
+   "name": "Авторадио",
+   "format": "поп-хиты",
+   "note": "Балашиха, 20 кВт",
+   "verify": false,
+   "source": [
+    "https://noginsk-service.ru/page.php?575=",
+    "https://www.radiogrom.com/moscowfm.html",
+    "https://www.morze.ru/radio_tv/radio_tv1.htm"
+   ]
+  },
+  {
+   "freq_mhz": 90.8,
+   "name": "Relax FM",
+   "format": "спокойная музыка",
+   "note": "Балашиха",
+   "verify": false,
+   "source": [
+    "https://noginsk-service.ru/page.php?575=",
+    "https://www.radiogrom.com/moscowfm.html",
+    "https://www.morze.ru/radio_tv/radio_tv1.htm"
+   ]
+  },
+  {
+   "freq_mhz": 91.2,
+   "name": "Радио Sputnik",
+   "format": "новости, разговорное",
+   "note": "с 09.03.2022, ранее «Эхо Москвы»",
+   "verify": false,
+   "source": [
+    "https://noginsk-service.ru/page.php?575=",
+    "https://www.radiogrom.com/moscowfm.html",
+    "https://www.morze.ru/radio_tv/radio_tv1.htm"
+   ]
+  },
+  {
+   "freq_mhz": 91.6,
+   "name": "Радио Культура",
+   "format": "культура, разговорное",
+   "note": "ВГТРК",
+   "verify": false,
+   "source": [
+    "https://noginsk-service.ru/page.php?575=",
+    "https://www.radiogrom.com/moscowfm.html",
+    "https://www.morze.ru/radio_tv/radio_tv1.htm"
+   ]
+  },
+  {
+   "freq_mhz": 92.0,
+   "name": "Москва FM",
+   "format": "музыка",
+   "note": "холдинг «Москва Медиа»; формат не уточнён",
+   "verify": true,
+   "source": [
+    "https://noginsk-service.ru/page.php?575=",
+    "https://www.radiogrom.com/moscowfm.html",
+    "https://www.morze.ru/radio_tv/radio_tv1.htm"
+   ]
+  },
+  {
+   "freq_mhz": 92.4,
+   "name": "Радио Дача",
+   "format": "русская эстрада",
+   "note": "Krutoy Media",
+   "verify": false,
+   "source": [
+    "https://noginsk-service.ru/page.php?575=",
+    "https://www.radiogrom.com/moscowfm.html",
+    "https://www.morze.ru/radio_tv/radio_tv1.htm"
+   ]
+  },
+  {
+   "freq_mhz": 92.8,
+   "name": "Радио РБК",
+   "format": "деловое разговорное",
+   "note": "с 08.09.2025, ранее Радио Карнавал",
+   "verify": false,
+   "source": [
+    "https://noginsk-service.ru/page.php?575=",
+    "https://www.radiogrom.com/moscowfm.html",
+    "https://www.morze.ru/radio_tv/radio_tv1.htm",
+    "https://www.rbc.ru/technology_and_media/08/09/2025/68bacda99a79471f034c18c9"
+   ]
+  },
+  {
+   "freq_mhz": 93.2,
+   "name": "Studio 21",
+   "format": "хип-хоп, R&B",
+   "note": "с 14.08.2018",
+   "verify": false,
+   "source": [
+    "https://noginsk-service.ru/page.php?575=",
+    "https://www.radiogrom.com/moscowfm.html",
+    "https://www.morze.ru/radio_tv/radio_tv1.htm"
+   ]
+  },
+  {
+   "freq_mhz": 93.6,
+   "name": "Коммерсантъ FM",
+   "format": "новости, деловое",
+   "note": "Останкино",
+   "verify": false,
+   "source": [
+    "https://noginsk-service.ru/page.php?575=",
+    "https://www.radiogrom.com/moscowfm.html",
+    "https://www.morze.ru/radio_tv/radio_tv1.htm"
+   ]
+  },
+  {
+   "freq_mhz": 94.0,
+   "name": "Восток FM",
+   "format": "восточная и поп-музыка",
+   "note": "Krutoy Media",
+   "verify": false,
+   "source": [
+    "https://noginsk-service.ru/page.php?575=",
+    "https://www.radiogrom.com/moscowfm.html",
+    "https://www.morze.ru/radio_tv/radio_tv1.htm"
+   ]
+  },
+  {
+   "freq_mhz": 94.4,
+   "name": "Первое спортивное радио",
+   "format": "спорт",
+   "note": "с 27.12.2021",
+   "verify": false,
+   "source": [
+    "https://noginsk-service.ru/page.php?575=",
+    "https://www.radiogrom.com/moscowfm.html",
+    "https://www.morze.ru/radio_tv/radio_tv1.htm"
+   ]
+  },
+  {
+   "freq_mhz": 94.8,
+   "name": "Говорит Москва",
+   "format": "новости, разговорное",
+   "note": "«Москва Медиа»",
+   "verify": false,
+   "source": [
+    "https://noginsk-service.ru/page.php?575=",
+    "https://www.radiogrom.com/moscowfm.html",
+    "https://www.morze.ru/radio_tv/radio_tv1.htm"
+   ]
+  },
+  {
+   "freq_mhz": 95.2,
+   "name": "Rock FM",
+   "format": "рок",
+   "note": "Мультимедиа Холдинг",
+   "verify": false,
+   "source": [
+    "https://noginsk-service.ru/page.php?575=",
+    "https://www.radiogrom.com/moscowfm.html",
+    "https://www.morze.ru/radio_tv/radio_tv1.htm"
+   ]
+  },
+  {
+   "freq_mhz": 95.6,
+   "name": "Радио Звезда",
+   "format": "разговорное и музыка",
+   "note": "Балашиха, 10 кВт",
+   "verify": false,
+   "source": [
+    "https://noginsk-service.ru/page.php?575=",
+    "https://www.radiogrom.com/moscowfm.html",
+    "https://www.morze.ru/radio_tv/radio_tv1.htm"
+   ]
+  },
+  {
+   "freq_mhz": 96.0,
+   "name": "Дорожное радио",
+   "format": "русская эстрада",
+   "note": "Европейская медиагруппа",
+   "verify": false,
+   "source": [
+    "https://noginsk-service.ru/page.php?575=",
+    "https://www.radiogrom.com/moscowfm.html",
+    "https://www.morze.ru/radio_tv/radio_tv1.htm"
+   ]
+  },
+  {
+   "freq_mhz": 96.4,
+   "name": "Такси FM",
+   "format": "русская поп-музыка",
+   "note": "с 07.06.2011",
+   "verify": false,
+   "source": [
+    "https://noginsk-service.ru/page.php?575=",
+    "https://www.radiogrom.com/moscowfm.html",
+    "https://www.morze.ru/radio_tv/radio_tv1.htm"
+   ]
+  },
+  {
+   "freq_mhz": 96.8,
+   "name": "Детское радио",
+   "format": "детское",
+   "note": "ГПМ Радио",
+   "verify": false,
+   "source": [
+    "https://noginsk-service.ru/page.php?575=",
+    "https://www.radiogrom.com/moscowfm.html",
+    "https://www.morze.ru/radio_tv/radio_tv1.htm"
+   ]
+  },
+  {
+   "freq_mhz": 97.2,
+   "name": "Радио Комсомольская правда",
+   "format": "разговорное, новости",
+   "note": "Балашиха, 10 кВт",
+   "verify": false,
+   "source": [
+    "https://noginsk-service.ru/page.php?575=",
+    "https://www.radiogrom.com/moscowfm.html",
+    "https://www.morze.ru/radio_tv/radio_tv1.htm"
+   ]
+  },
+  {
+   "freq_mhz": 97.6,
+   "name": "Вести FM",
+   "format": "новости, разговорное",
+   "note": "ВГТРК",
+   "verify": false,
+   "source": [
+    "https://noginsk-service.ru/page.php?575=",
+    "https://www.radiogrom.com/moscowfm.html",
+    "https://www.morze.ru/radio_tv/radio_tv1.htm"
+   ]
+  },
+  {
+   "freq_mhz": 98.0,
+   "name": "Радио Шоколад",
+   "format": "поп-хиты",
+   "note": "Останкино",
+   "verify": false,
+   "source": [
+    "https://noginsk-service.ru/page.php?575=",
+    "https://www.radiogrom.com/moscowfm.html",
+    "https://www.morze.ru/radio_tv/radio_tv1.htm"
+   ]
+  },
+  {
+   "freq_mhz": 98.4,
+   "name": "Новое Радио",
+   "format": "русские поп-хиты",
+   "note": "Европейская медиагруппа",
+   "verify": false,
+   "source": [
+    "https://noginsk-service.ru/page.php?575=",
+    "https://www.radiogrom.com/moscowfm.html",
+    "https://www.morze.ru/radio_tv/radio_tv1.htm"
+   ]
+  },
+  {
+   "freq_mhz": 98.8,
+   "name": "Радио Romantika",
+   "format": "поп-музыка",
+   "note": "ГПМ Радио",
+   "verify": false,
+   "source": [
+    "https://noginsk-service.ru/page.php?575=",
+    "https://www.radiogrom.com/moscowfm.html",
+    "https://www.morze.ru/radio_tv/radio_tv1.htm"
+   ]
+  },
+  {
+   "freq_mhz": 99.2,
+   "name": "Радио Орфей",
+   "format": "классическая музыка",
+   "note": "РГМЦ",
+   "verify": false,
+   "source": [
+    "https://noginsk-service.ru/page.php?575=",
+    "https://www.radiogrom.com/moscowfm.html",
+    "https://www.morze.ru/radio_tv/radio_tv1.htm"
+   ]
+  },
+  {
+   "freq_mhz": 99.6,
+   "name": "Русский Хит",
+   "format": "русские хиты",
+   "note": "Krutoy Media",
+   "verify": false,
+   "source": [
+    "https://noginsk-service.ru/page.php?575=",
+    "https://www.radiogrom.com/moscowfm.html",
+    "https://www.morze.ru/radio_tv/radio_tv1.htm"
+   ]
+  },
+  {
+   "freq_mhz": 100.1,
+   "name": "Серебряный дождь",
+   "format": "музыка и разговорное",
+   "note": "radiogrom пишет 100,0; noginsk и morze - 100,1",
+   "verify": false,
+   "source": [
+    "https://noginsk-service.ru/page.php?575=",
+    "https://www.radiogrom.com/moscowfm.html",
+    "https://www.morze.ru/radio_tv/radio_tv1.htm"
+   ]
+  },
+  {
+   "freq_mhz": 100.5,
+   "name": "Жара FM",
+   "format": "поп-хиты",
+   "note": "Crocus Media",
+   "verify": false,
+   "source": [
+    "https://noginsk-service.ru/page.php?575=",
+    "https://www.radiogrom.com/moscowfm.html",
+    "https://www.morze.ru/radio_tv/radio_tv1.htm"
+   ]
+  },
+  {
+   "freq_mhz": 100.9,
+   "name": "Радио Вера",
+   "format": "православное, разговорное",
+   "note": "с 15.09.2014",
+   "verify": false,
+   "source": [
+    "https://noginsk-service.ru/page.php?575=",
+    "https://www.radiogrom.com/moscowfm.html",
+    "https://www.morze.ru/radio_tv/radio_tv1.htm"
+   ]
+  },
+  {
+   "freq_mhz": 101.2,
+   "name": "DFM",
+   "format": "танцевальная",
+   "note": "Русская медиагруппа",
+   "verify": false,
+   "source": [
+    "https://noginsk-service.ru/page.php?575=",
+    "https://www.radiogrom.com/moscowfm.html",
+    "https://www.morze.ru/radio_tv/radio_tv1.htm"
+   ]
+  },
+  {
+   "freq_mhz": 101.5,
+   "name": "Радио России",
+   "format": "общественно-информационное",
+   "note": "с 09.07.2024 (переехало с УКВ 66,44)",
+   "verify": false,
+   "source": [
+    "https://noginsk-service.ru/page.php?575=",
+    "https://www.radiogrom.com/moscowfm.html",
+    "https://www.morze.ru/radio_tv/radio_tv1.htm"
+   ]
+  },
+  {
+   "freq_mhz": 101.8,
+   "name": "Наше Радио",
+   "format": "русский рок",
+   "note": "с 09.07.2024 на 101,8 (ранее 101,7)",
+   "verify": false,
+   "source": [
+    "https://noginsk-service.ru/page.php?575=",
+    "https://www.radiogrom.com/moscowfm.html",
+    "https://www.morze.ru/radio_tv/radio_tv1.htm"
+   ]
+  },
+  {
+   "freq_mhz": 102.1,
+   "name": "Радио Monte Carlo",
+   "format": "лаунж, поп",
+   "note": "Русская медиагруппа",
+   "verify": false,
+   "source": [
+    "https://noginsk-service.ru/page.php?575=",
+    "https://www.radiogrom.com/moscowfm.html",
+    "https://www.morze.ru/radio_tv/radio_tv1.htm"
+   ]
+  },
+  {
+   "freq_mhz": 102.5,
+   "name": "Comedy Radio",
+   "format": "юмор",
+   "note": "ГПМ Радио",
+   "verify": false,
+   "source": [
+    "https://noginsk-service.ru/page.php?575=",
+    "https://www.radiogrom.com/moscowfm.html",
+    "https://www.morze.ru/radio_tv/radio_tv1.htm"
+   ]
+  },
+  {
+   "freq_mhz": 103.0,
+   "name": "Радио Шансон",
+   "format": "шансон",
+   "note": "Krutoy Media",
+   "verify": false,
+   "source": [
+    "https://noginsk-service.ru/page.php?575=",
+    "https://www.radiogrom.com/moscowfm.html",
+    "https://www.morze.ru/radio_tv/radio_tv1.htm"
+   ]
+  },
+  {
+   "freq_mhz": 103.4,
+   "name": "Радио Маяк",
+   "format": "разговорное, познавательное",
+   "note": "ВГТРК",
+   "verify": false,
+   "source": [
+    "https://noginsk-service.ru/page.php?575=",
+    "https://www.radiogrom.com/moscowfm.html",
+    "https://www.morze.ru/radio_tv/radio_tv1.htm"
+   ]
+  },
+  {
+   "freq_mhz": 103.7,
+   "name": "Радио Maximum",
+   "format": "поп-рок",
+   "note": "Русская медиагруппа",
+   "verify": false,
+   "source": [
+    "https://noginsk-service.ru/page.php?575=",
+    "https://www.radiogrom.com/moscowfm.html",
+    "https://www.morze.ru/radio_tv/radio_tv1.htm"
+   ]
+  },
+  {
+   "freq_mhz": 104.2,
+   "name": "Радио Energy (NRJ)",
+   "format": "танцевальная, поп",
+   "note": "Балашиха, 15 кВт",
+   "verify": false,
+   "source": [
+    "https://noginsk-service.ru/page.php?575=",
+    "https://www.radiogrom.com/moscowfm.html",
+    "https://www.morze.ru/radio_tv/radio_tv1.htm"
+   ]
+  },
+  {
+   "freq_mhz": 104.7,
+   "name": "Радио 7 на семи холмах",
+   "format": "поп, ретро",
+   "note": "Европейская медиагруппа",
+   "verify": false,
+   "source": [
+    "https://noginsk-service.ru/page.php?575=",
+    "https://www.radiogrom.com/moscowfm.html",
+    "https://www.morze.ru/radio_tv/radio_tv1.htm"
+   ]
+  },
+  {
+   "freq_mhz": 105.0,
+   "name": "Радио Гордость (с блоками «Радио 1»)",
+   "format": "музыка, разговорное",
+   "note": "с 01.02.2024, ранее Радио Книга; формат не уточнён",
+   "verify": true,
+   "source": [
+    "https://noginsk-service.ru/page.php?575=",
+    "https://www.radiogrom.com/moscowfm.html",
+    "https://www.morze.ru/radio_tv/radio_tv1.htm"
+   ]
+  },
+  {
+   "freq_mhz": 105.3,
+   "name": "Радио Москвы",
+   "format": "городское разговорное",
+   "note": "с 01.02.2025, Capital FM ушёл в интернет (noginsk-service ещё показывает Capital FM)",
+   "verify": false,
+   "source": [
+    "https://noginsk-service.ru/page.php?575=",
+    "https://www.radiogrom.com/moscowfm.html",
+    "https://www.morze.ru/radio_tv/radio_tv1.htm",
+    "https://adindex.ru/news/releases/2025/01/28/330335.phtml"
+   ]
+  },
+  {
+   "freq_mhz": 105.7,
+   "name": "Русское Радио",
+   "format": "русская поп-музыка",
+   "note": "Останкино, 10 кВт",
+   "verify": false,
+   "source": [
+    "https://noginsk-service.ru/page.php?575=",
+    "https://www.radiogrom.com/moscowfm.html",
+    "https://www.morze.ru/radio_tv/radio_tv1.htm"
+   ]
+  },
+  {
+   "freq_mhz": 106.2,
+   "name": "Европа Плюс",
+   "format": "поп-хиты",
+   "note": "Останкино, 10 кВт",
+   "verify": false,
+   "source": [
+    "https://noginsk-service.ru/page.php?575=",
+    "https://www.radiogrom.com/moscowfm.html",
+    "https://www.morze.ru/radio_tv/radio_tv1.htm"
+   ]
+  },
+  {
+   "freq_mhz": 106.6,
+   "name": "Love Radio",
+   "format": "поп-музыка",
+   "note": "Krutoy Media",
+   "verify": false,
+   "source": [
+    "https://noginsk-service.ru/page.php?575=",
+    "https://www.radiogrom.com/moscowfm.html",
+    "https://www.morze.ru/radio_tv/radio_tv1.htm"
+   ]
+  },
+  {
+   "freq_mhz": 107.0,
+   "name": "Маруся FM",
+   "format": "русская поп-музыка",
+   "note": "с 12.11.2025, ранее Kiss FM (radiogrom и morze ещё показывают Kiss FM)",
+   "verify": false,
+   "source": [
+    "https://noginsk-service.ru/page.php?575=",
+    "https://www.radiogrom.com/moscowfm.html",
+    "https://www.morze.ru/radio_tv/radio_tv1.htm",
+    "https://www.radiogrom.com/online/moskva_fm/marusya-fm.html"
+   ]
+  },
+  {
+   "freq_mhz": 107.4,
+   "name": "Хит FM",
+   "format": "поп-хиты",
+   "note": "Русская медиагруппа",
+   "verify": false,
+   "source": [
+    "https://noginsk-service.ru/page.php?575=",
+    "https://www.radiogrom.com/moscowfm.html",
+    "https://www.morze.ru/radio_tv/radio_tv1.htm"
+   ]
+  },
+  {
+   "freq_mhz": 107.8,
+   "name": "Милицейская волна",
+   "format": "музыка и разговорное",
+   "note": "Балашиха",
+   "verify": false,
+   "source": [
+    "https://noginsk-service.ru/page.php?575=",
+    "https://www.radiogrom.com/moscowfm.html",
+    "https://www.morze.ru/radio_tv/radio_tv1.htm"
+   ]
+  }
+ ],
+ "fm_region": [
+  {
+   "city": "Волоколамск",
+   "freq_mhz": 106.8,
+   "name": "Радио 1 (Первое Подмосковное)",
+   "note": "областное радио; в Москве - блоки на 105,0 и 66,44",
+   "source": "https://noginsk-service.ru/page.php?575=",
+   "verify": false
+  },
+  {
+   "city": "Зарайск",
+   "freq_mhz": 106.5,
+   "name": "Радио 1 (Первое Подмосковное)",
+   "note": "областное радио; в Москве - блоки на 105,0 и 66,44",
+   "source": "https://noginsk-service.ru/page.php?575=",
+   "verify": false
+  },
+  {
+   "city": "Орехово-Зуево",
+   "freq_mhz": 89.3,
+   "name": "Радио 1 (Первое Подмосковное)",
+   "note": "областное радио; в Москве - блоки на 105,0 и 66,44",
+   "source": "https://noginsk-service.ru/page.php?575=",
+   "verify": false
+  },
+  {
+   "city": "Серпухов",
+   "freq_mhz": 98.2,
+   "name": "Радио 1 (Первое Подмосковное)",
+   "note": "областное радио; в Москве - блоки на 105,0 и 66,44",
+   "source": "https://noginsk-service.ru/page.php?575=",
+   "verify": false
+  },
+  {
+   "city": "Талдом",
+   "freq_mhz": 106.8,
+   "name": "Радио 1 (Первое Подмосковное)",
+   "note": "областное радио; в Москве - блоки на 105,0 и 66,44",
+   "source": "https://noginsk-service.ru/page.php?575=",
+   "verify": false
+  },
+  {
+   "city": "Шатура",
+   "freq_mhz": 105.1,
+   "name": "Радио 1 (Первое Подмосковное)",
+   "note": "областное радио; в Москве - блоки на 105,0 и 66,44",
+   "source": "https://noginsk-service.ru/page.php?575=",
+   "verify": false
+  },
+  {
+   "city": "Кашира",
+   "freq_mhz": 89.8,
+   "name": "Радио 1 (Первое Подмосковное)",
+   "note": "областное радио; в Москве - блоки на 105,0 и 66,44",
+   "source": "https://noginsk-service.ru/page.php?575=",
+   "verify": false
+  },
+  {
+   "city": "Наро-Фоминск",
+   "freq_mhz": 89.7,
+   "name": "Радио 1 (Первое Подмосковное)",
+   "note": "областное радио; в Москве - блоки на 105,0 и 66,44",
+   "source": "https://noginsk-service.ru/page.php?575=",
+   "verify": false
+  },
+  {
+   "city": "Подольск",
+   "freq_mhz": 91.7,
+   "name": "Радио 1 (Первое Подмосковное)",
+   "note": "областное радио; в Москве - блоки на 105,0 и 66,44",
+   "source": "https://noginsk-service.ru/page.php?575=",
+   "verify": false
+  },
+  {
+   "city": "Дубна",
+   "freq_mhz": 95.8,
+   "name": "Радио 1 (Первое Подмосковное)",
+   "note": "областное радио; в Москве - блоки на 105,0 и 66,44",
+   "source": "https://noginsk-service.ru/page.php?575=",
+   "verify": false
+  },
+  {
+   "city": "Коломна",
+   "freq_mhz": 94.2,
+   "name": "Радио 1 (Первое Подмосковное)",
+   "note": "областное радио; в Москве - блоки на 105,0 и 66,44",
+   "source": "https://noginsk-service.ru/page.php?575=",
+   "verify": false
+  },
+  {
+   "city": "Руза",
+   "freq_mhz": 107.6,
+   "name": "Радио 1 (Первое Подмосковное)",
+   "note": "областное радио; в Москве - блоки на 105,0 и 66,44",
+   "source": "https://noginsk-service.ru/page.php?575=",
+   "verify": false
+  },
+  {
+   "city": "Волоколамск",
+   "freq_mhz": 91.0,
+   "name": "Авторадио",
+   "note": "",
+   "source": "https://noginsk-service.ru/page.php?575=",
+   "verify": false
+  },
+  {
+   "city": "Дубна",
+   "freq_mhz": 92.6,
+   "name": "Авторадио",
+   "note": "",
+   "source": "https://noginsk-service.ru/page.php?575=",
+   "verify": false
+  },
+  {
+   "city": "Егорьевск",
+   "freq_mhz": 88.5,
+   "name": "Авторадио",
+   "note": "",
+   "source": "https://noginsk-service.ru/page.php?575=",
+   "verify": false
+  },
+  {
+   "city": "Зарайск",
+   "freq_mhz": 98.6,
+   "name": "Авторадио",
+   "note": "",
+   "source": "https://noginsk-service.ru/page.php?575=",
+   "verify": false
+  },
+  {
+   "city": "Клин",
+   "freq_mhz": 107.9,
+   "name": "Авторадио",
+   "note": "",
+   "source": "https://noginsk-service.ru/page.php?575=",
+   "verify": false
+  },
+  {
+   "city": "Коломна",
+   "freq_mhz": 106.0,
+   "name": "Авторадио",
+   "note": "",
+   "source": "https://noginsk-service.ru/page.php?575=",
+   "verify": false
+  },
+  {
+   "city": "Луховицы",
+   "freq_mhz": 100.4,
+   "name": "Авторадио",
+   "note": "",
+   "source": "https://noginsk-service.ru/page.php?575=",
+   "verify": false
+  },
+  {
+   "city": "Можайск",
+   "freq_mhz": 98.6,
+   "name": "Авторадио",
+   "note": "",
+   "source": "https://noginsk-service.ru/page.php?575=",
+   "verify": false
+  },
+  {
+   "city": "Орехово-Зуево",
+   "freq_mhz": 92.6,
+   "name": "Авторадио",
+   "note": "",
+   "source": "https://noginsk-service.ru/page.php?575=",
+   "verify": false
+  },
+  {
+   "city": "Серебряные Пруды",
+   "freq_mhz": 102.2,
+   "name": "Авторадио",
+   "note": "",
+   "source": "https://noginsk-service.ru/page.php?575=",
+   "verify": false
+  },
+  {
+   "city": "Серпухов",
+   "freq_mhz": 105.5,
+   "name": "Авторадио",
+   "note": "",
+   "source": "https://noginsk-service.ru/page.php?575=",
+   "verify": false
+  },
+  {
+   "city": "Ступино",
+   "freq_mhz": 107.6,
+   "name": "Авторадио",
+   "note": "",
+   "source": "https://noginsk-service.ru/page.php?575=",
+   "verify": false
+  },
+  {
+   "city": "Уваровка",
+   "freq_mhz": 105.5,
+   "name": "Авторадио",
+   "note": "",
+   "source": "https://noginsk-service.ru/page.php?575=",
+   "verify": false
+  },
+  {
+   "city": "Шатура",
+   "freq_mhz": 91.4,
+   "name": "Авторадио",
+   "note": "",
+   "source": "https://noginsk-service.ru/page.php?575=",
+   "verify": false
+  },
+  {
+   "city": "Можайск",
+   "freq_mhz": 102.8,
+   "name": "Маруся FM",
+   "note": "",
+   "source": "https://noginsk-service.ru/page.php?575=",
+   "verify": false
+  },
+  {
+   "city": "Орехово-Зуево",
+   "freq_mhz": 93.8,
+   "name": "Маруся FM",
+   "note": "",
+   "source": "https://noginsk-service.ru/page.php?575=",
+   "verify": false
+  },
+  {
+   "city": "Шатура",
+   "freq_mhz": 102.2,
+   "name": "Маруся FM",
+   "note": "",
+   "source": "https://noginsk-service.ru/page.php?575=",
+   "verify": false
+  },
+  {
+   "city": "Кашира",
+   "freq_mhz": 103.2,
+   "name": "Маруся FM",
+   "note": "",
+   "source": "https://noginsk-service.ru/page.php?575=",
+   "verify": false
+  },
+  {
+   "city": "Дубна",
+   "freq_mhz": 93.9,
+   "name": "Маруся FM",
+   "note": "",
+   "source": "https://noginsk-service.ru/page.php?575=",
+   "verify": false
+  },
+  {
+   "city": "Коломна",
+   "freq_mhz": 98.2,
+   "name": "Маруся FM",
+   "note": "",
+   "source": "https://noginsk-service.ru/page.php?575=",
+   "verify": false
+  },
+  {
+   "city": "Коломна",
+   "freq_mhz": 88.1,
+   "name": "Love Radio",
+   "note": "данные агрегатора",
+   "source": "https://top-radio.ru/kolomna",
+   "verify": false
+  },
+  {
+   "city": "Коломна",
+   "freq_mhz": 90.6,
+   "name": "Радио 7",
+   "note": "данные агрегатора",
+   "source": "https://top-radio.ru/kolomna",
+   "verify": false
+  },
+  {
+   "city": "Коломна",
+   "freq_mhz": 92.6,
+   "name": "Радио Дача",
+   "note": "данные агрегатора",
+   "source": "https://top-radio.ru/kolomna",
+   "verify": false
+  },
+  {
+   "city": "Коломна",
+   "freq_mhz": 93.0,
+   "name": "Дорожное радио",
+   "note": "данные агрегатора",
+   "source": "https://top-radio.ru/kolomna",
+   "verify": false
+  },
+  {
+   "city": "Коломна",
+   "freq_mhz": 93.8,
+   "name": "Наше Радио",
+   "note": "данные агрегатора",
+   "source": "https://top-radio.ru/kolomna",
+   "verify": false
+  },
+  {
+   "city": "Коломна",
+   "freq_mhz": 95.4,
+   "name": "Новое Радио",
+   "note": "данные агрегатора",
+   "source": "https://top-radio.ru/kolomna",
+   "verify": false
+  },
+  {
+   "city": "Коломна",
+   "freq_mhz": 97.0,
+   "name": "Comedy Radio",
+   "note": "данные агрегатора",
+   "source": "https://top-radio.ru/kolomna",
+   "verify": false
+  },
+  {
+   "city": "Коломна",
+   "freq_mhz": 97.4,
+   "name": "Русское Радио",
+   "note": "данные агрегатора",
+   "source": "https://top-radio.ru/kolomna",
+   "verify": false
+  },
+  {
+   "city": "Коломна",
+   "freq_mhz": 97.8,
+   "name": "Радио Energy",
+   "note": "данные агрегатора",
+   "source": "https://top-radio.ru/kolomna",
+   "verify": false
+  },
+  {
+   "city": "Коломна",
+   "freq_mhz": 99.0,
+   "name": "Ретро FM",
+   "note": "данные агрегатора",
+   "source": "https://top-radio.ru/kolomna",
+   "verify": false
+  },
+  {
+   "city": "Коломна",
+   "freq_mhz": 99.4,
+   "name": "Европа Плюс",
+   "note": "данные агрегатора",
+   "source": "https://top-radio.ru/kolomna",
+   "verify": false
+  },
+  {
+   "city": "Коломна",
+   "freq_mhz": 100.4,
+   "name": "Relax FM",
+   "note": "данные агрегатора",
+   "source": "https://top-radio.ru/kolomna",
+   "verify": false
+  },
+  {
+   "city": "Коломна",
+   "freq_mhz": 101.8,
+   "name": "Rock FM",
+   "note": "данные агрегатора",
+   "source": "https://top-radio.ru/kolomna",
+   "verify": false
+  },
+  {
+   "city": "Коломна",
+   "freq_mhz": 104.8,
+   "name": "Юмор FM",
+   "note": "данные агрегатора",
+   "source": "https://top-radio.ru/kolomna",
+   "verify": false
+  },
+  {
+   "city": "Коломна",
+   "freq_mhz": 94.2,
+   "name": "Вести FM",
+   "note": "top-radio.ru; по noginsk-service на 94,2 в Коломне Радио 1 - конфликт",
+   "source": "https://top-radio.ru/kolomna",
+   "verify": true
+  },
+  {
+   "city": "Коломна",
+   "freq_mhz": 98.2,
+   "name": "Хит FM",
+   "note": "top-radio.ru; на 98,2 там же указана Маруся FM - конфликт",
+   "source": "https://top-radio.ru/kolomna",
+   "verify": true
+  },
+  {
+   "city": "Дубна",
+   "freq_mhz": 88.5,
+   "name": "Радио Шансон",
+   "note": "данные агрегатора",
+   "source": "https://top-radio.ru/dubna",
+   "verify": false
+  },
+  {
+   "city": "Дубна",
+   "freq_mhz": 90.5,
+   "name": "Радио Дача",
+   "note": "данные агрегатора",
+   "source": "https://top-radio.ru/dubna",
+   "verify": false
+  },
+  {
+   "city": "Дубна",
+   "freq_mhz": 93.0,
+   "name": "Ретро FM",
+   "note": "данные агрегатора",
+   "source": "https://top-radio.ru/dubna",
+   "verify": false
+  },
+  {
+   "city": "Дубна",
+   "freq_mhz": 95.0,
+   "name": "Европа Плюс",
+   "note": "данные агрегатора",
+   "source": "https://top-radio.ru/dubna",
+   "verify": false
+  },
+  {
+   "city": "Дубна",
+   "freq_mhz": 95.4,
+   "name": "Радио 7",
+   "note": "данные агрегатора",
+   "source": "https://top-radio.ru/dubna",
+   "verify": false
+  },
+  {
+   "city": "Дубна",
+   "freq_mhz": 98.6,
+   "name": "Русское Радио",
+   "note": "данные агрегатора",
+   "source": "https://top-radio.ru/dubna",
+   "verify": false
+  },
+  {
+   "city": "Дубна",
+   "freq_mhz": 101.0,
+   "name": "DFM",
+   "note": "данные агрегатора",
+   "source": "https://top-radio.ru/dubna",
+   "verify": false
+  },
+  {
+   "city": "Дубна",
+   "freq_mhz": 106.0,
+   "name": "Наше Радио",
+   "note": "данные агрегатора",
+   "source": "https://top-radio.ru/dubna",
+   "verify": false
+  },
+  {
+   "city": "Дубна",
+   "freq_mhz": 106.4,
+   "name": "Love Radio",
+   "note": "данные агрегатора",
+   "source": "https://top-radio.ru/dubna",
+   "verify": false
+  },
+  {
+   "city": "Дубна",
+   "freq_mhz": 95.8,
+   "name": "Вести FM",
+   "note": "top-radio.ru; по noginsk-service на 95,8 в Дубне Радио 1 - конфликт",
+   "source": "https://top-radio.ru/dubna",
+   "verify": true
+  }
+ ],
+ "mw_lw": [
+  {
+   "freq_khz": null,
+   "name": "Российские ДВ-станции",
+   "country": "Россия",
+   "when": "-",
+   "note": "Все российские ДВ-передатчики закрыты: Маяк 198 кГц - 14.03.2013, Радио России 261 кГц (Талдом) - 2014. Вещания на ДВ в Москве нет",
+   "source": "https://ru.wikipedia.org/wiki/Длинные_волны",
+   "verify": false
+  },
+  {
+   "freq_khz": null,
+   "name": "Московские СВ-станции",
+   "country": "Россия",
+   "when": "-",
+   "note": "В списке ru.wiki «по состоянию на 2026» нет ни одной московской СВ-станции. Радонеж на 612/846 кГц в Москве прекратил вещание (612 - 01.05.2019). Остальные московские СВ-частоты (549, 693, 810, 873, 1044, 1134, 1260, 1503 и др.) отключены",
+   "source": "https://ru.wikipedia.org/wiki/Средние_волны ; https://ru.wikipedia.org/wiki/Радонеж_(радиостанция) ; https://www.morze.ru/radio_tv/radio_tv4.htm",
+   "verify": false
+  },
+  {
+   "freq_khz": 738,
+   "name": "WRN «Всемирная радиосеть» (Куркино)",
+   "country": "Россия",
+   "when": "вечер",
+   "note": "morze.ru (данные 2019) указывает 738 кГц 5 кВт; в списке ru.wiki 2026 отсутствует, noginsk-service (2026) даёт частоту без названия. Скорее всего не работает",
+   "source": "https://www.morze.ru/radio_tv/radio_tv4.htm",
+   "verify": true
+  },
+  {
+   "freq_khz": 999,
+   "name": "Радио России (через Приднестровье, Григориополь, 1000 кВт)",
+   "country": "Молдова/ПМР",
+   "when": "день",
+   "note": "ежедневно 11:00-15:00 UTC (14:00-18:00 MSK); днём СВ на 1100 км ловится слабо",
+   "source": "https://ru.wikipedia.org/wiki/Средние_волны ; http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": true,
+   "time_utc": "11:00-15:00"
+  },
+  {
+   "freq_khz": 1413,
+   "name": "Вести FM (через Приднестровье, 500 кВт)",
+   "country": "Молдова/ПМР",
+   "when": "вечер, ночь",
+   "note": "18:00-07:00 UTC = 21:00-10:00 MSK, один из самых сильных дальних сигналов на русском",
+   "source": "https://ru.wikipedia.org/wiki/Средние_волны ; http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false,
+   "time_utc": "18:00-07:00"
+  },
+  {
+   "freq_khz": 621,
+   "name": "Радио 1 плюс (Приднестровье)",
+   "country": "Молдова/ПМР",
+   "when": "день",
+   "note": "Пн-Пт 13:00-16:18 UTC",
+   "source": "https://ru.wikipedia.org/wiki/Средние_волны",
+   "verify": true,
+   "time_utc": "13:00-16:18"
+  },
+  {
+   "freq_khz": 666,
+   "name": "Радио Сигнал (Ситкунай)",
+   "country": "Литва",
+   "when": "вечер",
+   "note": "ежедневно 16:00-22:00 UTC = 19:00-01:00 MSK, русский язык, 25 кВт",
+   "source": "https://ru.wikipedia.org/wiki/Средние_волны",
+   "verify": true,
+   "time_utc": "16:00-22:00"
+  },
+  {
+   "freq_khz": 1386,
+   "name": "Radio Baltic Waves International (Вешинтос, 200 кВт)",
+   "country": "Литва",
+   "when": "вечер, ночь",
+   "note": "ретранслирует несколько вещателей: 14:00-03:30 и 03:30-08:30 UTC; внутри: Польское радио 16:00-16:27 UTC, «Радио Страна Регионов» 17:52-18:20, NHK, Radio Ukraine International 22:30-03:30 UTC",
+   "source": "https://ru.wikipedia.org/wiki/Средние_волны ; http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": true,
+   "time_utc": "14:00-08:30"
+  },
+  {
+   "freq_khz": 1386,
+   "name": "Радио Свобода (через Литву)",
+   "country": "Литва/США",
+   "when": "утро",
+   "note": "ежедневно 05:30-08:30 UTC = 08:30-11:30 MSK; приостанавливалось в июне 2025, возобновлено 01.08.2025; в EiBi A26 не указано",
+   "source": "https://www.svoboda.org/a/radio-svoboda-vozobnovlyaet-efirnoe-veschanie-na-srednih-volnah/33489174.html ; https://ru.wikipedia.org/wiki/Средние_волны",
+   "verify": true,
+   "time_utc": "05:30-08:30"
+  },
+  {
+   "freq_khz": 1386,
+   "name": "BBC World Service (через Литву)",
+   "country": "Литва/Великобритания",
+   "when": "вечер",
+   "note": "ru.wiki: Пн-Пт 18:30-19:00 и 20:00-20:30 UTC; по EiBi русские выпуски действовали только до 30.06.2026",
+   "source": "https://ru.wikipedia.org/wiki/Средние_волны ; http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": true,
+   "time_utc": "18:30-19:00, 20:00-20:30"
+  },
+  {
+   "freq_khz": 1035,
+   "name": "Семейное радио Эли (Паюкурму, 200 кВт)",
+   "country": "Эстония",
+   "when": "вечер, ночь",
+   "note": "круглосуточно, русский язык; там же «Голос Надежды» Пн-Пт 17:00-18:00 UTC и Трансмировое радио Пн-Пт 19:00-21:20 UTC",
+   "source": "https://ru.wikipedia.org/wiki/Средние_волны",
+   "verify": false,
+   "time_utc": "00:00-24:00"
+  },
+  {
+   "freq_khz": 1557,
+   "name": "Радио Лента (Ситкунай)",
+   "country": "Литва",
+   "when": "вечер",
+   "note": "ежедневно 15:55-00:05 UTC",
+   "source": "https://ru.wikipedia.org/wiki/Средние_волны",
+   "verify": true,
+   "time_utc": "15:55-00:05"
+  },
+  {
+   "freq_khz": 1278,
+   "name": "Украинское радио (Курисово, Одесская обл.)",
+   "country": "Украина",
+   "when": "вечер, ночь",
+   "note": "круглосуточно, украинский язык",
+   "source": "https://ru.wikipedia.org/wiki/Средние_волны",
+   "verify": true,
+   "time_utc": "00:00-24:00"
+  },
+  {
+   "freq_khz": 855,
+   "name": "Radio România Actualități (Тынкебешть, 200 кВт)",
+   "country": "Румыния",
+   "when": "вечер",
+   "note": "03:55-20:00 UTC, румынский; такие же программы на 1053 (Radio Iași), 1152 и 1179 кГц",
+   "source": "https://ru.wikipedia.org/wiki/Средние_волны",
+   "verify": true,
+   "time_utc": "03:55-20:00"
+  },
+  {
+   "freq_khz": 1521,
+   "name": "Китайское международное радио, русская служба (Хутуби, 600 кВт)",
+   "country": "Китай",
+   "when": "вечер",
+   "note": "по ru.wiki 11:00-20:00 UTC; по EiBi русские часы до 19:00-20:00 UTC; хорошая DX-цель",
+   "source": "https://ru.wikipedia.org/wiki/Средние_волны ; http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": true,
+   "time_utc": "11:00-20:00"
+  },
+  {
+   "freq_khz": 1323,
+   "name": "Китайское международное радио (Шуанъяшань / Хутуби)",
+   "country": "Китай",
+   "when": "вечер",
+   "note": "10:00-16:00 UTC, русский и другие языки; направлено на Дальний Восток",
+   "source": "https://ru.wikipedia.org/wiki/Средние_волны ; http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": true,
+   "time_utc": "10:00-16:00"
+  },
+  {
+   "freq_khz": 963,
+   "name": "Китайское международное радио (Хуадянь, 600 кВт)",
+   "country": "Китай",
+   "when": "вечер",
+   "note": "10:00-16:00 UTC, русский на Дальний Восток; дальняя DX-цель",
+   "source": "https://ru.wikipedia.org/wiki/Средние_волны",
+   "verify": true,
+   "time_utc": "10:00-16:00"
+  },
+  {
+   "freq_khz": 612,
+   "name": "Трансмировое радио (Красная Речка, 200 кВт)",
+   "country": "Кыргызстан",
+   "when": "вечер",
+   "note": "Пн-Сб 15:45-16:30, Вс 15:45-16:00 UTC; DX-цель",
+   "source": "https://ru.wikipedia.org/wiki/Средние_волны",
+   "verify": true,
+   "time_utc": "15:45-16:30"
+  },
+  {
+   "freq_khz": 1485,
+   "name": "«Зелёный глаз» (дер. Дорковская, Вологодская обл.)",
+   "country": "Россия",
+   "when": "вечер, ночь",
+   "note": "18:00-01:00 UTC, мощность около 40-50 Вт; DX-цель для терпеливых",
+   "source": "https://ru.wikipedia.org/wiki/Средние_волны",
+   "verify": true,
+   "time_utc": "18:00-01:00"
+  },
+  {
+   "freq_khz": 1602,
+   "name": "Scandinavian Weekend Radio",
+   "country": "Финляндия",
+   "when": "ночь",
+   "note": "только в первые выходные месяца (с вечера пятницы до вечера субботы), финский",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": true
+  },
+  {
+   "freq_khz": 1395,
+   "name": "BBC на персидском (через Армению)",
+   "country": "Армения/Великобритания",
+   "when": "вечер",
+   "note": "17:30-18:00 и 19:30-20:00 UTC",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": true,
+   "time_utc": "17:30-18:00, 19:30-20:00"
+  },
+  {
+   "freq_khz": 702,
+   "name": "IRIB Голос Ирана (Киш)",
+   "country": "Иран",
+   "when": "вечер, ночь",
+   "note": "азербайджанский, туркменский и др.; DX-цель",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": true
+  },
+  {
+   "freq_khz": 225,
+   "name": "Polskie Radio Program 1",
+   "country": "Польша",
+   "when": "вечер, ночь",
+   "note": "ДВ; числится действующей в таблице ru.wiki",
+   "source": "https://ru.wikipedia.org/wiki/Длинные_волны",
+   "verify": true
+  },
+  {
+   "freq_khz": 153,
+   "name": "Radio Antena Satelor",
+   "country": "Румыния",
+   "when": "вечер, ночь",
+   "note": "ДВ; числится действующей в таблице ru.wiki",
+   "source": "https://ru.wikipedia.org/wiki/Длинные_волны",
+   "verify": true
+  },
+  {
+   "freq_khz": 252,
+   "name": "Chaîne 3",
+   "country": "Алжир",
+   "when": "ночь",
+   "note": "ДВ; дальняя DX-цель",
+   "source": "https://ru.wikipedia.org/wiki/Длинные_волны",
+   "verify": true
+  },
+  {
+   "freq_khz": 171,
+   "name": "Medi 1",
+   "country": "Марокко",
+   "when": "ночь",
+   "note": "ДВ; в таблице ru.wiki без пометки о закрытии, текущий статус не подтверждён",
+   "source": "https://ru.wikipedia.org/wiki/Длинные_волны",
+   "verify": true
+  },
+  {
+   "freq_khz": 198,
+   "name": "BBC Radio 4",
+   "country": "Великобритания",
+   "when": "-",
+   "note": "ДВ-вещание прекращено 27.06.2026, ловить нечего",
+   "source": "https://ru.wikipedia.org/wiki/Длинные_волны",
+   "verify": false
+  }
+ ],
+ "sw_russian": [
+  {
+   "freq_khz": 9820,
+   "station": "Би-би-си (через WRN)",
+   "country": "Великобритания",
+   "time_utc": "17:00-18:00",
+   "time_msk": "20:00-21:00",
+   "days": "Сб",
+   "target": "Восточная Европа",
+   "language": "русский",
+   "note": "ретранслятор: UAE",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 9820,
+   "station": "Би-би-си (через WRN)",
+   "country": "Великобритания",
+   "time_utc": "17:00-17:30",
+   "time_msk": "20:00-20:30",
+   "days": "Вс",
+   "target": "Восточная Европа",
+   "language": "русский",
+   "note": "ретранслятор: UAE",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 9380,
+   "station": "Bible Voice (передатчик в Узбекистане)",
+   "country": "Канада",
+   "time_utc": "18:00-18:30",
+   "time_msk": "21:00-21:30",
+   "days": "Вс",
+   "target": "Восточная Европа",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026); short-wave.info даёт 6185 кГц, Пн 18:00-18:30 UTC; ретранслятор: UZB",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": true
+  },
+  {
+   "freq_khz": 5965,
+   "station": "Китайское международное радио (CRI)",
+   "country": "Китай",
+   "time_utc": "15:00-16:00",
+   "time_msk": "18:00-19:00",
+   "days": "ежедневно",
+   "target": "Сибирь",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026); направлено на Сибирь, в Москве слышно слабо или никак",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": true
+  },
+  {
+   "freq_khz": 5990,
+   "station": "Китайское международное радио (CRI)",
+   "country": "Китай",
+   "time_utc": "01:00-02:00",
+   "time_msk": "04:00-05:00",
+   "days": "ежедневно",
+   "target": "Средняя Азия",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026)",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 5990,
+   "station": "Китайское международное радио (CRI)",
+   "country": "Китай",
+   "time_utc": "13:00-14:00",
+   "time_msk": "16:00-17:00",
+   "days": "ежедневно",
+   "target": "Сибирь",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026); направлено на Сибирь, в Москве слышно слабо или никак",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": true
+  },
+  {
+   "freq_khz": 5990,
+   "station": "Китайское международное радио (CRI)",
+   "country": "Китай",
+   "time_utc": "15:00-16:00",
+   "time_msk": "18:00-19:00",
+   "days": "ежедневно",
+   "target": "Сибирь",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026); направлено на Сибирь, в Москве слышно слабо или никак",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": true
+  },
+  {
+   "freq_khz": 5995,
+   "station": "Китайское международное радио (CRI)",
+   "country": "Китай",
+   "time_utc": "16:00-17:00",
+   "time_msk": "19:00-20:00",
+   "days": "ежедневно",
+   "target": "Средняя Азия",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026)",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 6050,
+   "station": "Китайское международное радио (CRI)",
+   "country": "Китай",
+   "time_utc": "13:00-14:00",
+   "time_msk": "16:00-17:00",
+   "days": "ежедневно",
+   "target": "Сибирь",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026); направлено на Сибирь, в Москве слышно слабо или никак",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": true
+  },
+  {
+   "freq_khz": 6085,
+   "station": "Китайское международное радио (CRI)",
+   "country": "Китай",
+   "time_utc": "15:00-16:00",
+   "time_msk": "18:00-19:00",
+   "days": "ежедневно",
+   "target": "Сибирь",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026); направлено на Сибирь, в Москве слышно слабо или никак",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": true
+  },
+  {
+   "freq_khz": 6100,
+   "station": "Китайское международное радио (CRI)",
+   "country": "Китай",
+   "time_utc": "12:00-13:00",
+   "time_msk": "15:00-16:00",
+   "days": "ежедневно",
+   "target": "Сибирь",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026); направлено на Сибирь, в Москве слышно слабо или никак",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": true
+  },
+  {
+   "freq_khz": 6100,
+   "station": "Китайское международное радио (CRI)",
+   "country": "Китай",
+   "time_utc": "15:00-16:00",
+   "time_msk": "18:00-19:00",
+   "days": "ежедневно",
+   "target": "Средняя Азия",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026)",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 6110,
+   "station": "Китайское международное радио (CRI)",
+   "country": "Китай",
+   "time_utc": "19:00-20:00",
+   "time_msk": "22:00-23:00",
+   "days": "ежедневно",
+   "target": "Средняя Азия",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026)",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 6155,
+   "station": "Китайское международное радио (CRI)",
+   "country": "Китай",
+   "time_utc": "14:00-15:00",
+   "time_msk": "17:00-18:00",
+   "days": "ежедневно",
+   "target": "Средняя Азия",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026)",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 6180,
+   "station": "Китайское международное радио (CRI)",
+   "country": "Китай",
+   "time_utc": "02:00-05:00",
+   "time_msk": "05:00-08:00",
+   "days": "ежедневно",
+   "target": "Средняя Азия",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026)",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 7210,
+   "station": "Китайское международное радио (CRI)",
+   "country": "Китай",
+   "time_utc": "18:00-19:00",
+   "time_msk": "21:00-22:00",
+   "days": "ежедневно",
+   "target": "Восточная Европа",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026)",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 7230,
+   "station": "Китайское международное радио (CRI)",
+   "country": "Китай",
+   "time_utc": "12:00-14:00",
+   "time_msk": "15:00-17:00",
+   "days": "ежедневно",
+   "target": "Средняя Азия",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026)",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 7245,
+   "station": "Китайское международное радио (CRI)",
+   "country": "Китай",
+   "time_utc": "19:00-21:00",
+   "time_msk": "22:00-00:00",
+   "days": "ежедневно",
+   "target": "Восточная Европа",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026)",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 7265,
+   "station": "Китайское международное радио (CRI)",
+   "country": "Китай",
+   "time_utc": "17:00-18:00",
+   "time_msk": "20:00-21:00",
+   "days": "ежедневно",
+   "target": "Восточная Европа",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026)",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 7390,
+   "station": "Китайское международное радио (CRI)",
+   "country": "Китай",
+   "time_utc": "10:00-11:00",
+   "time_msk": "13:00-14:00",
+   "days": "ежедневно",
+   "target": "Сибирь",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026); направлено на Сибирь, в Москве слышно слабо или никак",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": true
+  },
+  {
+   "freq_khz": 7430,
+   "station": "Китайское международное радио (CRI)",
+   "country": "Китай",
+   "time_utc": "00:00-01:00",
+   "time_msk": "03:00-04:00",
+   "days": "ежедневно",
+   "target": "Сибирь",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026); направлено на Сибирь, в Москве слышно слабо или никак",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": true
+  },
+  {
+   "freq_khz": 7430,
+   "station": "Китайское международное радио (CRI)",
+   "country": "Китай",
+   "time_utc": "23:00-00:00",
+   "time_msk": "02:00-03:00",
+   "days": "ежедневно",
+   "target": "Сибирь",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026); направлено на Сибирь, в Москве слышно слабо или никак",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": true
+  },
+  {
+   "freq_khz": 9445,
+   "station": "Китайское международное радио (CRI)",
+   "country": "Китай",
+   "time_utc": "00:00-01:00",
+   "time_msk": "03:00-04:00",
+   "days": "ежедневно",
+   "target": "Сибирь",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026); направлено на Сибирь, в Москве слышно слабо или никак",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": true
+  },
+  {
+   "freq_khz": 9445,
+   "station": "Китайское международное радио (CRI)",
+   "country": "Китай",
+   "time_utc": "23:00-00:00",
+   "time_msk": "02:00-03:00",
+   "days": "ежедневно",
+   "target": "Сибирь",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026); направлено на Сибирь, в Москве слышно слабо или никак",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": true
+  },
+  {
+   "freq_khz": 9470,
+   "station": "Китайское международное радио (CRI)",
+   "country": "Китай",
+   "time_utc": "17:00-18:00",
+   "time_msk": "20:00-21:00",
+   "days": "ежедневно",
+   "target": "Средняя Азия",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026)",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 9525,
+   "station": "Китайское международное радио (CRI)",
+   "country": "Китай",
+   "time_utc": "19:00-21:00",
+   "time_msk": "22:00-00:00",
+   "days": "ежедневно",
+   "target": "Восточная Европа",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026)",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 9560,
+   "station": "Китайское международное радио (CRI)",
+   "country": "Китай",
+   "time_utc": "18:00-19:00",
+   "time_msk": "21:00-22:00",
+   "days": "ежедневно",
+   "target": "Средняя Азия",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026)",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 9605,
+   "station": "Китайское международное радио (CRI)",
+   "country": "Китай",
+   "time_utc": "16:00-18:00",
+   "time_msk": "19:00-21:00",
+   "days": "ежедневно",
+   "target": "Восточная Европа",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026)",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 9675,
+   "station": "Китайское международное радио (CRI)",
+   "country": "Китай",
+   "time_utc": "13:00-15:00",
+   "time_msk": "16:00-18:00",
+   "days": "ежедневно",
+   "target": "Дальний Восток",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026); направлено на Дальний Восток, в Москве слышно слабо или никак",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": true
+  },
+  {
+   "freq_khz": 9725,
+   "station": "Китайское международное радио (CRI)",
+   "country": "Китай",
+   "time_utc": "10:00-12:00",
+   "time_msk": "13:00-15:00",
+   "days": "ежедневно",
+   "target": "Сибирь",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026); направлено на Сибирь, в Москве слышно слабо или никак",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": true
+  },
+  {
+   "freq_khz": 9730,
+   "station": "Китайское международное радио (CRI)",
+   "country": "Китай",
+   "time_utc": "16:00-17:00",
+   "time_msk": "19:00-20:00",
+   "days": "ежедневно",
+   "target": "Восточная Европа",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026)",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 9765,
+   "station": "Китайское международное радио (CRI)",
+   "country": "Китай",
+   "time_utc": "18:00-19:00",
+   "time_msk": "21:00-22:00",
+   "days": "ежедневно",
+   "target": "Восточная Европа",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026)",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 9880,
+   "station": "Китайское международное радио (CRI)",
+   "country": "Китай",
+   "time_utc": "15:00-16:00",
+   "time_msk": "18:00-19:00",
+   "days": "ежедневно",
+   "target": "Средняя Азия",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026)",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 11790,
+   "station": "Китайское международное радио (CRI)",
+   "country": "Китай",
+   "time_utc": "15:00-16:00",
+   "time_msk": "18:00-19:00",
+   "days": "ежедневно",
+   "target": "Европа",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026)",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 11875,
+   "station": "Китайское международное радио (CRI)",
+   "country": "Китай",
+   "time_utc": "16:00-18:00",
+   "time_msk": "19:00-21:00",
+   "days": "ежедневно",
+   "target": "Восточная Европа",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026)",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 11910,
+   "station": "Китайское международное радио (CRI)",
+   "country": "Китай",
+   "time_utc": "14:00-15:00",
+   "time_msk": "17:00-18:00",
+   "days": "ежедневно",
+   "target": "Средняя Азия",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026)",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 11935,
+   "station": "Китайское международное радио (CRI)",
+   "country": "Китай",
+   "time_utc": "10:00-13:00",
+   "time_msk": "13:00-16:00",
+   "days": "ежедневно",
+   "target": "Дальний Восток",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026); направлено на Дальний Восток, в Москве слышно слабо или никак",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": true
+  },
+  {
+   "freq_khz": 13575,
+   "station": "Китайское международное радио (CRI)",
+   "country": "Китай",
+   "time_utc": "12:00-13:00",
+   "time_msk": "15:00-16:00",
+   "days": "ежедневно",
+   "target": "Восточная Европа",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026)",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 13600,
+   "station": "Китайское международное радио (CRI)",
+   "country": "Китай",
+   "time_utc": "01:00-02:00",
+   "time_msk": "04:00-05:00",
+   "days": "ежедневно",
+   "target": "Средняя Азия",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026)",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 13600,
+   "station": "Китайское международное радио (CRI)",
+   "country": "Китай",
+   "time_utc": "12:00-14:00",
+   "time_msk": "15:00-17:00",
+   "days": "ежедневно",
+   "target": "Средняя Азия",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026)",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 13860,
+   "station": "Китайское международное радио (CRI)",
+   "country": "Китай",
+   "time_utc": "11:00-12:00",
+   "time_msk": "14:00-15:00",
+   "days": "ежедневно",
+   "target": "Сибирь",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026); направлено на Сибирь, в Москве слышно слабо или никак",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": true
+  },
+  {
+   "freq_khz": 13860,
+   "station": "Китайское международное радио (CRI)",
+   "country": "Китай",
+   "time_utc": "15:00-16:00",
+   "time_msk": "18:00-19:00",
+   "days": "ежедневно",
+   "target": "Восточная Европа",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026)",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 15335,
+   "station": "Китайское международное радио (CRI)",
+   "country": "Китай",
+   "time_utc": "08:00-10:00",
+   "time_msk": "11:00-13:00",
+   "days": "ежедневно",
+   "target": "Восточная Европа",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026)",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 15335,
+   "station": "Китайское международное радио (CRI)",
+   "country": "Китай",
+   "time_utc": "12:00-13:00",
+   "time_msk": "15:00-16:00",
+   "days": "ежедневно",
+   "target": "Восточная Европа",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026)",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 15435,
+   "station": "Китайское международное радио (CRI)",
+   "country": "Китай",
+   "time_utc": "03:00-04:00",
+   "time_msk": "06:00-07:00",
+   "days": "ежедневно",
+   "target": "Средняя Азия",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026)",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 15445,
+   "station": "Китайское международное радио (CRI)",
+   "country": "Китай",
+   "time_utc": "04:00-06:00",
+   "time_msk": "07:00-09:00",
+   "days": "ежедневно",
+   "target": "Восточная Европа",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026)",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 15665,
+   "station": "Китайское международное радио (CRI)",
+   "country": "Китай",
+   "time_utc": "04:00-06:00",
+   "time_msk": "07:00-09:00",
+   "days": "ежедневно",
+   "target": "Восточная Европа",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026)",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 15665,
+   "station": "Китайское международное радио (CRI)",
+   "country": "Китай",
+   "time_utc": "08:00-10:00",
+   "time_msk": "11:00-13:00",
+   "days": "ежедневно",
+   "target": "Восточная Европа",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026)",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 17640,
+   "station": "Китайское международное радио (CRI)",
+   "country": "Китай",
+   "time_utc": "02:00-05:00",
+   "time_msk": "05:00-08:00",
+   "days": "ежедневно",
+   "target": "Средняя Азия",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026)",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 3995,
+   "station": "HCJB «Голос Анд» (передатчик Weenermoor, Германия)",
+   "country": "Эквадор/Германия",
+   "time_utc": "03:00-04:00",
+   "time_msk": "06:00-07:00",
+   "days": "ежедневно",
+   "target": "Центральная Европа",
+   "language": "русский",
+   "note": "последнее подтверждённое наблюдение EiBi: 08.2024; ретранслятор: D-we; давно не подтверждалось",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": true
+  },
+  {
+   "freq_khz": 3995,
+   "station": "HCJB «Голос Анд» (передатчик Weenermoor, Германия)",
+   "country": "Эквадор/Германия",
+   "time_utc": "22:00-00:00",
+   "time_msk": "01:00-03:00",
+   "days": "ежедневно",
+   "target": "Центральная Европа",
+   "language": "русский",
+   "note": "последнее подтверждённое наблюдение EiBi: 03.2024; ретранслятор: D-we; давно не подтверждалось",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": true
+  },
+  {
+   "freq_khz": 5920,
+   "station": "HCJB «Голос Анд» (передатчик Weenermoor, Германия)",
+   "country": "Эквадор/Германия",
+   "time_utc": "03:00-04:00",
+   "time_msk": "06:00-07:00",
+   "days": "ежедневно",
+   "target": "Центральная Европа",
+   "language": "русский",
+   "note": "ретранслятор: D-we",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 5920,
+   "station": "HCJB «Голос Анд» (передатчик Weenermoor, Германия)",
+   "country": "Эквадор/Германия",
+   "time_utc": "22:00-23:00",
+   "time_msk": "01:00-02:00",
+   "days": "ежедневно",
+   "target": "Центральная Европа",
+   "language": "русский",
+   "note": "ретранслятор: D-we",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 11700,
+   "station": "HCJB «Голос Анд» (передатчик Weenermoor, Германия)",
+   "country": "Эквадор/Германия",
+   "time_utc": "15:30-16:00",
+   "time_msk": "18:30-19:00",
+   "days": "Сб",
+   "target": "Кавказ",
+   "language": "русский",
+   "note": "ретранслятор: D-n",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 9645,
+   "station": "KBS World Radio",
+   "country": "Южная Корея",
+   "time_utc": "13:00-14:00",
+   "time_msk": "16:00-17:00",
+   "days": "ежедневно",
+   "target": "Сибирь",
+   "language": "русский",
+   "note": "направлено на Сибирь, в Москве слышно слабо или никак",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": true
+  },
+  {
+   "freq_khz": 15265,
+   "station": "KBS World Radio",
+   "country": "Южная Корея",
+   "time_utc": "18:00-19:00",
+   "time_msk": "21:00-22:00",
+   "days": "ежедневно",
+   "target": "Восточная Европа",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026); short-wave.info даёт на это время 6040 кГц; ретранслятор: G-w",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": true
+  },
+  {
+   "freq_khz": 9545,
+   "station": "KNLS «Новая жизнь» (Аляска)",
+   "country": "США (Аляска)",
+   "time_utc": "09:00-10:00",
+   "time_msk": "12:00-13:00",
+   "days": "ежедневно",
+   "target": "Дальний Восток",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026); направлено на Дальний Восток, в Москве слышно слабо или никак",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": true
+  },
+  {
+   "freq_khz": 9580,
+   "station": "KNLS «Новая жизнь» (Аляска)",
+   "country": "США (Аляска)",
+   "time_utc": "11:00-12:00",
+   "time_msk": "14:00-15:00",
+   "days": "ежедневно",
+   "target": "Дальний Восток",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026); направлено на Дальний Восток, в Москве слышно слабо или никак",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": true
+  },
+  {
+   "freq_khz": 9580,
+   "station": "KNLS «Новая жизнь» (Аляска)",
+   "country": "США (Аляска)",
+   "time_utc": "16:00-18:00",
+   "time_msk": "19:00-21:00",
+   "days": "ежедневно",
+   "target": "Дальний Восток",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026); направлено на Дальний Восток, в Москве слышно слабо или никак",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": true
+  },
+  {
+   "freq_khz": 9800,
+   "station": "KNLS «Новая жизнь» (Аляска)",
+   "country": "США (Аляска)",
+   "time_utc": "15:00-16:00",
+   "time_msk": "18:00-19:00",
+   "days": "ежедневно",
+   "target": "Дальний Восток",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026); направлено на Дальний Восток, в Москве слышно слабо или никак",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": true
+  },
+  {
+   "freq_khz": 9845,
+   "station": "«Новая жизнь» (передатчик на Мадагаскаре)",
+   "country": "Мадагаскар",
+   "time_utc": "19:00-20:00",
+   "time_msk": "22:00-23:00",
+   "days": "ежедневно",
+   "target": "Восточная Европа",
+   "language": "русский",
+   "note": "последнее подтверждённое наблюдение EiBi: 07.2026",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 9885,
+   "station": "«Новая жизнь» (передатчик на Мадагаскаре)",
+   "country": "Мадагаскар",
+   "time_utc": "18:00-19:00",
+   "time_msk": "21:00-22:00",
+   "days": "ежедневно",
+   "target": "Восточная Европа",
+   "language": "русский",
+   "note": "последнее подтверждённое наблюдение EiBi: 06.2026",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 3940,
+   "station": "Music Wave Radio (Калининград)",
+   "country": "Россия",
+   "time_utc": "19:00-04:00",
+   "time_msk": "22:00-07:00",
+   "days": "нерегулярно",
+   "target": "Восточная Европа",
+   "language": "русский",
+   "note": "последнее подтверждённое наблюдение EiBi: 12.2025; любительская/нерегулярная станция",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": true
+  },
+  {
+   "freq_khz": 6165,
+   "station": "NHK World Radio Japan",
+   "country": "Япония",
+   "time_utc": "04:30-04:50",
+   "time_msk": "07:30-07:50",
+   "days": "ежедневно",
+   "target": "Восточная Европа",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026); ретранслятор: D-n",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 7350,
+   "station": "NHK World Radio Japan",
+   "country": "Япония",
+   "time_utc": "09:30-09:50",
+   "time_msk": "12:30-12:50",
+   "days": "ежедневно",
+   "target": "Дальний Восток",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026); направлено на Дальний Восток, в Москве слышно слабо или никак",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": true
+  },
+  {
+   "freq_khz": 11920,
+   "station": "NHK World Radio Japan",
+   "country": "Япония",
+   "time_utc": "04:30-04:50",
+   "time_msk": "07:30-07:50",
+   "days": "ежедневно",
+   "target": "Дальний Восток",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026); направлено на Дальний Восток, в Москве слышно слабо или никак",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": true
+  },
+  {
+   "freq_khz": 11920,
+   "station": "NHK World Radio Japan",
+   "country": "Япония",
+   "time_utc": "05:40-06:00",
+   "time_msk": "08:40-09:00",
+   "days": "ежедневно",
+   "target": "Дальний Восток",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026); направлено на Дальний Восток, в Москве слышно слабо или никак",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": true
+  },
+  {
+   "freq_khz": 9890,
+   "station": "Радио Каир",
+   "country": "Египет",
+   "time_utc": "19:00-20:00",
+   "time_msk": "22:00-23:00",
+   "days": "ежедневно",
+   "target": "Восточная Европа",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026)",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 9820,
+   "station": "Radio Exterior de España",
+   "country": "Испания",
+   "time_utc": "17:00-17:30",
+   "time_msk": "20:00-20:30",
+   "days": "Пн",
+   "target": "Восточная Европа",
+   "language": "русский",
+   "note": "ретранслятор: UAE",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 9820,
+   "station": "Radio Exterior de España",
+   "country": "Испания",
+   "time_utc": "19:00-19:30",
+   "time_msk": "22:00-22:30",
+   "days": "Сб",
+   "target": "Восточная Европа",
+   "language": "русский",
+   "note": "ретранслятор: UAE",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 9820,
+   "station": "Радио Прага (через WRN)",
+   "country": "Чехия",
+   "time_utc": "19:00-19:30",
+   "time_msk": "22:00-22:30",
+   "days": "Пт",
+   "target": "Восточная Европа",
+   "language": "русский",
+   "note": "ретранслятор: UAE",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 9820,
+   "station": "Радио Прага (через WRN)",
+   "country": "Чехия",
+   "time_utc": "17:00-17:30",
+   "time_msk": "20:00-20:30",
+   "days": "Ср",
+   "target": "Восточная Европа",
+   "language": "русский",
+   "note": "ретранслятор: UAE",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 9510,
+   "station": "Радио Румыния Интернешнл",
+   "country": "Румыния",
+   "time_utc": "04:30-05:00",
+   "time_msk": "07:30-08:00",
+   "days": "ежедневно",
+   "target": "Восточная Европа",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026)",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 9890,
+   "station": "Радио Румыния Интернешнл",
+   "country": "Румыния",
+   "time_utc": "04:30-05:00",
+   "time_msk": "07:30-08:00",
+   "days": "ежедневно",
+   "target": "Восточная Европа",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026)",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 11810,
+   "station": "Радио Румыния Интернешнл",
+   "country": "Румыния",
+   "time_utc": "15:00-15:30",
+   "time_msk": "18:00-18:30",
+   "days": "ежедневно",
+   "target": "Восточная Европа",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026)",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 11850,
+   "station": "Радио Румыния Интернешнл",
+   "country": "Румыния",
+   "time_utc": "15:00-15:30",
+   "time_msk": "18:00-18:30",
+   "days": "ежедневно",
+   "target": "Восточная Европа",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026)",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 15210,
+   "station": "Радио Румыния Интернешнл",
+   "country": "Румыния",
+   "time_utc": "13:00-14:00",
+   "time_msk": "16:00-17:00",
+   "days": "ежедневно",
+   "target": "Сибирь",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026); направлено на Сибирь, в Москве слышно слабо или никак",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": true
+  },
+  {
+   "freq_khz": 15530,
+   "station": "Радио Румыния Интернешнл",
+   "country": "Румыния",
+   "time_utc": "13:00-14:00",
+   "time_msk": "16:00-17:00",
+   "days": "ежедневно",
+   "target": "Сибирь",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026); направлено на Сибирь, в Москве слышно слабо или никак",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": true
+  },
+  {
+   "freq_khz": 9820,
+   "station": "Радио Словакия Интернешнл (через WRN)",
+   "country": "Словакия",
+   "time_utc": "19:30-20:00",
+   "time_msk": "22:30-23:00",
+   "days": "ежедневно",
+   "target": "Восточная Европа",
+   "language": "русский",
+   "note": "ретранслятор: UAE",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 9490,
+   "station": "Радио Тайвань Интернешнл",
+   "country": "Тайвань",
+   "time_utc": "11:00-12:00",
+   "time_msk": "14:00-15:00",
+   "days": "ежедневно",
+   "target": "Сибирь",
+   "language": "русский",
+   "note": "последнее подтверждённое наблюдение EiBi: 04.2026; направлено на Сибирь, в Москве слышно слабо или никак",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": true
+  },
+  {
+   "freq_khz": 9790,
+   "station": "Радио Тайвань Интернешнл",
+   "country": "Тайвань",
+   "time_utc": "17:00-17:30",
+   "time_msk": "20:00-20:30",
+   "days": "ежедневно",
+   "target": "Восточная Европа",
+   "language": "русский",
+   "note": "последнее подтверждённое наблюдение EiBi: 02.2026; short-wave.info даёт для 17:00 UTC частоту 5900 кГц; ретранслятор: BUL-s",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": true
+  },
+  {
+   "freq_khz": 9710,
+   "station": "Радио Ватикана",
+   "country": "Ватикан",
+   "time_utc": "05:00-05:20",
+   "time_msk": "08:00-08:20",
+   "days": "ежедневно",
+   "target": "Восточная Европа",
+   "language": "русский",
+   "note": "",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 9710,
+   "station": "Радио Ватикана",
+   "country": "Ватикан",
+   "time_utc": "16:20-16:40",
+   "time_msk": "19:20-19:40",
+   "days": "ежедневно",
+   "target": "Средняя Азия",
+   "language": "русский",
+   "note": "short-wave.info указывает в это время на 9710 белорусский язык",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": true
+  },
+  {
+   "freq_khz": 11815,
+   "station": "Радио Ватикана",
+   "country": "Ватикан",
+   "time_utc": "05:00-05:20",
+   "time_msk": "08:00-08:20",
+   "days": "ежедневно",
+   "target": "Восточная Европа",
+   "language": "русский",
+   "note": "",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 11815,
+   "station": "Радио Ватикана",
+   "country": "Ватикан",
+   "time_utc": "16:20-16:40",
+   "time_msk": "19:20-19:40",
+   "days": "ежедневно",
+   "target": "Средняя Азия",
+   "language": "русский",
+   "note": "",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 17790,
+   "station": "Радио Ватикана",
+   "country": "Ватикан",
+   "time_utc": "12:30-12:50",
+   "time_msk": "15:30-15:50",
+   "days": "ежедневно",
+   "target": "Сибирь",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026); направлено на Сибирь, в Москве слышно слабо или никак",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": true
+  },
+  {
+   "freq_khz": 21760,
+   "station": "Радио Ватикана",
+   "country": "Ватикан",
+   "time_utc": "12:30-12:50",
+   "time_msk": "15:30-15:50",
+   "days": "ежедневно",
+   "target": "Сибирь",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026); направлено на Сибирь, в Москве слышно слабо или никак",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": true
+  },
+  {
+   "freq_khz": 9820,
+   "station": "Радио ООН (через WRN)",
+   "country": "ООН",
+   "time_utc": "17:30-18:00",
+   "time_msk": "20:30-21:00",
+   "days": "Пн",
+   "target": "Восточная Европа",
+   "language": "русский",
+   "note": "ретранслятор: UAE",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 9820,
+   "station": "Радио ООН (через WRN)",
+   "country": "ООН",
+   "time_utc": "18:00-18:30",
+   "time_msk": "21:00-21:30",
+   "days": "Вс",
+   "target": "Восточная Европа",
+   "language": "русский",
+   "note": "ретранслятор: UAE",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 9425,
+   "station": "Голос Кореи (КНДР)",
+   "country": "КНДР",
+   "time_utc": "14:00-16:00",
+   "time_msk": "17:00-19:00",
+   "days": "ежедневно",
+   "target": "Европа",
+   "language": "русский",
+   "note": "последнее подтверждённое наблюдение EiBi: 03.2026",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 9425,
+   "station": "Голос Кореи (КНДР)",
+   "country": "КНДР",
+   "time_utc": "17:00-18:00",
+   "time_msk": "20:00-21:00",
+   "days": "ежедневно",
+   "target": "Европа",
+   "language": "русский",
+   "note": "последнее подтверждённое наблюдение EiBi: 04.2026",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 9875,
+   "station": "Голос Кореи (КНДР)",
+   "country": "КНДР",
+   "time_utc": "07:00-09:00",
+   "time_msk": "10:00-12:00",
+   "days": "ежедневно",
+   "target": "Дальний Восток",
+   "language": "русский",
+   "note": "последнее подтверждённое наблюдение EiBi: 02.2026; направлено на Дальний Восток, в Москве слышно слабо или никак",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": true
+  },
+  {
+   "freq_khz": 11735,
+   "station": "Голос Кореи (КНДР)",
+   "country": "КНДР",
+   "time_utc": "07:00-09:00",
+   "time_msk": "10:00-12:00",
+   "days": "ежедневно",
+   "target": "Дальний Восток",
+   "language": "русский",
+   "note": "последнее подтверждённое наблюдение EiBi: 06.2026; направлено на Дальний Восток, в Москве слышно слабо или никак",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": true
+  },
+  {
+   "freq_khz": 12015,
+   "station": "Голос Кореи (КНДР)",
+   "country": "КНДР",
+   "time_utc": "14:00-16:00",
+   "time_msk": "17:00-19:00",
+   "days": "ежедневно",
+   "target": "Европа",
+   "language": "русский",
+   "note": "последнее подтверждённое наблюдение EiBi: 06.2026",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 12015,
+   "station": "Голос Кореи (КНДР)",
+   "country": "КНДР",
+   "time_utc": "17:00-18:00",
+   "time_msk": "20:00-21:00",
+   "days": "ежедневно",
+   "target": "Европа",
+   "language": "русский",
+   "note": "последнее подтверждённое наблюдение EiBi: 09.2025",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 13760,
+   "station": "Голос Кореи (КНДР)",
+   "country": "КНДР",
+   "time_utc": "07:00-09:00",
+   "time_msk": "10:00-12:00",
+   "days": "ежедневно",
+   "target": "Европа",
+   "language": "русский",
+   "note": "последнее подтверждённое наблюдение EiBi: 01.2024; давно не подтверждалось",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": true
+  },
+  {
+   "freq_khz": 15245.2,
+   "station": "Голос Кореи (КНДР)",
+   "country": "КНДР",
+   "time_utc": "07:00-09:00",
+   "time_msk": "10:00-12:00",
+   "days": "ежедневно",
+   "target": "Европа",
+   "language": "русский",
+   "note": "последнее подтверждённое наблюдение EiBi: 07.2026",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 11965,
+   "station": "Голос Турции",
+   "country": "Турция",
+   "time_utc": "13:00-14:00",
+   "time_msk": "16:00-17:00",
+   "days": "ежедневно",
+   "target": "Восточная Европа",
+   "language": "русский",
+   "note": "расписание только на сезон A26 (до 25.10.2026)",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 9835,
+   "station": "Голос Вьетнама",
+   "country": "Вьетнам",
+   "time_utc": "16:30-17:00",
+   "time_msk": "19:30-20:00",
+   "days": "ежедневно",
+   "target": "Европа",
+   "language": "русский",
+   "note": "",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 11885,
+   "station": "Голос Вьетнама",
+   "country": "Вьетнам",
+   "time_utc": "16:30-17:00",
+   "time_msk": "19:30-20:00",
+   "days": "ежедневно",
+   "target": "Европа",
+   "language": "русский",
+   "note": "последнее подтверждённое наблюдение EiBi: 11.2025",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 9820,
+   "station": "WRN «Всемирная радиосеть»",
+   "country": "Россия",
+   "time_utc": "17:00-20:00",
+   "time_msk": "20:00-23:00",
+   "days": "ежедневно",
+   "target": "Восточная Европа",
+   "language": "русский",
+   "note": "последнее подтверждённое наблюдение EiBi: 06.2026; ретранслятор: UAE",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 4765,
+   "station": "Таджикское радио 1",
+   "country": "Таджикистан",
+   "time_utc": "23:00-20:00",
+   "time_msk": "02:00-23:00",
+   "days": "ежедневно",
+   "target": "Средняя Азия",
+   "language": "русский",
+   "note": "есть только в short-wave.info (по частям в течение суток), в EiBi A26 не найдено",
+   "source": "https://www.short-wave.info/index.php?language=Russian",
+   "verify": true
+  },
+  {
+   "freq_khz": 6095,
+   "station": "Sender Königs Wusterhausen",
+   "country": "Германия",
+   "time_utc": "13:00-14:00",
+   "time_msk": "16:00-17:00",
+   "days": "ежедневно",
+   "target": "Европа",
+   "language": "русский",
+   "note": "есть только в short-wave.info",
+   "source": "https://www.short-wave.info/index.php?language=Russian",
+   "verify": true
+  },
+  {
+   "freq_khz": 6040,
+   "station": "KBS World Radio (передатчик Вуфертон, Великобритания)",
+   "country": "Южная Корея",
+   "time_utc": "18:00-19:00",
+   "time_msk": "21:00-22:00",
+   "days": "ежедневно",
+   "target": "Европа",
+   "language": "русский",
+   "note": "short-wave.info; в EiBi на это время указана 15265 кГц",
+   "source": "https://www.short-wave.info/index.php?language=Russian",
+   "verify": true
+  },
+  {
+   "freq_khz": 9920,
+   "station": "FEBC «Радио Теос»",
+   "country": "Филиппины",
+   "time_utc": "15:30-16:00",
+   "time_msk": "18:30-19:00",
+   "days": "Пн, Ср, Пт, Сб, Вс",
+   "target": "Средняя Азия",
+   "language": "русский",
+   "note": "есть только в short-wave.info",
+   "source": "https://www.short-wave.info/index.php?language=Russian",
+   "verify": true
+  },
+  {
+   "freq_khz": 7730,
+   "station": "WRMI Radiopanorama",
+   "country": "США",
+   "time_utc": "20:00-20:30",
+   "time_msk": "23:00-23:30",
+   "days": "Вт",
+   "target": "Европа",
+   "language": "русский",
+   "note": "short-wave.info; передатчик во Флориде",
+   "source": "https://www.short-wave.info/index.php?language=Russian",
+   "verify": true
+  },
+  {
+   "freq_khz": 13610,
+   "station": "Радио Румыния Интернешнл",
+   "country": "Румыния",
+   "time_utc": "13:00-13:57",
+   "time_msk": "16:00-16:57",
+   "days": "ежедневно",
+   "target": "Сибирь",
+   "language": "русский",
+   "note": "short-wave.info; в EiBi на это время 15210/15530 кГц",
+   "source": "https://www.short-wave.info/index.php?language=Russian",
+   "verify": true
+  },
+  {
+   "freq_khz": 15770,
+   "station": "WRN «Всемирная радиосеть» (утренний блок)",
+   "country": "Россия/США",
+   "time_utc": "07:00-07:30",
+   "time_msk": "10:00-10:30",
+   "days": "ежедневно",
+   "target": "Европа",
+   "language": "русский",
+   "note": "по noginsk-service.ru: с 18.11.2025 WRN вещает на 9820 и 15770 кГц",
+   "source": "https://noginsk-service.ru/page.php?575=",
+   "verify": true
+  },
+  {
+   "freq_khz": 15770,
+   "station": "Радио Свобода (через WRMI, США)",
+   "country": "США",
+   "time_utc": "04:00-05:00",
+   "time_msk": "07:00-08:00",
+   "days": "Пн-Пт (short-wave.info: Вт-Пт, Вс)",
+   "target": "Европа / Северная Америка",
+   "language": "русский",
+   "note": "EiBi: цель ENA; передатчик во Флориде, в Москве приём под вопросом; последнее наблюдение EiBi 07.2025",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": true
+  }
+ ],
+ "sw_other": [
+  {
+   "freq_khz": 9600,
+   "station": "China Radio International",
+   "country": "Китай",
+   "language": "английский",
+   "time_utc": "20:00-22:00",
+   "time_msk": "23:00-01:00",
+   "days": "ежедневно",
+   "note": "также 18:00-19:00 UTC; 11770 кГц 20:00-22:00",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 9535,
+   "station": "China Radio International",
+   "country": "Китай",
+   "language": "немецкий",
+   "time_utc": "16:00-18:00",
+   "time_msk": "19:00-21:00",
+   "days": "ежедневно",
+   "note": "далее 11650/13810 кГц 18:00-20:00 UTC",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 9480,
+   "station": "China Radio International",
+   "country": "Китай",
+   "language": "французский",
+   "time_utc": "18:00-20:00",
+   "time_msk": "21:00-23:00",
+   "days": "ежедневно",
+   "note": "",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 7265,
+   "station": "China Radio International",
+   "country": "Китай",
+   "language": "эсперанто",
+   "time_utc": "19:30-20:30",
+   "time_msk": "22:30-23:30",
+   "days": "ежедневно",
+   "note": "",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 9460,
+   "station": "Голос Турции",
+   "country": "Турция",
+   "language": "турецкий",
+   "time_utc": "16:00-21:00",
+   "time_msk": "19:00-00:00",
+   "days": "ежедневно",
+   "note": "",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 9750,
+   "station": "Голос Турции",
+   "country": "Турция",
+   "language": "английский",
+   "time_utc": "18:30-19:30",
+   "time_msk": "21:30-22:30",
+   "days": "ежедневно",
+   "note": "немецкий - 9840 кГц 17:30-18:30 UTC",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 11975,
+   "station": "Radio Romania International",
+   "country": "Румыния",
+   "language": "румынский/французский/английский",
+   "time_utc": "17:00-21:00",
+   "time_msk": "20:00-00:00",
+   "days": "ежедневно",
+   "note": "английский 20:30-21:00 UTC (также 9740 кГц), французский 20:00-20:30",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 11750,
+   "station": "Radio Romania International",
+   "country": "Румыния",
+   "language": "немецкий",
+   "time_utc": "18:00-19:00",
+   "time_msk": "21:00-22:00",
+   "days": "ежедневно",
+   "note": "",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 9425,
+   "station": "Голос Кореи (КНДР)",
+   "country": "КНДР",
+   "language": "немецкий",
+   "time_utc": "18:00-20:00",
+   "time_msk": "21:00-23:00",
+   "days": "ежедневно",
+   "note": "также 16:00-17:00; параллельно 12015 кГц; корейский 20:00-20:50",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 9875,
+   "station": "Голос Кореи (КНДР)",
+   "country": "КНДР",
+   "language": "английский",
+   "time_utc": "19:00-20:00",
+   "time_msk": "22:00-23:00",
+   "days": "ежедневно",
+   "note": "французский 18:00-19:00",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 9515,
+   "station": "KBS World Radio",
+   "country": "Южная Корея",
+   "language": "английский",
+   "time_utc": "15:00-17:00",
+   "time_msk": "18:00-20:00",
+   "days": "ежедневно",
+   "note": "",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 3955,
+   "station": "KBS World Radio (через Вуфертон)",
+   "country": "Южная Корея",
+   "language": "немецкий",
+   "time_utc": "20:00-21:00",
+   "time_msk": "23:00-00:00",
+   "days": "ежедневно",
+   "note": "",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 9835,
+   "station": "Голос Вьетнама",
+   "country": "Вьетнам",
+   "language": "английский/немецкий/французский/испанский",
+   "time_utc": "16:00-22:00",
+   "time_msk": "19:00-01:00",
+   "days": "ежедневно",
+   "note": "английский 19:00-19:30 и 21:30-22:00 UTC",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 9890,
+   "station": "Радио Каир",
+   "country": "Египет",
+   "language": "английский",
+   "time_utc": "21:15-22:15",
+   "time_msk": "00:15-01:15",
+   "days": "ежедневно",
+   "note": "немецкий 9410 кГц 19:00-20:00 UTC",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 9620,
+   "station": "All India Radio (Akashvani)",
+   "country": "Индия",
+   "language": "французский/английский",
+   "time_utc": "19:30-20:30",
+   "time_msk": "22:30-23:30",
+   "days": "ежедневно",
+   "note": "арабский 17:30-19:30 UTC; английские выпуски нерегулярно",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 9870,
+   "station": "IRIB (Голос Ирана)",
+   "country": "Иран",
+   "language": "турецкий",
+   "time_utc": "16:50-18:20",
+   "time_msk": "19:50-21:20",
+   "days": "ежедневно",
+   "note": "параллельно 11710 кГц",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 12060,
+   "station": "NHK World Radio Japan",
+   "country": "Япония",
+   "language": "японский",
+   "time_utc": "17:00-19:00",
+   "time_msk": "20:00-22:00",
+   "days": "ежедневно",
+   "note": "цель - Ближний Восток",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 15520,
+   "station": "Radio Exterior de España",
+   "country": "Испания",
+   "language": "испанский",
+   "time_utc": "15:00-22:00",
+   "time_msk": "18:00-01:00",
+   "days": "ежедневно (по будням - блоками)",
+   "note": "цель - Ближний Восток",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 9920,
+   "station": "Radyo Pilipinas",
+   "country": "Филиппины",
+   "language": "тагальский",
+   "time_utc": "17:30-20:30",
+   "time_msk": "20:30-23:30",
+   "days": "ежедневно",
+   "note": "также 12120 и 15190 кГц",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 5900,
+   "station": "Radio Taiwan International (через Болгарию)",
+   "country": "Тайвань",
+   "language": "немецкий",
+   "time_utc": "19:00-19:30",
+   "time_msk": "22:00-22:30",
+   "days": "ежедневно",
+   "note": "французский - 6005 кГц",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 6140,
+   "station": "Radio Slovakia International (через Люксембург)",
+   "country": "Словакия",
+   "language": "английский",
+   "time_utc": "16:30-17:00",
+   "time_msk": "19:30-20:00",
+   "days": "ежедневно",
+   "note": "французский 17:00-17:30",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq_khz": 6070,
+   "station": "Channel 292",
+   "country": "Германия",
+   "language": "немецкий/английский",
+   "time_utc": "00:00-00:00",
+   "time_msk": "03:00-03:00",
+   "days": "ежедневно",
+   "note": "частная станция, ретранслирует разные программы; мощность небольшая",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": true
+  },
+  {
+   "freq_khz": 5930,
+   "station": "World Music Radio",
+   "country": "Дания",
+   "language": "английский",
+   "time_utc": "00:00-00:00",
+   "time_msk": "03:00-03:00",
+   "days": "ежедневно",
+   "note": "частная станция малой мощности",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": true
+  },
+  {
+   "freq_khz": 6160,
+   "station": "Shortwave Radio Gold",
+   "country": "Германия",
+   "language": "немецкий/английский",
+   "time_utc": "15:00-22:00",
+   "time_msk": "18:00-01:00",
+   "days": "ежедневно",
+   "note": "частная станция",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": true
+  },
+  {
+   "freq_khz": 6170,
+   "station": "Scandinavian Weekend Radio",
+   "country": "Финляндия",
+   "language": "финский",
+   "time_utc": "00:00-00:00",
+   "time_msk": "03:00-03:00",
+   "days": "только первые выходные месяца (Пт вечер - Сб)",
+   "note": "также 11690/11720 кГц",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": true
+  }
+ ],
+ "utility": [
+  {
+   "freq": "126.375 МГц",
+   "what": "Шереметьево-АТИС (рус.)",
+   "mode": "AM",
+   "when": "круглосуточно",
+   "note": "данные radioscanner.ru, частоты УВД меняются; англ. АТИС 125.125",
+   "source": "https://www.radioscanner.ru/airbase/1.html",
+   "verify": true
+  },
+  {
+   "freq": "120.700 / 131.500 / 118.700 МГц",
+   "what": "Шереметьево-Вышка (старт/посадка)",
+   "mode": "AM",
+   "when": "круглосуточно",
+   "note": "данные radioscanner.ru, частоты УВД меняются",
+   "source": "https://www.radioscanner.ru/airbase/1.html",
+   "verify": true
+  },
+  {
+   "freq": "118.100 / 126.600 МГц",
+   "what": "Шереметьево-Круг (вылет / прилёт)",
+   "mode": "AM",
+   "when": "круглосуточно",
+   "note": "данные radioscanner.ru, частоты УВД меняются",
+   "source": "https://www.radioscanner.ru/airbase/1.html",
+   "verify": true
+  },
+  {
+   "freq": "119.300 / 123.700 МГц",
+   "what": "Шереметьево-Подход",
+   "mode": "AM",
+   "when": "круглосуточно",
+   "note": "данные radioscanner.ru, частоты УВД меняются",
+   "source": "https://www.radioscanner.ru/airbase/1.html",
+   "verify": true
+  },
+  {
+   "freq": "119.000 / 121.800 МГц",
+   "what": "Шереметьево-Руление",
+   "mode": "AM",
+   "when": "круглосуточно",
+   "note": "данные radioscanner.ru, частоты УВД меняются; слышно только вблизи аэропорта",
+   "source": "https://www.radioscanner.ru/airbase/1.html",
+   "verify": true
+  },
+  {
+   "freq": "125.875 МГц",
+   "what": "Внуково-АТИС (рус.)",
+   "mode": "AM",
+   "when": "круглосуточно",
+   "note": "данные radioscanner.ru, частоты УВД меняются; англ. 131.850",
+   "source": "https://www.radioscanner.ru/airbase/3.html",
+   "verify": true
+  },
+  {
+   "freq": "118.300 МГц",
+   "what": "Внуково-Старт/Посадка",
+   "mode": "AM",
+   "when": "круглосуточно",
+   "note": "данные radioscanner.ru, частоты УВД меняются",
+   "source": "https://www.radioscanner.ru/airbase/3.html",
+   "verify": true
+  },
+  {
+   "freq": "126.000 МГц",
+   "what": "Внуково-Круг",
+   "mode": "AM",
+   "when": "круглосуточно",
+   "note": "данные radioscanner.ru, частоты УВД меняются",
+   "source": "https://www.radioscanner.ru/airbase/3.html",
+   "verify": true
+  },
+  {
+   "freq": "122.300 МГц",
+   "what": "Внуково-Подход",
+   "mode": "AM",
+   "when": "круглосуточно",
+   "note": "данные radioscanner.ru, частоты УВД меняются",
+   "source": "https://www.radioscanner.ru/airbase/3.html",
+   "verify": true
+  },
+  {
+   "freq": "128.125 / 127.875 МГц",
+   "what": "Внуково-Волмет (погода для экипажей; 127.875 - англ.)",
+   "mode": "AM",
+   "when": "круглосуточно",
+   "note": "данные radioscanner.ru, частоты УВД меняются",
+   "source": "https://www.radioscanner.ru/airbase/3.html",
+   "verify": true
+  },
+  {
+   "freq": "122.950 МГц",
+   "what": "Домодедово-АТИС (рус.)",
+   "mode": "AM",
+   "when": "круглосуточно",
+   "note": "данные radioscanner.ru, частоты УВД меняются; англ. 128.300",
+   "source": "https://www.radioscanner.ru/airbase/2.html",
+   "verify": true
+  },
+  {
+   "freq": "118.600 / 119.700 МГц",
+   "what": "Домодедово-Вышка-1 / Вышка-2",
+   "mode": "AM",
+   "when": "круглосуточно",
+   "note": "данные radioscanner.ru, частоты УВД меняются",
+   "source": "https://www.radioscanner.ru/airbase/2.html",
+   "verify": true
+  },
+  {
+   "freq": "127.700 МГц",
+   "what": "Домодедово-Круг",
+   "mode": "AM",
+   "when": "круглосуточно",
+   "note": "данные radioscanner.ru, частоты УВД меняются",
+   "source": "https://www.radioscanner.ru/airbase/2.html",
+   "verify": true
+  },
+  {
+   "freq": "120.600 МГц",
+   "what": "Домодедово-Подход",
+   "mode": "AM",
+   "when": "круглосуточно",
+   "note": "данные radioscanner.ru, частоты УВД меняются",
+   "source": "https://www.radioscanner.ru/airbase/2.html",
+   "verify": true
+  },
+  {
+   "freq": "125.250 МГц",
+   "what": "Жуковский (Раменское) - Круг, Посадка («Гордый»)",
+   "mode": "AM",
+   "when": "при полётах",
+   "note": "данные radioscanner.ru, частоты УВД меняются; Подход 124.250, Руление 131.000, Метеоканал 127.750",
+   "source": "https://www.radioscanner.ru/airbase/44.html",
+   "verify": true
+  },
+  {
+   "freq": "121.500 МГц",
+   "what": "Аварийная частота (для всех ВС)",
+   "mode": "AM",
+   "when": "редко, только при происшествиях",
+   "note": "",
+   "source": "https://www.radioscanner.ru/airbase/1.html",
+   "verify": false
+  },
+  {
+   "freq": "4996 / 9996 / 14996 кГц",
+   "what": "RWM - эталонные сигналы времени и частоты (Талдом, ВНИИФТРИ)",
+   "mode": "CW/несущая; удобнее в режиме SSB (USB)",
+   "when": "круглосуточно; 4996 - вечер и ночь, 14996 - днём",
+   "note": "цикл 30 мин: несущая, позывной морзе на 9-й и 39-й минуте, секундные метки 10-20 и 40-50 мин",
+   "source": "https://ru.wikipedia.org/wiki/RWM ; http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq": "6617 / 8939 кГц",
+   "what": "Ростов-Волмет и Санкт-Петербург-Волмет (авиапогода на русском)",
+   "mode": "USB",
+   "when": "круглосуточно; Ростов в x25/x55, СПб в x05/x35 минут часа",
+   "note": "вечером Ростов также на 2941 кГц, днём на 11297",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq": "6693 / 8888 кГц",
+   "what": "Самара-Волмет, Новосибирск-Волмет, Сыктывкар-Волмет (8888)",
+   "mode": "USB",
+   "when": "круглосуточно; Самара x15/x45, Новосибирск x07/x37, Сыктывкар x00/x30",
+   "note": "EiBi: часть частот давно не подтверждалась",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": true
+  },
+  {
+   "freq": "3413 / 5505 / 8957 / 13264 кГц",
+   "what": "Shannon VOLMET (Ирландия, английский)",
+   "mode": "USB",
+   "when": "круглосуточно; 3413 и 5505 - ночью, 8957/13264 - днём",
+   "note": "",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq": "5450 / 11253 кГц",
+   "what": "RAF VOLMET (Великобритания, английский)",
+   "mode": "USB",
+   "when": "круглосуточно",
+   "note": "",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq": "4625 кГц",
+   "what": "«Жужжалка» UVB-76 (военная станция, непрерывный зуммер)",
+   "mode": "USB или AM",
+   "when": "круглосуточно",
+   "note": "последнее наблюдение EiBi 08.2026",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq": "3756 / 5448 кГц",
+   "what": "«Капля» (The Pip), Ростов - военный маркер",
+   "mode": "USB",
+   "when": "3756 - вечер/ночь, 5448 - день",
+   "note": "",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  },
+  {
+   "freq": "3600-3800 кГц",
+   "what": "Радиолюбители, 80 м, телефон SSB",
+   "mode": "LSB",
+   "when": "вечер и ночь",
+   "note": "телеграф 3500-3570 кГц",
+   "source": "https://www.iaru-r1.org/on-the-air/band-plans/",
+   "verify": false
+  },
+  {
+   "freq": "7050-7200 кГц",
+   "what": "Радиолюбители, 40 м, телефон SSB",
+   "mode": "LSB",
+   "when": "вечер (днём - ближние связи)",
+   "note": "телеграф 7000-7040 кГц",
+   "source": "https://www.iaru-r1.org/on-the-air/band-plans/",
+   "verify": false
+  },
+  {
+   "freq": "14100-14350 кГц",
+   "what": "Радиолюбители, 20 м, телефон SSB (дальние связи)",
+   "mode": "USB",
+   "when": "день и ранний вечер",
+   "note": "",
+   "source": "https://www.iaru-r1.org/on-the-air/band-plans/",
+   "verify": false
+  },
+  {
+   "freq": "27.135 МГц",
+   "what": "Си-Би, 15-й канал сетки C («европа», C15EA) - вызывной канал водителей и дальнобойщиков",
+   "mode": "AM",
+   "when": "круглосуточно, лучше у трасс",
+   "note": "часть раций в «русской сетке» сдвинута на -5 кГц (27.130); D-808 принимает 27 МГц в КВ-диапазоне",
+   "source": "https://radiokom.ru/news/2025/nastroyka-avtomobilnoy-ratsii-na-15-kanal/ ; https://2491040.ru/setka-27.html",
+   "verify": false
+  }
+ ],
+ "shows": [
+  {
+   "station": "Европа Плюс",
+   "freq": "106.2 FM",
+   "show": "ЕвроХит Топ 40",
+   "days": "Пт; повтор Сб",
+   "time_msk": "Пт 14:00-16:00; Сб 16:00-18:00",
+   "note": "",
+   "source": "https://europaplus.ru/programs/top40",
+   "verify": false
+  },
+  {
+   "station": "Радио Дача",
+   "freq": "92.4 FM",
+   "show": "Горячая десятка",
+   "days": "Пт",
+   "time_msk": "19:02",
+   "note": "",
+   "source": "https://www.radiodacha.ru/programs/goryachaya-desyatka",
+   "verify": false
+  },
+  {
+   "station": "Авторадио",
+   "freq": "90.3 FM",
+   "show": "Поехали (утреннее шоу)",
+   "days": "Пн-Пт",
+   "time_msk": "07:00-10:00",
+   "note": "",
+   "source": "https://www.avtoradio.ru/programs",
+   "verify": false
+  },
+  {
+   "station": "Авторадио",
+   "freq": "90.3 FM",
+   "show": "Мурзилки LIVE",
+   "days": "Пн-Пт",
+   "time_msk": "18:00-21:00",
+   "note": "",
+   "source": "https://www.avtoradio.ru/programs",
+   "verify": false
+  },
+  {
+   "station": "Авторадио",
+   "freq": "90.3 FM",
+   "show": "Тест-драйв",
+   "days": "Ср, Пт",
+   "time_msk": "Ср 09:10; Пт 07:40",
+   "note": "",
+   "source": "https://www.avtoradio.ru/programs",
+   "verify": false
+  },
+  {
+   "station": "Авторадио",
+   "freq": "90.3 FM",
+   "show": "Авторадио поздравляет",
+   "days": "ежедневно",
+   "time_msk": "14:00-15:00",
+   "note": "",
+   "source": "https://www.avtoradio.ru/programs",
+   "verify": false
+  },
+  {
+   "station": "Love Radio",
+   "freq": "106.6 FM",
+   "show": "Красавцы Love Radio (утреннее шоу)",
+   "days": "Пн-Пт",
+   "time_msk": "07:00-11:00",
+   "note": "",
+   "source": "https://www.loveradio.ru/programs",
+   "verify": false
+  },
+  {
+   "station": "Love Radio",
+   "freq": "106.6 FM",
+   "show": "Big Love 20 (хит-парад)",
+   "days": "Пт; повтор Вс",
+   "time_msk": "Пт 18:00; Вс 13:00",
+   "note": "",
+   "source": "https://www.loveradio.ru/programs",
+   "verify": false
+  },
+  {
+   "station": "Love Radio",
+   "freq": "106.6 FM",
+   "show": "Big Love Dance",
+   "days": "Пт, Сб",
+   "time_msk": "20:00-22:00",
+   "note": "",
+   "source": "https://www.loveradio.ru/programs",
+   "verify": false
+  },
+  {
+   "station": "Love Radio",
+   "freq": "106.6 FM",
+   "show": "Fresh Time",
+   "days": "Сб",
+   "time_msk": "13:00-14:00",
+   "note": "",
+   "source": "https://www.loveradio.ru/programs",
+   "verify": false
+  },
+  {
+   "station": "Хит FM",
+   "freq": "107.4 FM",
+   "show": "Большая 20-ка (хит-парад)",
+   "days": "Сб; повтор Вс",
+   "time_msk": "Сб 18:00; Вс 12:00",
+   "note": "",
+   "source": "https://hitfm.ru/shows/bolshaya-20-ka",
+   "verify": false
+  },
+  {
+   "station": "Радио Маяк",
+   "freq": "103.4 FM",
+   "show": "Сергей Стиллавин и его друзья",
+   "days": "Пн-Пт",
+   "time_msk": "07:00-11:00",
+   "note": "время взято из описаний в поисковой выдаче, на странице бренда не указано",
+   "source": "https://smotrim.ru/brand/58219",
+   "verify": true
+  },
+  {
+   "station": "Вести FM",
+   "freq": "97.6 FM",
+   "show": "Полный контакт (Владимир Соловьёв)",
+   "days": "Вт, Ср, Чт",
+   "time_msk": "07:00-11:00",
+   "note": "",
+   "source": "https://smotrim.ru/brand/60948",
+   "verify": false
+  },
+  {
+   "station": "Русское Радио",
+   "freq": "105.7 FM",
+   "show": "Русские Перцы (утреннее шоу)",
+   "days": "Пн-Пт",
+   "time_msk": "с 07:00 (до 11:00)",
+   "note": "начало с 7:00 и рубрики до 9:05 - со страницы шоу; окончание в 11:00 - по вторичным источникам",
+   "source": "https://rusradio.ru/shows/107-utrennee-shou-russkie-percy",
+   "verify": true
+  },
+  {
+   "station": "Наше Радио",
+   "freq": "101.8 FM",
+   "show": "Чартова дюжина (хит-парад русского рока)",
+   "days": "Пт",
+   "time_msk": "19:00",
+   "note": "выпуски по пятницам подтверждаются (итоги 18.09.2026); время 19:00 - по Википедии",
+   "source": "https://www.nashe.ru/chartova ; https://ru.wikipedia.org/wiki/Чартова_дюжина",
+   "verify": true
+  },
+  {
+   "station": "Ретро FM",
+   "freq": "88.3 FM",
+   "show": "Первая смена (утреннее шоу)",
+   "days": "Пн-Пт",
+   "time_msk": "07:00-11:00",
+   "note": "на странице программ сопоставление шоу и времени неоднозначно",
+   "source": "https://retrofm.ru/programs",
+   "verify": true
+  },
+  {
+   "station": "Радио Рекорд",
+   "freq": "89.9 FM",
+   "show": "Record Super Chart",
+   "days": "Сб",
+   "time_msk": "15:00-16:30",
+   "note": "по поисковой выдаче; страница расписания не открылась",
+   "source": "https://test.radiorecord.ru/radio/schedule/",
+   "verify": true
+  },
+  {
+   "station": "Радио Рекорд",
+   "freq": "89.9 FM",
+   "show": "Record Club Chart",
+   "days": "Сб",
+   "time_msk": "21:00-22:00",
+   "note": "по поисковой выдаче; страница расписания не открылась",
+   "source": "https://test.radiorecord.ru/radio/schedule/",
+   "verify": true
+  },
+  {
+   "station": "WRN «Всемирная радиосеть»",
+   "freq": "9820 кГц (КВ)",
+   "show": "Блок международных вещателей на русском (BBC, Радио Прага, RSI, REE, Радио ООН)",
+   "days": "ежедневно, состав по дням",
+   "time_msk": "20:00-23:00",
+   "note": "например: Радио Словакия ежедневно 22:30-23:00 MSK; Радио Прага Ср 20:00 и Пт 22:00 MSK",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv ; https://noginsk-service.ru/page.php?575=",
+   "verify": false
+  },
+  {
+   "station": "Радио Румыния Интернешнл",
+   "freq": "11810 / 11850 кГц (КВ)",
+   "show": "Русская служба RRI",
+   "days": "ежедневно",
+   "time_msk": "18:00-18:30",
+   "note": "до 25.10.2026, затем зимнее расписание B26",
+   "source": "http://www.eibispace.de/dx/sked-a26.csv",
+   "verify": false
+  }
+ ],
+ "sources": [
+  "http://www.eibispace.de/dx/README.TXT",
+  "http://www.eibispace.de/dx/sked-a26.csv",
+  "https://2491040.ru/setka-27.html",
+  "https://adindex.ru/news/releases/2025/01/28/330335.phtml",
+  "https://europaplus.ru/programs/top40",
+  "https://hitfm.ru/shows/bolshaya-20-ka",
+  "https://noginsk-service.ru/page.php?575=",
+  "https://radiokom.ru/news/2025/nastroyka-avtomobilnoy-ratsii-na-15-kanal/",
+  "https://retrofm.ru/programs",
+  "https://ru.wikipedia.org/wiki/RWM",
+  "https://ru.wikipedia.org/wiki/Длинные_волны",
+  "https://ru.wikipedia.org/wiki/Радонеж_(радиостанция)",
+  "https://ru.wikipedia.org/wiki/Средние_волны",
+  "https://rusradio.ru/shows/107-utrennee-shou-russkie-percy",
+  "https://smotrim.ru/brand/58219",
+  "https://smotrim.ru/brand/60948",
+  "https://test.radiorecord.ru/radio/schedule/",
+  "https://top-radio.ru/dubna",
+  "https://top-radio.ru/kolomna",
+  "https://www.avtoradio.ru/programs",
+  "https://www.iaru-r1.org/on-the-air/band-plans/",
+  "https://www.loveradio.ru/programs",
+  "https://www.morze.ru/radio_tv/radio_tv1.htm",
+  "https://www.morze.ru/radio_tv/radio_tv4.htm",
+  "https://www.nashe.ru/chartova",
+  "https://www.radiodacha.ru/programs/goryachaya-desyatka",
+  "https://www.radiogrom.com/moscow_svdv.html",
+  "https://www.radiogrom.com/moscowfm.html",
+  "https://www.radiogrom.com/online/moskva_fm/marusya-fm.html",
+  "https://www.radioscanner.ru/airbase/1.html",
+  "https://www.radioscanner.ru/airbase/2.html",
+  "https://www.radioscanner.ru/airbase/3.html",
+  "https://www.radioscanner.ru/airbase/44.html",
+  "https://www.rbc.ru/technology_and_media/08/09/2025/68bacda99a79471f034c18c9",
+  "https://www.short-wave.info/index.php?language=Russian",
+  "https://www.svoboda.org/a/radio-svoboda-vozobnovlyaet-efirnoe-veschanie-na-srednih-volnah/33489174.html"
+ ]
+};

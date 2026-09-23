@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Программа на день и вечер</title>
+<meta name="description" content="Что слушать на XHDATA D-808 утром, днём, вечером и ночью: FM-передачи и КВ-эфир по часам.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://wwwparser.github.io/xhdata-d808/schedule.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Программа на день и вечер">
+<meta property="og:description" content="Что слушать на XHDATA D-808 утром, днём, вечером и ночью: FM-передачи и КВ-эфир по часам.">
+<meta property="og:url" content="https://wwwparser.github.io/xhdata-d808/schedule.html">
+<meta name="theme-color" content="#c2410c">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<main class="wrap">
+  <h1>Программа: что слушать днём и вечером</h1>
+  <p class="lead">Собрано по часам: популярные FM-передачи и КВ-эфир на русском. Время московское. Сейчас <span class="clock" id="clock"></span>.</p>
+
+  <p class="small muted" id="meta"></p>
+  <div class="toolbar" id="slots"></div>
+  <label class="small muted"><input type="checkbox" id="all"> показывать станции, приём которых в Москве не подтверждён</label>
+  <div id="out"></div>
+
+  <h2>Популярные передачи</h2>
+  <p class="muted">Сетка вещания радиостанций меняется от сезона к сезону. Перед выходом на эфир сверяйтесь с сайтом станции.</p>
+  <div class="toolbar"><input type="search" id="q" placeholder="Поиск по станции или передаче…"></div>
+  <div id="shows"></div>
+</main>
+<script src="data/stations.js"></script>
+<script src="assets/app.js"></script>
+<script>
+(function () {
+  const { esc, table, verify, isLive, startClock, filterRows, nowMsk, groupSW, $ } = Site;
+  const S = window.STATIONS || {};
+  startClock($("#clock"));
+  if (S.meta) $("#meta").textContent = `Данные собраны ${S.meta.compiled}. КВ-расписания: сезон ${S.meta.season}.`;
+
+  // Время суток по МСК
+  const SLOTS = {
+    morning: { title: "Утро 6–12", from: 6, to: 12,
+      text: "Утром лучше всего FM: новости, утренние шоу. На КВ днём работают верхние диапазоны 13–19 м (15–22 МГц), дальние станции слышны слабее." },
+    day: { title: "День 12–18", from: 12, to: 18,
+      text: "Днём средние волны почти пусты: дальних станций не слышно, остаются только местные. На КВ ищите станции в диапазонах 16–25 м (11–18 МГц). Самое время для авиадиапазона: у аэропортов большая загрузка." },
+    evening: { title: "Вечер 18–24", from: 18, to: 24,
+      text: "Лучшее время для дальнего приёма. После заката оживают СВ (Европа, Ближний Восток) и КВ-диапазоны 31, 41 и 49 м (6–10 МГц). Радиолюбители работают в SSB на 40 м (7,0–7,2 МГц) и 80 м (3,5–3,8 МГц)." },
+    night: { title: "Ночь 0–6", from: 0, to: 6,
+      text: "Ночью «длинные» КВ-диапазоны 49, 60, 75 и 90 м (3–6 МГц) и СВ принимают станции за тысячи километров. Хорошее время для сигналов точного времени RWM на 4996 кГц и погоды VOLMET." },
+  };
+  const h = nowMsk().getHours();
+  let cur = Object.keys(SLOTS).find((k) => h >= SLOTS[k].from && h < SLOTS[k].to) || "evening";
+
+  // "HH:MM-HH:MM" МСК -> пересекается ли со слотом
+  function inSlot(range, slot) {
+    // есть только время начала ("19:00") — считаем передачу часовой
+    const m = /(\d{1,2}):?(\d{2})\s*[-–]\s*(\d{1,2}):?(\d{2})/.exec(String(range || ""))
+      || /(\d{1,2}):(\d{2})/.exec(String(range || ""));
+    if (!m) return false;
+    const a = +m[1] + +m[2] / 60;
+    let b = m[3] != null ? +m[3] + +m[4] / 60 : a + 1;
+    if (b <= a) b += 24;
+    for (const off of [0, 24]) {
+      if (a < slot.to + off && b > slot.from + off) return true;
+    }
+    return false;
+  }
+
+  function render() {
+    $("#slots").innerHTML = Object.entries(SLOTS).map(([k, s]) =>
+      `<button class="chip${k === cur ? " active" : ""}" data-k="${k}">${s.title}</button>`).join("");
+    const s = SLOTS[cur];
+    const showAll = $("#all").checked;
+    const sw = groupSW([...(S.sw_russian || []), ...(S.sw_other || [])]
+      .filter((r) => inSlot(r.time_msk, s) && (showAll || !r.verify)))
+      .sort((a, b) => String(a.time_msk).localeCompare(String(b.time_msk)));
+    const shows = (S.shows || []).filter((r) => inSlot(r.time_msk, s));
+    $("#out").innerHTML = `<p class="tip">${esc(s.text)}</p>
+      <h3>FM-передачи в это время</h3>` +
+      table(shows, [
+        { title: "МСК", cls: "num", render: (r) => esc(r.time_msk) },
+        { title: "Передача", render: (r) => `<b>${esc(r.show)}</b>${verify(r)}` },
+        { title: "Станция", render: (r) => `${esc(r.station)} <span class="muted">${esc(r.freq)}</span>` },
+        { title: "Дни", key: "days" },
+      ]) +
+      `<h3>КВ-эфир в это время</h3>` +
+      table(sw, [
+        { title: "МСК", cls: "num", render: (r) => esc(r.time_msk) },
+        { title: "кГц", cls: "num", render: (r) => esc(r.freq_khz) },
+        { title: "Станция", render: (r) => `<b>${esc(r.station)}</b>${isLive(r.time_utc) ? ' <span class="badge on">в эфире</span>' : ""}${verify(r)}` },
+        { title: "Язык", render: (r) => esc(r.language || r.lang || "русский") },
+      ], { live: (r) => isLive(r.time_utc) });
+  }
+  function renderShows() {
+    const rows = filterRows(S.shows || [], $("#q").value);
+    $("#shows").innerHTML = table(rows, [
+      { title: "Станция", render: (r) => `<b>${esc(r.station)}</b> <span class="muted">${esc(r.freq)}</span>` },
+      { title: "Передача", render: (r) => `${esc(r.show)}${verify(r)}` },
+      { title: "Дни", key: "days" },
+      { title: "МСК", cls: "num", render: (r) => esc(r.time_msk) },
+      { title: "", render: (r) => { const u = [].concat(r.source || [])[0]; return u ? `<a href="${esc(u)}" target="_blank" rel="noopener">источник</a>` : ""; } },
+    ]);
+  }
+  $("#slots").addEventListener("click", (e) => {
+    const b = e.target.closest("[data-k]");
+    if (b) { cur = b.dataset.k; render(); }
+  });
+  $("#q").addEventListener("input", renderShows);
+  $("#all").addEventListener("change", render);
+  render();
+  renderShows();
+})();
+</script>
+</body>
+</html>

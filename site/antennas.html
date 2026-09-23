@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Антенны до 3000 ₽</title>
+<meta name="description" content="20 недорогих антенн с маркетплейсов для XHDATA D-808: комнатные и наружные, принцип работы и рейтинг приёма.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://wwwparser.github.io/xhdata-d808/antennas.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Антенны до 3000 ₽">
+<meta property="og:description" content="20 недорогих антенн с маркетплейсов для XHDATA D-808: комнатные и наружные, принцип работы и рейтинг приёма.">
+<meta property="og:url" content="https://wwwparser.github.io/xhdata-d808/antennas.html">
+<meta name="theme-color" content="#c2410c">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<main class="wrap">
+  <h1>20 антенн до 3000 ₽ для D-808</h1>
+  <p class="lead">Комнатные и наружные антенны с Wildberries, цены на 23 сентября 2026 года. Для каждой: как подключить, как она работает и насколько улучшает приём на КВ, СВ и FM.</p>
+
+  <details class="howto">
+    <summary>Как читать рейтинг и что выбрать</summary>
+    <div class="body">
+      <p>Рейтинг от 1 до 5 показывает, насколько антенна улучшает приём по сравнению со штатной, отдельно по диапазонам. Он основан на типе антенны, отзывах покупателей и обзорах радиолюбителей. Это экспертная оценка, а не лабораторный замер.</p>
+      <ul>
+        <li><b>Живёте в квартире, хочется лучшего КВ.</b> Возьмите пассивный провод 5–7 м, вытянутый к окну или на балкон: дёшево и заметно лучше телескопа.</li>
+        <li><b>В квартире много помех от техники.</b> Рамочная антенна меньше собирает бытовые помехи, чем провод.</li>
+        <li><b>Дача или частный дом.</b> Наружный провод 10–20 м, натянутый как можно выше, даёт лучший результат за свои деньги.</li>
+        <li><b>СВ по вечерам.</b> Лучше всего работает индуктивная рамка: её ставят рядом с приёмником, подключать не нужно.</li>
+      </ul>
+      <p class="note">Наружную антенну отключайте от приёмника при грозе. Длинный провод на улице собирает статическое электричество и может вывести из строя входные цепи.</p>
+    </div>
+  </details>
+
+  <div class="toolbar" id="place"></div>
+  <div class="toolbar">
+    <label class="small muted">Сортировка:
+      <select id="sort">
+        <option value="overall">по общей оценке</option>
+        <option value="sw">по КВ</option>
+        <option value="mw">по СВ</option>
+        <option value="fm">по FM</option>
+        <option value="price">по цене</option>
+      </select></label>
+    <input type="search" id="q" placeholder="Поиск по названию или типу…">
+  </div>
+  <p class="small muted" id="count"></p>
+  <div class="grid" id="out"></div>
+</main>
+<script src="data/antennas.js"></script>
+<script src="assets/app.js"></script>
+<script>
+(function () {
+  const { esc, stars, verify, filterRows, $ } = Site;
+  const A = window.ANTENNAS || [];
+  const PLACES = { all: "Все", "комнатная": "Комнатные", "наружная": "Наружные" };
+  let place = "all";
+
+  function card(a) {
+    const r = a.rating || {};
+    const bands = (a.bands || []).map((b) => `<span class="badge">${esc(b)}</span>`).join(" ");
+    return `<article class="card ant">
+      <div class="kicker">${esc(a.type)} · ${esc(a.placement)}</div>
+      <h3 style="margin:0">${esc(a.name)}${verify(a)}</h3>
+      <div class="meta">${bands}${a.needs_power ? ' <span class="badge">нужно питание</span>' : ""}</div>
+      <div class="price">${a.price_rub ? Number(a.price_rub).toLocaleString("ru-RU") + " ₽" : "цена —"}
+        <span class="small muted">${esc(a.marketplace || "")}</span></div>
+      <div class="ratings">
+        <span>Итог</span>${stars(r.overall)}
+        <span>КВ</span>${stars(r.sw)}
+        <span>СВ</span>${stars(r.mw)}
+        <span>FM</span>${stars(r.fm)}
+      </div>
+      <p style="margin:0">${esc(a.description)}</p>
+      <details><summary class="small"><b>Как работает и как подключить</b></summary>
+        <p class="small">${esc(a.principle)}</p>
+        <p class="small"><b>Подключение:</b> ${esc(a.connection)}</p>
+        ${a.pros && a.pros.length ? `<p class="small" style="margin-bottom:0"><b>Плюсы</b></p><ul>${a.pros.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}
+        ${a.cons && a.cons.length ? `<p class="small" style="margin-bottom:0"><b>Минусы</b></p><ul>${a.cons.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}
+        ${a.rating_note ? `<p class="small muted">${esc(a.rating_note)}</p>` : ""}
+      </details>
+      ${a.url ? `<a href="${esc(a.url)}" target="_blank" rel="noopener nofollow">Открыть на маркетплейсе →</a>` : ""}
+    </article>`;
+  }
+
+  function render() {
+    $("#place").innerHTML = Object.entries(PLACES).map(([k, t]) =>
+      `<button class="chip${k === place ? " active" : ""}" data-k="${k}">${t}</button>`).join("");
+    let rows = filterRows(A, $("#q").value);
+    if (place !== "all") rows = rows.filter((a) => a.placement === place || a.placement === "обе");
+    const key = $("#sort").value;
+    rows = [...rows].sort((a, b) => key === "price"
+      ? (a.price_rub || 1e9) - (b.price_rub || 1e9)
+      : ((b.rating || {})[key] || 0) - ((a.rating || {})[key] || 0) || (a.price_rub || 0) - (b.price_rub || 0));
+    $("#count").textContent = `Показано: ${rows.length} из ${A.length}`;
+    $("#out").innerHTML = rows.map(card).join("") || '<p class="muted">Ничего не найдено.</p>';
+  }
+  $("#place").addEventListener("click", (e) => {
+    const b = e.target.closest("[data-k]");
+    if (b) { place = b.dataset.k; render(); }
+  });
+  $("#sort").addEventListener("change", render);
+  $("#q").addEventListener("input", render);
+  render();
+})();
+</script>
+</body>
+</html>

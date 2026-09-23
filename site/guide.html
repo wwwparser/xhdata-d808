@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Инструкция к D-808</title>
+<meta name="description" content="Инструкция к приёмнику XHDATA D-808 простыми словами: кнопки, память, автопоиск ATS, SSB, часы и будильник по шагам.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://wwwparser.github.io/xhdata-d808/guide.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Инструкция к D-808">
+<meta property="og:description" content="Инструкция к приёмнику XHDATA D-808 простыми словами: кнопки, память, автопоиск ATS, SSB, часы и будильник по шагам.">
+<meta property="og:url" content="https://wwwparser.github.io/xhdata-d808/guide.html">
+<meta name="theme-color" content="#c2410c">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<main class="wrap">
+  <h1>Инструкция к D-808 простыми словами</h1>
+  <p class="lead">Где какая кнопка и как выполнить любое действие по шагам. Составлено по официальному руководству XHDATA (версия 2025 года с разъёмом Type-C) и сверено с руководствами 2018 и 2023 годов.</p>
+
+  <figure class="figure">
+    <svg viewBox="0 0 760 360" role="img" aria-label="Схема приёмника D-808 с нумерацией органов управления">
+      <style>
+        .b{fill:var(--surface-2);stroke:var(--line);stroke-width:2}
+        .k{fill:var(--surface);stroke:var(--muted);stroke-width:1.2}
+        .t{font:600 11px system-ui,sans-serif;fill:var(--muted)}
+        .n{fill:var(--accent)} .nt{font:700 13px system-ui,sans-serif;fill:#fff}
+        .lcd{fill:var(--lcd)} .lt{font:700 26px ui-monospace,Consolas,monospace;fill:var(--lcd-ink)}
+        .ls{font:600 10px ui-monospace,Consolas,monospace;fill:var(--lcd-ink)}
+      </style>
+      <!-- телескоп -->
+      <rect x="560" y="8" width="8" height="52" rx="3" class="k"/>
+      <text x="576" y="30" class="t">телескоп (сзади)</text>
+      <!-- корпус -->
+      <rect x="60" y="60" width="600" height="270" rx="26" class="b"/>
+      <!-- динамик -->
+      <g fill="var(--muted)" opacity=".45">
+        <circle cx="175" cy="195" r="92" fill="none" stroke="var(--muted)" stroke-width="2"/>
+      </g>
+      <g id="grill" fill="var(--muted)" opacity=".35"></g>
+      <!-- дисплей -->
+      <rect x="310" y="85" width="215" height="80" rx="6" class="lcd"/>
+      <text x="324" y="102" class="ls">SW 31m   FAST   BW 3k</text>
+      <text x="330" y="140" class="lt">9 665</text>
+      <text x="470" y="140" class="ls">kHz</text>
+      <text x="324" y="158" class="ls">P12   SNR 18dB   12:40</text>
+      <!-- POWER -->
+      <rect x="560" y="88" width="72" height="30" rx="8" fill="var(--accent)"/>
+      <text x="572" y="108" style="font:700 12px system-ui;fill:#fff">POWER</text>
+      <!-- кнопки диапазонов -->
+      <g>
+        <rect x="560" y="126" width="34" height="22" rx="5" class="k"/><text x="566" y="141" class="t">FM</text>
+        <rect x="598" y="126" width="34" height="22" rx="5" class="k"/><text x="600" y="141" class="t">MW</text>
+        <rect x="560" y="152" width="34" height="22" rx="5" class="k"/><text x="566" y="167" class="t">SW</text>
+        <rect x="598" y="152" width="34" height="22" rx="5" class="k"/><text x="603" y="167" class="t">AIR</text>
+      </g>
+      <!-- функциональные кнопки -->
+      <g id="fn"></g>
+      <!-- цифровая клавиатура -->
+      <g id="pad"></g>
+      <!-- боковые органы -->
+      <rect x="44" y="130" width="16" height="70" rx="6" class="k"/>
+      <rect x="44" y="232" width="16" height="16" rx="3" class="k"/>
+      <rect x="44" y="258" width="16" height="16" rx="3" class="k"/>
+      <rect x="660" y="120" width="18" height="90" rx="7" class="k"/>
+      <rect x="660" y="225" width="14" height="40" rx="5" class="k"/>
+      <rect x="660" y="280" width="12" height="22" rx="3" class="k"/>
+      <!-- номера -->
+      <g id="nums"></g>
+      <!-- подписи боков -->
+      <text x="4" y="120" class="t">левый бок</text>
+      <text x="684" y="112" class="t">правый</text>
+      <text x="684" y="125" class="t">бок</text>
+    </svg>
+    <figcaption>Упрощённая схема, нарисованная для этого сайта: расположение кнопок на лицевой панели условное. Номера на схеме совпадают с номерами в таблице ниже.</figcaption>
+  </figure>
+
+  <h2>Органы управления</h2>
+  <div id="controls"></div>
+
+  <h2>Как сделать: пошагово</h2>
+  <div class="toolbar"><input type="search" id="q" placeholder="Найти: память, SSB, будильник…"></div>
+  <div id="howto"></div>
+
+  <h2>Характеристики</h2>
+  <div id="specs"></div>
+
+  <h2>Советы владельцев</h2>
+  <div id="tips"></div>
+</main>
+<script src="data/d808.js"></script>
+<script src="assets/app.js"></script>
+<script>
+(function () {
+  const { esc, table, $ } = Site;
+  const D = window.D808 || {};
+
+  // --- дорисовываем схему ---
+  const svgNS = "http://www.w3.org/2000/svg";
+  function add(parent, tag, attrs, text) {
+    const e = document.createElementNS(svgNS, tag);
+    for (const k in attrs) e.setAttribute(k, attrs[k]);
+    if (text != null) e.textContent = text;
+    $(parent).appendChild(e);
+    return e;
+  }
+  for (let r = -80; r <= 80; r += 14)
+    for (let c = -80; c <= 80; c += 14)
+      if (r * r + c * c < 82 * 82) add("#grill", "circle", { cx: 175 + c, cy: 195 + r, r: 3 });
+  const FN = ["SSB", "DISPLAY", "ALARM", "BW/ST", "LIGHT", "INFO"];
+  FN.forEach((t, i) => {
+    const x = 310 + (i % 3) * 73, y = 180 + Math.floor(i / 3) * 28;
+    add("#fn", "rect", { x, y, width: 68, height: 22, rx: 5, class: "k" });
+    add("#fn", "text", { x: x + 6, y: y + 15, class: "t" }, t);
+  });
+  const PAD = ["1", "2", "3", "▲", "4", "5", "6", "▼", "7", "8", "9", "0", "FREQ", "PAGE"];
+  PAD.forEach((t, i) => {
+    const w = i >= 12 ? 60 : 28;
+    const x = 310 + (i % 4) * 34;
+    const yy = 240 + Math.floor(i / 4) * 22;
+    if (i < 12) {
+      add("#pad", "rect", { x, y: yy, width: w, height: 18, rx: 4, class: "k" });
+      add("#pad", "text", { x: x + 9, y: yy + 13, class: "t" }, t);
+    } else {
+      add("#pad", "rect", { x: 460 + (i - 12) * 66, y: 240, width: w, height: 18, rx: 4, class: "k" });
+      add("#pad", "text", { x: 468 + (i - 12) * 66, y: 253, class: "t" }, t);
+    }
+  });
+  // номера: [x, y, №]
+  const NUMS = [[640, 80, 1], [640, 170, 2], [300, 190, 3], [300, 250, 4], [600, 249, 5], [310, 78, 6],
+    [690, 160, 7], [690, 240, 8], [30, 160, 9], [30, 250, 10], [690, 292, 11], [544, 24, 12]];
+  NUMS.forEach(([x, y, n]) => {
+    add("#nums", "circle", { cx: x, cy: y, r: 11, class: "n" });
+    add("#nums", "text", { x: x - (n > 9 ? 8 : 4), y: y + 5, class: "nt" }, n);
+  });
+
+  // --- таблица органов управления, сгруппированная под номера схемы ---
+  const GROUPS = [
+    [1, "POWER", /^POWER/],
+    [2, "Кнопки диапазонов", /^(FM|LW\/MW|SW|AIR)$/],
+    [3, "Функциональные кнопки", /^(SSB|DISPLAY|ALARM|AM BW|LIGHT|INFO)/],
+    [4, "Цифры и стрелки", /^(0–9|▲)/],
+    [5, "FREQ и PAGE", /^(FREQ|PAGE)$/],
+    [6, "Дисплей", /$^/],
+    [7, "Колесо настройки", /^TUNING/],
+    [8, "Точная подстройка", /^FINE/],
+    [9, "Громкость", /^VOLUME/],
+    [10, "Гнёзда антенны и наушников", /^Гнездо/],
+    [11, "USB-разъём", /^USB/],
+    [12, "Телескопическая антенна", /^Телескоп/],
+  ];
+  const ctl = D.controls || [];
+  const used = new Set();
+  const rows = GROUPS.map(([n, g, re]) => {
+    const items = ctl.filter((c) => re.test(c.name));
+    items.forEach((c) => used.add(c));
+    if (n === 6) return { n, g, items: [{ name: "Экран", location: "лицевая панель", function: "Частота, диапазон, метровый поддиапазон КВ, шаг (FAST/SLOW), полоса фильтра, ячейка памяти, уровень сигнала и SNR, часы. Кнопка DISPLAY переключает нижнюю строку." }] };
+    return { n, g, items };
+  });
+  const rest = ctl.filter((c) => !used.has(c));
+  if (rest.length) rows.push({ n: "—", g: "Прочее", items: rest });
+  const kbdify = (s) => esc(s).replace(/\b(POWER|SSB|DISPLAY|ALARM|AM BW|FM ST|TIME SET|LW\/MW|FM|SW|AIR|LIGHT|FREQ|PAGE|INFO|TUNING|FINE TUNE|VOLUME|RESET)\b/g, '<span class="kbd">$1</span>');
+  $("#controls").innerHTML = table(rows.flatMap((r) => r.items.map((c, i) => ({ ...c, n: i === 0 ? r.n : "", g: r.g }))), [
+    { title: "№", cls: "num", render: (r) => r.n },
+    { title: "Орган", render: (r) => `<b>${esc(r.name)}</b><div class="small muted">${esc(r.location)}</div>` },
+    { title: "Что делает", render: (r) => kbdify(r.function) },
+  ]);
+
+  // --- пошаговые процедуры ---
+  function renderHowto() {
+    const q = $("#q").value.trim().toLowerCase();
+    const list = (D.howto || []).filter((h) => !q || JSON.stringify(h).toLowerCase().includes(q));
+    $("#howto").innerHTML = list.map((h, i) => `<details class="howto"${q && i < 3 ? " open" : ""}>
+      <summary>${esc(h.title)}</summary>
+      <div class="body"><ol class="steps">${h.steps.map((s) => `<li>${kbdify(s).replace(/\(?unverified\)?/gi, '<span class="badge verify">не подтверждено</span>')}</li>`).join("")}</ol>
+      ${h.source ? `<p class="small muted">Источник: <a href="${esc(h.source)}" target="_blank" rel="noopener">руководство</a></p>` : ""}</div>
+    </details>`).join("") || '<p class="muted">Ничего не найдено.</p>';
+  }
+  $("#q").addEventListener("input", renderHowto);
+  renderHowto();
+
+  // --- характеристики ---
+  const sp = D.specs || {};
+  const b = sp.bands || {};
+  const specRows = [
+    ["FM", b.FM && b.FM.range], ["СВ (MW)", b.MW && b.MW.range], ["ДВ (LW)", b.LW && b.LW.range],
+    ["КВ (SW)", b.SW && b.SW.range], ["Авиа (AIR)", b.AIR && b.AIR.range],
+    ["Фильтры AM, кГц", sp.bandwidth_filters && sp.bandwidth_filters.AM.join(" / ")],
+    ["Фильтры SSB, кГц", sp.bandwidth_filters && sp.bandwidth_filters.SSB.join(" / ")],
+    ["Память", sp.memory && `${sp.memory.total} ячеек, по ${sp.memory.per_band} на диапазон (${sp.memory.pages})`],
+    ["Питание", sp.power && `${sp.power.battery}; ${sp.power.dc_in}`],
+    ["Время работы", sp.power && sp.power.runtime],
+    ["Гнёзда", sp.jacks && `антенна ${sp.jacks.external_antenna}, наушники ${sp.jacks.headphones}`],
+    ["Размеры и вес", `${sp.dimensions_mm || ""} мм, ${sp.weight || ""}`],
+    ["Чего нет", sp.no_features],
+  ].filter((r) => r[1]).map(([k, v]) => ({ k, v }));
+  $("#specs").innerHTML = table(specRows, [{ title: "Параметр", render: (r) => `<b>${esc(r.k)}</b>` }, { title: "Значение", key: "v" }]);
+
+  $("#tips").innerHTML = `<div class="grid">${(D.tips || []).map((t) =>
+    `<div class="card small">${esc(t.tip)}${t.source ? ` <a href="${esc(t.source)}" target="_blank" rel="noopener">источник</a>` : ""}</div>`).join("")}</div>`;
+})();
+</script>
+</body>
+</html>
