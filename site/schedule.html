@@ -18,7 +18,7 @@
 <body>
 <main class="wrap">
   <h1>Программа: что слушать днём и вечером</h1>
-  <p class="lead">Собрано по часам: популярные FM-передачи и КВ-эфир на русском. Время московское. Сейчас <span class="clock" id="clock"></span>.</p>
+  <p class="lead">Собрано по часам: популярные FM-передачи и КВ-эфир. Время московское. Нажмите на строку — появится подсказка, что набрать на приёмнике. Сейчас <span class="clock" id="clock"></span>.</p>
 
   <p class="small muted" id="meta"></p>
   <div class="toolbar" id="slots"></div>
@@ -31,10 +31,11 @@
   <div id="shows"></div>
 </main>
 <script src="data/stations.js"></script>
+<script src="data/streams.js"></script>
 <script src="assets/app.js"></script>
 <script>
 (function () {
-  const { esc, table, verify, isLive, startClock, filterRows, nowMsk, groupSW, $ } = Site;
+  const { esc, table, verify, isLive, startClock, filterRows, nowMsk, groupSW, tuneHelp, $ } = Site;
   const S = window.STATIONS || {};
   startClock($("#clock"));
   if (S.meta) $("#meta").textContent = `Данные собраны ${S.meta.compiled}. КВ-расписания: сезон ${S.meta.season}.`;
@@ -84,14 +85,14 @@
         { title: "Передача", render: (r) => `<b>${esc(r.show)}</b>${verify(r)}` },
         { title: "Станция", render: (r) => `${esc(r.station)} <span class="muted">${esc(r.freq)}</span>` },
         { title: "Дни", key: "days" },
-      ]) +
+      ], { detail: tuneHelp }) +
       `<h3>КВ-эфир в это время</h3>` +
       table(sw, [
         { title: "МСК", cls: "num", render: (r) => esc(r.time_msk) },
         { title: "кГц", cls: "num", render: (r) => esc(r.freq_khz) },
         { title: "Станция", render: (r) => `<b>${esc(r.station)}</b>${isLive(r.time_utc) ? ' <span class="badge on">в эфире</span>' : ""}${verify(r)}` },
         { title: "Язык", render: (r) => esc(r.language || r.lang || "русский") },
-      ], { live: (r) => isLive(r.time_utc) });
+      ], { live: (r) => isLive(r.time_utc), detail: tuneHelp });
   }
   function renderShows() {
     const rows = filterRows(S.shows || [], $("#q").value);
@@ -101,7 +102,7 @@
       { title: "Дни", key: "days" },
       { title: "МСК", cls: "num", render: (r) => esc(r.time_msk) },
       { title: "", render: (r) => { const u = [].concat(r.source || [])[0]; return u ? `<a href="${esc(u)}" target="_blank" rel="noopener">источник</a>` : ""; } },
-    ]);
+    ], { detail: tuneHelp });
   }
   $("#slots").addEventListener("click", (e) => {
     const b = e.target.closest("[data-k]");

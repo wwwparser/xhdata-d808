@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Радиолюбители и радиохулиганы</title>
+<meta name="description" content="Как слушать радиолюбителей, Си-Би, радиохулиганов и пиратов на XHDATA D-808: частоты, время, круглые столы и что набрать на приёмнике.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://wwwparser.github.io/xhdata-d808/hams.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Радиолюбители и радиохулиганы">
+<meta property="og:description" content="Как слушать радиолюбителей, Си-Би, радиохулиганов и пиратов на XHDATA D-808: частоты, время, круглые столы и что набрать на приёмнике.">
+<meta property="og:url" content="https://wwwparser.github.io/xhdata-d808/hams.html">
+<meta name="theme-color" content="#c2410c">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<main class="wrap">
+  <h1>Радиолюбители, Си-Би и радиохулиганы</h1>
+  <p class="lead">Живой эфир, которого нет в программе передач: разговоры радиолюбителей, круглые столы, дальнобойщики на 27 МГц, самодельные станции «свободных операторов» и пираты. Нажмите на частоту — появится подсказка, что набрать на D-808. Сейчас <span class="clock" id="clock"></span>.</p>
+
+  <details class="howto" open>
+    <summary>Как слушать радиолюбителей на D-808 — коротко</summary>
+    <div class="body">
+      <ol class="steps">
+        <li>Радиолюбители говорят в режиме <b>SSB</b>: в обычном AM их речь звучит как «кряканье». Ниже 10 МГц (160, 80, 40 м) — нижняя полоса <b>LSB</b>, выше (20–10 м) — верхняя <b>USB</b>.</li>
+        <li>Наберите частоту: <span class="kbd">SW</span> → <span class="kbd">FREQ</span> → цифры в кГц → <span class="kbd">FREQ</span>. Нажмите на колесо <span class="kbd">TUNING</span> до <b>SLOW</b>.</li>
+        <li>Нажмите <span class="kbd">SSB</span> и подождите до 5 секунд. Кнопкой <span class="kbd">INFO</span> выберите LSB или USB.</li>
+        <li>Медленно крутите колёсико <span class="kbd">FINE TUNE</span>, пока голос не станет естественным. Фильтр <span class="kbd">AM BW</span> — 2,2 кГц.</li>
+        <li>Морзе (CW) тоже слушается в SSB, с узким фильтром 0,5–1 кГц. Си-Би и радиохулиганы в основном работают в обычном <b>AM</b>: режим SSB для них не нужен.</li>
+      </ol>
+      <p class="tip">Штатного телескопа для 160 и 80 м мало. Провод 5–10 м к окну или на балкон, подключённый к гнезду внешней антенны, заметно прибавит станций.</p>
+    </div>
+  </details>
+
+  <p class="note" id="legal"></p>
+
+  <div class="toolbar" id="tabs"></div>
+  <div class="toolbar"><input type="search" id="q" placeholder="Поиск: частота, город, режим…"></div>
+  <div id="intro"></div>
+  <div id="out"></div>
+  <p class="small muted" id="meta"></p>
+</main>
+<script src="data/hams.js"></script>
+<script src="assets/app.js"></script>
+<script>
+(function () {
+  const { esc, table, verify, startClock, filterRows, tuneHelp, $ } = Site;
+  const H = window.HAMS || {};
+  startClock($("#clock"));
+  $("#legal").textContent = H.legal || "";
+  if (H.meta) $("#meta").textContent = `Данные собраны ${H.meta.compiled}. Записи с меткой «проверить» основаны на старых или непрямых источниках — эфир мог измениться.`;
+
+  const first = (s) => (String(s || "").match(/\d+(?:[.,]\d+)?/) || [""])[0].replace(",", ".");
+  const range = (s) => {
+    const m = /(\d+(?:[.,]\d+)?)\s*[–-]\s*(\d+(?:[.,]\d+)?)/.exec(String(s || ""));
+    return m ? `${m[1]}–${m[2]} кГц` : "";
+  };
+  const src = (r) => {
+    const u = String(r.source || "").split(/\s*;\s*/)[0];
+    return u ? `<a href="${esc(u)}" target="_blank" rel="noopener" class="small">источник</a>` : "";
+  };
+  // строки данных -> запись, которую понимает подсказка tuneHelp (scan — участок, который проходить колесом)
+  const tune = {
+    bands: (r) => tuneHelp({ freq_khz: first(r.ssb_part_khz) || first(r.range_khz), mode: String(r.sideband).split(/[ ,(]/)[0], scan: range(r.ssb_part_khz) || range(r.range_khz) }),
+    nets: (r) => tuneHelp({ freq_khz: first(r.freq_khz), mode: r.mode }),
+    hooligans: (r) => tuneHelp({ freq_khz: first(r.range_or_freq_khz), mode: r.mode, scan: range(r.range_or_freq_khz) }),
+    pirates: (r) => tuneHelp({ freq_khz: first(r.freq_khz), mode: r.mode, scan: range(r.freq_khz) }),
+  };
+
+  const TABS = {
+    bands: {
+      title: "Диапазоны", rows: H.ham_bands, detail: tune.bands,
+      intro: "Любительские КВ-диапазоны, которые принимает D-808, и Си-Би 27 МГц. Правило простое: вечером и ночью слушайте 160, 80 и 40 м, днём — 20 м и выше.",
+      cols: [
+        { title: "Диапазон", cls: "num", render: (r) => esc(r.band) },
+        { title: "Частоты, кГц", render: (r) => `${esc(r.range_khz)}<div class="small muted">телефон: ${esc(r.ssb_part_khz)}</div>` },
+        { title: "Полоса", render: (r) => esc(r.sideband) },
+        { title: "Когда слушать", render: (r) => esc(r.best_time_msk) },
+        { title: "Кого слышно", render: (r) => `${esc(r.what)}<div class="small muted">${esc(r.tips || "")}</div>` },
+      ],
+    },
+    nets: {
+      title: "Круглые столы и эфиры", rows: H.nets, detail: tune.nets,
+      intro: "Регулярные выходы в эфир в одно и то же время: областные круглые столы, радиолюбительские новости, маяки и дежурные частоты.",
+      cols: [
+        { title: "кГц", cls: "num", render: (r) => esc(r.freq_khz) },
+        { title: "Что", render: (r) => `<b>${esc(r.name)}</b>${verify(r)}<div class="small muted">${esc(r.what)}</div>` },
+        { title: "Режим", render: (r) => esc(r.mode) },
+        { title: "Дни", render: (r) => esc(r.days) },
+        { title: "МСК", cls: "num", render: (r) => esc(r.time_msk) },
+        { title: "", render: src },
+      ],
+    },
+    contests: {
+      title: "Соревнования", rows: H.contests,
+      intro: "Во время соревнований эфир забит станциями со всего мира — лучшее время, чтобы услышать много и далеко. Настраивайтесь на любой участок телефона из вкладки «Диапазоны».",
+      cols: [
+        { title: "Даты", cls: "num", render: (r) => esc(r.dates) },
+        { title: "Соревнование", render: (r) => `<b>${esc(r.name)}</b>${verify(r)}` },
+        { title: "Диапазоны", render: (r) => esc(r.bands) },
+        { title: "Режим", render: (r) => esc(r.mode) },
+        { title: "", render: src },
+      ],
+    },
+    hooligans: {
+      title: "Радиохулиганы", rows: H.hooligans, detail: tune.hooligans,
+      intro: "«Свободные операторы» — самодельные AM-станции без позывных: музыка, переговоры, эксперименты с передатчиками. Слушаются в обычном AM. Ищите вечером и ночью, медленно проходя участок колесом.",
+      cols: [
+        { title: "кГц", cls: "num", render: (r) => esc(r.range_or_freq_khz) },
+        { title: "Что там", render: (r) => `${esc(r.what)}${verify(r)}` },
+        { title: "Режим", render: (r) => esc(r.mode) },
+        { title: "Когда", render: (r) => esc(r.when_msk) },
+        { title: "", render: src },
+      ],
+    },
+    pirates: {
+      title: "Пираты", rows: H.pirates, detail: tune.pirates,
+      intro: "Нелицензионные вещательные станции, в основном из Нидерландов и Германии. Чаще всего выходят вечером в выходные на 6200–6400 кГц. Из Москвы слышны при хорошем прохождении и с внешней антенной.",
+      cols: [
+        { title: "кГц", cls: "num", render: (r) => esc(r.freq_khz) },
+        { title: "Станция", render: (r) => `<b>${esc(r.station)}</b>${verify(r)}` },
+        { title: "Режим", render: (r) => esc(r.mode) },
+        { title: "Когда (МСК)", render: (r) => esc(r.when_msk) },
+        { title: "Откуда", render: (r) => esc(r.region) },
+      ],
+    },
+  };
+
+  let cur = (location.hash || "#bands").slice(1);
+  if (!TABS[cur]) cur = "bands";
+  function render() {
+    $("#tabs").innerHTML = Object.entries(TABS).map(([k, t]) =>
+      `<button class="chip${k === cur ? " active" : ""}" data-k="${k}">${t.title} <span class="muted small">${(t.rows || []).length}</span></button>`).join("");
+    const t = TABS[cur];
+    $("#intro").innerHTML = `<p class="tip">${esc(t.intro)}</p>`;
+    $("#out").innerHTML = table(filterRows(t.rows || [], $("#q").value), t.cols, t.detail ? { detail: t.detail } : {});
+  }
+  $("#tabs").addEventListener("click", (e) => {
+    const b = e.target.closest("[data-k]");
+    if (!b) return;
+    cur = b.dataset.k;
+    history.replaceState(null, "", "#" + cur);
+    render();
+  });
+  $("#q").addEventListener("input", render);
+  render();
+})();
+</script>
+</body>
+</html>

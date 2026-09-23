@@ -18,7 +18,7 @@
 <body>
 <main class="wrap">
   <h1>Что слушать в Москве и Подмосковье</h1>
-  <p class="lead">Все станции, которые реально принимает D-808 в регионе, по диапазонам. Зелёным подсвечены КВ-передачи, которые идут в эфире прямо сейчас. Сейчас <span class="clock" id="clock"></span>.</p>
+  <p class="lead">Все станции, которые реально принимает D-808 в регионе, по диапазонам. Нажмите на частоту — появится подсказка, какие кнопки нажать на D-808, и кнопка онлайн-эфира, если он есть. Зелёным подсвечены КВ-передачи, которые идут прямо сейчас. Сейчас <span class="clock" id="clock"></span>.</p>
 
   <p class="small muted" id="meta"></p>
   <div class="toolbar" id="tabs"></div>
@@ -27,15 +27,17 @@
   <div id="out"></div>
 </main>
 <script src="data/stations.js"></script>
+<script src="data/streams.js"></script>
 <script src="assets/app.js"></script>
 <script>
 (function () {
-  const { esc, table, verify, isLive, startClock, filterRows, $ } = Site;
+  const { esc, table, verify, isLive, startClock, filterRows, tuneHelp, streamFor, $ } = Site;
   const S = window.STATIONS || {};
   startClock($("#clock"));
   if (S.meta) $("#meta").textContent = `Данные собраны ${S.meta.compiled}. КВ-расписания: сезон ${S.meta.season}.`;
 
   const live = (r) => isLive(r.time_utc);
+  const online = (r) => streamFor(r) ? ' <span class="badge" title="есть онлайн-поток">▶ онлайн</span>' : "";
   const liveBadge = (r) => live(r) ? ' <span class="badge on">в эфире</span>' : "";
 
   const TABS = {
@@ -44,7 +46,7 @@
       intro: "Основной диапазон 87,5–108 МГц. Несколько станций ещё работают в старом советском диапазоне 64–74 МГц: чтобы их поймать, выключите радио, удержите FM и выберите нижнюю границу 64. Выдвиньте телескопическую антенну полностью. В Москве сигналы очень сильные: если соседние станции «налезают» друг на друга, задвиньте антенну наполовину (аттенюатора у D-808 нет). Если слабая станция шипит, переключите её в моно кнопкой FM ST.",
       cols: [
         { title: "МГц", cls: "num", render: (r) => esc(r.freq_mhz) },
-        { title: "Станция", render: (r) => `<b>${esc(r.name)}</b>${verify(r)}` },
+        { title: "Станция", render: (r) => `<b>${esc(r.name)}</b>${online(r)}${verify(r)}` },
         { title: "Формат", key: "format" },
         { title: "Примечание", key: "note" },
       ],
@@ -54,7 +56,7 @@
       intro: "В городах Подмосковья работают местные станции и ретрансляторы на своих частотах. В 60–100 км от МКАД московские станции слабеют — тогда пригодится выносная FM-антенна.",
       cols: [
         { title: "МГц", cls: "num", render: (r) => esc(r.freq_mhz) },
-        { title: "Станция", render: (r) => `<b>${esc(r.name)}</b>${verify(r)}` },
+        { title: "Станция", render: (r) => `<b>${esc(r.name)}</b>${online(r)}${verify(r)}` },
         { title: "Город", render: (r) => esc(r.city || r.town || "") },
         { title: "Примечание", render: (r) => esc(r.note || r.format || "") },
       ],
@@ -64,7 +66,7 @@
       intro: "Большинство советских средневолновых и длинноволновых передатчиков в России выключены. Днём на СВ почти тихо, зато после заката открывается дальний приём: Европа, Кавказ, Средняя Азия, Ближний Восток. Приём идёт на внутреннюю ферритовую антенну — поворачивайте приёмник корпусом, телескоп на СВ не работает.",
       cols: [
         { title: "кГц", cls: "num", render: (r) => esc(r.freq_khz) },
-        { title: "Станция", render: (r) => `<b>${esc(r.name)}</b>${verify(r)}` },
+        { title: "Станция", render: (r) => `<b>${esc(r.name)}</b>${online(r)}${verify(r)}` },
         { title: "Страна", key: "country" },
         { title: "Когда", key: "when" },
         { title: "Примечание", render: (r) => esc(r.note || "") },
@@ -75,7 +77,7 @@
       intro: "Русскоязычные передачи на коротких волнах. Время указано по Москве; время в UTC — для сверки с расписаниями EiBi и short-wave.info. Расписания меняются дважды в год: в конце марта и в конце октября.",
       cols: [
         { title: "кГц", cls: "num", render: (r) => esc(r.freq_khz) },
-        { title: "Станция", render: (r) => `<b>${esc(r.station)}</b>${liveBadge(r)}${verify(r)}` },
+        { title: "Станция", render: (r) => `<b>${esc(r.station)}</b>${liveBadge(r)}${online(r)}${verify(r)}` },
         { title: "Страна", key: "country" },
         { title: "МСК", render: (r) => esc(r.time_msk) },
         { title: "UTC", render: (r) => `<span class="muted">${esc(r.time_utc)}</span>` },
@@ -87,7 +89,7 @@
       intro: "Мощные международные станции, которые легко слышно вечером и ночью. Хороший способ проверить приёмник и антенну.",
       cols: [
         { title: "кГц", cls: "num", render: (r) => esc(r.freq_khz) },
-        { title: "Станция", render: (r) => `<b>${esc(r.station)}</b>${liveBadge(r)}${verify(r)}` },
+        { title: "Станция", render: (r) => `<b>${esc(r.station)}</b>${liveBadge(r)}${online(r)}${verify(r)}` },
         { title: "Страна", key: "country" },
         { title: "Язык", render: (r) => esc(r.language || r.lang || "") },
         { title: "МСК", render: (r) => esc(r.time_msk) },
@@ -116,7 +118,7 @@
     $("#intro").innerHTML = `<p class="tip">${esc(t.intro)}</p>`;
     let rows = filterRows(t.rows || [], $("#q").value);
     if (t.live) rows = [...rows].sort((a, b) => (t.live(b) ? 1 : 0) - (t.live(a) ? 1 : 0));
-    $("#out").innerHTML = table(rows, t.cols, { live: t.live });
+    $("#out").innerHTML = table(rows, t.cols, { live: t.live, detail: tuneHelp });
   }
   $("#tabs").addEventListener("click", (e) => {
     const b = e.target.closest("[data-k]");

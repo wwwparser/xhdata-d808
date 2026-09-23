@@ -18,6 +18,9 @@ FILES = {
     "d808.json": "D808",
     "stations.json": "STATIONS",
     "antennas.json": "ANTENNAS",
+    "streams.json": "STREAMS",
+    "hams.json": "HAMS",
+    "d808_photos.json": "D808_PHOTOS",
 }
 
 TIME_RE = re.compile(r"^\s*(\d{1,2}):?(\d{2})\s*[-–]\s*(\d{1,2}):?(\d{2})\s*$")
@@ -85,6 +88,9 @@ def main():
             data = [] if var == "ANTENNAS" else {}
         else:
             data = json.loads(src.read_text(encoding="utf-8"))
+        if var == "STREAMS":
+            # на сайт попадают только потоки, прошедшие scripts/check_streams.py
+            data = {k: v for k, v in data.items() if v.get("ok")}
         if var == "STATIONS":
             fix_sw(data.get("sw_russian", []), problems, "sw_russian")
             fix_sw(data.get("sw_other", []), problems, "sw_other")
